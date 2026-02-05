@@ -15,7 +15,11 @@ const CHECKS = [
   { pattern: /\u201C/g, name: "curly double quote (open)", replacement: '"' },
   { pattern: /\u201D/g, name: "curly double quote (close)", replacement: '"' },
   { pattern: /\u2018/g, name: "curly single quote (open)", replacement: "'" },
-  { pattern: /\u2019/g, name: "curly single quote/apostrophe (close)", replacement: "'" },
+  {
+    pattern: /\u2019/g,
+    name: "curly single quote/apostrophe (close)",
+    replacement: "'",
+  },
   { pattern: /\u2014/g, name: "em dash", replacement: "--" },
   { pattern: /\u2013/g, name: "en dash", replacement: "-" },
   { pattern: /\u2026/g, name: "ellipsis character", replacement: "..." },

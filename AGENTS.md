@@ -39,7 +39,17 @@ This repository is a lightweight knowledge base of my notes on **AI** and **secu
 
 ## Tools
 
-Pre-commit hooks run automatically on staged `.md` files. Run `pnpm install` to set up.
+Pre-commit hooks run automatically on staged files. Run `pnpm install` to set up.
+
+### Code formatting (Prettier)
+
+Auto-formats markdown, JavaScript, TypeScript, and JSON files.
+
+- **Format all files**: `pnpm format`
+- **Check formatting**: `pnpm format:check`
+- **Config**: `.prettierrc`
+
+Prettier runs first in the pre-commit hook and auto-fixes formatting issues.
 
 ### Markdown linting (markdownlint)
 
@@ -52,13 +62,13 @@ Enforces consistent markdown structure and style.
 
 Enforces plain ASCII characters for consistency and tooling compatibility.
 
-| Don't use | Use instead |
-|-----------|-------------|
-| Curly double quotes | `"` (straight quote) |
+| Don't use                       | Use instead               |
+| ------------------------------- | ------------------------- |
+| Curly double quotes             | `"` (straight quote)      |
 | Curly single quotes/apostrophes | `'` (straight apostrophe) |
-| Em dash | `--` |
-| En dash | `-` |
-| Ellipsis character | `...` |
+| Em dash                         | `--`                      |
+| En dash                         | `-`                       |
+| Ellipsis character              | `...`                     |
 
 - **Manual check**: `pnpm check-quotes <file.md>`
 - **Script**: `scripts/check-quotes.js`

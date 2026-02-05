@@ -7,12 +7,12 @@
 
   // Allow duplicate headings in different sections
   "MD024": {
-    "siblings_only": true
+    "siblings_only": true,
   },
 
   // Allow trailing punctuation in headings (e.g., "Why it matters:")
   "MD026": false,
 
   // Allow inline HTML if needed
-  "MD033": false
+  "MD033": false,
 }

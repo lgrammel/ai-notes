@@ -20,6 +20,9 @@ importers:
       markdownlint-cli2:
         specifier: ^0.17.2
         version: 0.17.2
+      prettier:
+        specifier: ^3.5.1
+        version: 3.8.1
 
 packages:
 
@@ -600,6 +603,11 @@ packages:
   pidtree@0.6.0:
     resolution: {integrity: sha512-eG2dWTVw5bzqGRztnHExczNxt5VGsE6OwTeCG3fdUf9KBsZzO3R5OIIIzWR+iZA0NtZ+RDVdaoE2dK1cn6jH4g==}
     engines: {node: '>=0.10'}
+    hasBin: true
+
+  prettier@3.8.1:
+    resolution: {integrity: sha512-UOnG6LftzbdaHZcKoPFtOcCKztrQ57WkHDeRD9t/PTQtmT0NHSeWWepj6pS0z/N7+08BHFDQVUrfmfMRcZwbMg==}
+    engines: {node: '>=14'}
     hasBin: true
 
   progress@2.0.3:
@@ -1467,6 +1475,8 @@ snapshots:
   picomatch@2.3.1: {}
 
   pidtree@0.6.0: {}
+
+  prettier@3.8.1: {}
 
   progress@2.0.3: {}
 

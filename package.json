@@ -1,0 +1,17 @@
+{
+  "name": "ai-notes",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare": "husky",
+    "check-links": "markdown-link-check --config .markdown-link-check.json"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "markdown-link-check": "^3.13.6"
+  },
+  "lint-staged": {
+    "*.md": "markdown-link-check --config .markdown-link-check.json"
+  }
+}

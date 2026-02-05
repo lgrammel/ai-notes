@@ -1,0 +1,11 @@
+# Dependencies
+node_modules/
+
+# pnpm
+.pnpm-store/
+pnpm-debug.log*
+
+# Editor
+.DS_Store
+*.swp
+*.swo

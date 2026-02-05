@@ -34,7 +34,7 @@ Every concept note follows this shape:
 ```markdown
 # Term Name
 
-Also called: synonym1, synonym2.
+Synonyms: synonym1, synonym2.
 
 A 1-2 sentence definition of what the term means.
 
@@ -50,11 +50,11 @@ See also: [Related Concept](./related-concept.md), [Another](./another.md).
 **Required elements:**
 
 - Title (`# Term Name`)
-- Definition (1-2 sentences immediately after title or "Also called")
+- Definition (1-2 sentences immediately after title or "Synonyms")
 
 **Optional elements** (use when helpful, in this order):
 
-- `Also called:` -- synonyms, placed right after the title
+- `Synonyms:` -- synonyms, placed right after the title. Do not include links here; use plain text only.
 - Additional context paragraphs
 - `Why it matters:` -- production relevance
 - `Note:` -- clarifications
@@ -63,9 +63,9 @@ See also: [Related Concept](./related-concept.md), [Another](./another.md).
 
 ### Linking and avoiding duplication
 
-- **One canonical note per idea**. Before creating a new file, check if the concept exists under a synonym; if so, update the existing note and add the synonym under "Also called".
+- **One canonical note per idea**. Before creating a new file, check if the concept exists under a synonym; if so, update the existing note and add the synonym under `Synonyms:`.
 - **Link, don't duplicate**. If another concept is needed, use a relative link (e.g. `[LLM](./large-language-model.md)`) rather than restating the definition.
-- **Update related notes** when changing a definition/scope--check parent/child concepts and "Also called" synonyms for consistency.
+- **Update related notes** when changing a definition/scope--check parent/child concepts and `Synonyms:` for consistency.
 
 ### General conventions
 

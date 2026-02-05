@@ -6,4 +6,7 @@ A service layer between an application/[agent](./ai-agent.md) and one or more [m
 
 Typically provides request routing (model selection, fallbacks), unified auth and key management, rate limiting/quotas, retries/timeouts, cost controls, caching, and logging/metrics (often with PII redaction).
 
-Examples: OpenRouter, Vercel AI Gateway.
+## Examples
+
+- OpenRouter
+- Vercel AI Gateway

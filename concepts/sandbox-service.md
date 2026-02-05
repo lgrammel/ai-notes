@@ -6,4 +6,7 @@ A hosted service (usually exposed via an API) that provisions and manages [sandb
 
 Sandbox services typically add lifecycle management (create/destroy, pooling), prebuilt images/templates, workspace mounting/sync, secrets injection, network controls, timeouts/quotas, snapshotting, and [observability](./observability-tools.md) hooks.
 
-Examples: E2B, Vercel Sandbox.
+## Examples
+
+- E2B
+- Vercel Sandbox

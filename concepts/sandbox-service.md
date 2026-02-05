@@ -1,6 +1,6 @@
 # Sandbox Service
 
-Also called: sandbox-as-a-service, remote sandbox.
+Synonyms: sandbox-as-a-service, remote sandbox.
 
 A hosted service (usually exposed via an API) that provisions and manages [sandboxes](./sandbox.md) on demand and provides primitives to run commands/code, read/write files, and stream logs.
 

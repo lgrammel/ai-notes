@@ -1,6 +1,6 @@
 # Chatbot
 
-Also called: chat assistant, conversational assistant (product terms).
+Synonyms: chat assistant, conversational assistant (product terms).
 
 A chatbot is an application that provides a conversational interface (chat) for users to ask questions or request actions, producing responses over one or more turns using an [LLM](./large-language-model.md). In practice, chatbots often use retrieval (RAG), tools, and guardrails to answer more reliably and safely.
 

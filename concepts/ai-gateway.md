@@ -1,6 +1,6 @@
 # AI Gateway
 
-Also called: model gateway, LLM gateway.
+Synonyms: model gateway, LLM gateway.
 
 A service layer between an application/[agent](./ai-agent.md) and one or more [model providers](./inference-provider.md) that standardizes access to models and centralizes operational controls.
 

@@ -1,6 +1,6 @@
 # Sandbox
 
-Also called: execution sandbox, agent sandbox.
+Synonyms: execution sandbox, agent sandbox.
 
 An isolated execution environment for running code (often model-generated or user-supplied) with controlled access to the host system: filesystem/workspace, network, secrets, and compute.
 

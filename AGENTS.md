@@ -23,3 +23,16 @@ This repository is a lightweight knowledge base of my notes on **AI** and **secu
 - Prefer **clear definitions** plus 1–2 sentences on why it matters in production.
 - Put **term definitions** in `concepts/`. In other files, reference/link to the relevant concept note rather than duplicating definitions.
 - When relevant, connect concepts (e.g. how **telemetry** feeds **evals**, how **evals** gate releases, how **observability** catches regressions).
+
+## Consistency rules for concepts (when adding or updating)
+
+- Prefer **one canonical concept note per idea**. Before creating a new file, check whether the concept already exists under a synonym; if it does, update the existing note and add the synonym under “Also called”.
+- Keep **names consistent**:
+  - File name: kebab-case (e.g. `ai-gateway.md`).
+  - Title: matches the primary term (first line `# Term Name`).
+  - Use the same term casing/spelling across notes; avoid introducing near-duplicates (e.g. “AI Observability” vs “Observability Tools”) unless you intentionally split scope.
+- Use a **definition-first shape**:
+  - Start with a crisp 1–2 sentence definition.
+  - Use optional, consistent labels when helpful: “Also called: …”, “Why it matters: …”, “Examples: …”, “See also: …”.
+- Avoid **duplicating definitions across notes**. If another concept is needed, link to it (relative link within `concepts/`) rather than restating it.
+- When you **change a definition/scope**, do a quick pass over related notes and update any links/wording that would now be inconsistent (especially parent/child concepts and “Also called” synonyms).

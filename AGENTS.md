@@ -41,8 +41,6 @@ A 1-2 sentence definition of what the term means.
 Optional additional context: typical behaviors, scope, or how it works in practice.
 
 Examples: concrete examples if helpful.
-
-See also: [Related Concept](./related-concept.md), [Another](./another.md).
 ```
 
 **Required elements:**
@@ -56,9 +54,12 @@ See also: [Related Concept](./related-concept.md), [Another](./another.md).
 - Additional context paragraphs
 - `Note:` -- clarifications
 - `Examples:` -- concrete instances
-- `See also:` -- links to related concepts
 
 Do not include `Why it matters:` sections in concept notes. If production relevance is important, incorporate it briefly into the definition or the additional context instead.
+
+Do not include `See also:` sections in concept notes.
+
+Only include links when they materially help define or clarify the concept (i.e., the concept is referenced in the definition, a note, or the additional context). Do not add generic link lists (for example, a standalone "Related concepts:" sentence).
 
 ### Linking and avoiding duplication
 
@@ -68,7 +69,7 @@ Do not include `Why it matters:` sections in concept notes. If production releva
 
 ### General conventions
 
-- Keep notes **practical**--prefer clear definitions plus 1-2 sentences on why it matters.
+- Keep notes **practical**--prefer clear definitions plus 1-2 sentences on practical implications (in the definition or additional context).
 - **Connect concepts** when relevant (e.g. how telemetry feeds evals, how evals gate releases).
 - For non-concept files, reference/link to concept notes rather than duplicating definitions.
 

@@ -7,5 +7,3 @@ A chatbot is an application that provides a conversational interface (chat) for 
 Note: a chatbot is a UI pattern and product surface; it may or may not be an [AI agent](./ai-agent.md) (which implies tool use in a loop).
 
 Examples: customer support chat, an internal IT helpdesk bot, a "docs Q&A" assistant.
-
-See also: [Large Language Model (LLM, Model)](./large-language-model.md), [Prompt](./prompt.md), [AI Agent](./ai-agent.md), [AI Gateway](./ai-gateway.md), [Observability Tools](./observability-tools.md), [Evaluations (Evals)](./evaluations-evals.md).

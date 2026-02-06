@@ -4,7 +4,7 @@ Instruction following is an [LLM](./llm.md) behavior where the model treats part
 
 It is typically strengthened by post-[pretraining](./pretraining.md) [training](./training.md) such as instruction fine-tuning and preference-based methods (for example RLHF), and it strongly influences how "chat" models behave across multi-turn conversations.
 
-Note: Instruction following is not the same as task capability; a model can understand an instruction yet fail to complete it due to missing knowledge, weak reasoning, or missing tools.
+Note: Instruction following is not the same as task capability; a model can understand an instruction yet fail to complete it due to missing knowledge, weak [reasoning](./reasoning.md), or missing tools.
 
 ## Examples
 

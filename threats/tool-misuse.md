@@ -4,7 +4,7 @@ Tool Misuse occurs when attackers manipulate AI [agents](../concepts/agent.md) i
 
 The key characteristic of tool misuse is that the agent uses tools it is legitimately allowed to use, but applies them in unintended or harmful ways. This distinguishes it from [privilege compromise](./privilege-compromise.md) (where the attacker gains unauthorized permissions) and from [unexpected RCE and code attacks](./unexpected-rce-and-code-attacks.md) (where the attacker exploits code execution vulnerabilities). Tool misuse is commonly enabled by [prompt injection](./prompt-injection.md).
 
-A specific variant is Agent Hijacking, where an agent ingests adversarially manipulated data (for example, a poisoned document or crafted API response) and subsequently executes unintended tool calls, also discussed under [intent breaking & goal manipulation](./intent-breaking-and-goal-manipulation.md) from the goal-redirection perspective.
+A specific variant is Agent Hijacking, where an agent ingests adversarially manipulated data (for example, a poisoned document or crafted API response) and subsequently executes unintended tool calls, also discussed under [intent breaking & goal manipulation](./intent-breaking-and-goal-manipulation.md) from the goal-redirection perspective. [Tool execution approval](../concepts/tool-execution-approval.md) is a key mitigation, though its effectiveness can be degraded by [overwhelming human in the loop](./overwhelming-human-in-the-loop.md) attacks.
 
 ## Examples
 

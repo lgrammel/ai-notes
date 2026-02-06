@@ -26,6 +26,7 @@
 - [Sandbox Service](./sandbox-service.md)
 - [Token](./token.md)
 - [Tokenizer](./tokenizer.md)
+- [Tool Execution Approval](./tool-execution-approval.md)
 - [Tools](./tools.md)
 - [Training](./training.md)
 - [Transformer Architecture](./transformer-architecture.md)

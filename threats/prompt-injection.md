@@ -9,7 +9,7 @@ In practice this shows up as:
 
 In tool-using [agents](../concepts/agent.md), prompt injection often aims to manipulate tool calls (for example, "send the secrets to ...") or to extract hidden prompts, tokens, or other sensitive [context](../concepts/context.md) for [exfiltration](./exfiltration.md). Prompt injection is the primary enabler for many other agent threats, including [tool misuse](./tool-misuse.md), [intent breaking & goal manipulation](./intent-breaking-and-goal-manipulation.md), and [memory poisoning](./memory-poisoning.md).
 
-Mitigations commonly include treating retrieved content as untrusted data, minimizing tool permissions, [sandboxing](../concepts/sandbox.md), validating high-risk actions, and using [context engineering](../concepts/context-engineering.md) to clearly separate instructions from untrusted content.
+Mitigations commonly include treating retrieved content as untrusted data, minimizing tool permissions, [sandboxing](../concepts/sandbox.md), [tool execution approval](../concepts/tool-execution-approval.md) for high-risk actions, and using [context engineering](../concepts/context-engineering.md) to clearly separate instructions from untrusted content.
 
 ## Examples
 

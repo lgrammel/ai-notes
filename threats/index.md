@@ -1,6 +1,5 @@
 # Threats
 
-- [Approval Fatigue Exploitation](./approval-fatigue-exploitation.md)
 - [Context Poisoning](./context-poisoning.md)
 - [Exfiltration](./exfiltration.md)
 - [Goal Manipulation](./goal-manipulation.md)
@@ -9,6 +8,7 @@
 - [Privilege Compromise](./privilege-compromise.md)
 - [Prompt Injection](./prompt-injection.md)
 - [Resource Overload](./resource-overload.md)
+- [Tool Approval Fatigue Exploitation](./tool-approval-fatigue-exploitation.md)
 - [Tool Misuse](./tool-misuse.md)
 - [Unexpected RCE and Code Attacks](./unexpected-rce-and-code-attacks.md)
 - [User Manipulation](./user-manipulation.md)

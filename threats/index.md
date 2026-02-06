@@ -1,7 +1,6 @@
 # Threats
 
 - [Approval Fatigue Exploitation](./approval-fatigue-exploitation.md)
-- [Belief Manipulation](./belief-manipulation.md)
 - [Context Poisoning](./context-poisoning.md)
 - [Exfiltration](./exfiltration.md)
 - [Goal Manipulation](./goal-manipulation.md)
@@ -12,3 +11,4 @@
 - [Resource Overload](./resource-overload.md)
 - [Tool Misuse](./tool-misuse.md)
 - [Unexpected RCE and Code Attacks](./unexpected-rce-and-code-attacks.md)
+- [User Manipulation](./user-manipulation.md)

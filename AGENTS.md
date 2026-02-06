@@ -56,6 +56,11 @@ synonym1, synonym2.
 - Title (`# Term Name`)
 - Definition (1-2 sentences immediately after title)
 
+**Main section rule (descriptive-only):**
+
+- The main section (definition + any additional context paragraphs before the first `##` heading) is **descriptive only**: it explains what the term is, how it behaves, and where it applies.
+- Avoid prescriptive/normative language in the main section (for example: "should", "must" as advice, "do X", "avoid Y", "best practice is..."). If operational guidance is important, either phrase it descriptively ("common practice is...") or put concrete instances under `## Examples`.
+
 **Optional elements** (use when helpful, in this order):
 
 - Additional context paragraphs

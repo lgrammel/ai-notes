@@ -1,15 +1,16 @@
 # Chatbot
 
-A chatbot is an application that provides a conversational interface (chat) for users to ask questions or request actions, producing responses over one or more turns using an [LLM](./llm.md). In practice, chatbots often use retrieval (RAG), tools, and guardrails to answer more reliably and safely.
+A chatbot is an application that provides a conversational interface (chat) for users to ask questions or request actions, producing responses over one or more turns (often using an [LLM](./llm.md)).
 
-Note: a chatbot is a UI pattern and product surface; it may or may not be an [agent](./agent.md) (which implies tool use in a loop).
+Chatbots range from simple input-response systems (for example, one model call per user turn) to chat UIs that front an [agent](./agent.md) and its [agent runtime](./agent-runtime.md), where the backend runs a tool-using loop before replying.
+
+Note: "chatbot" is a UI pattern and product surface; it does not imply tool use. Some chatbots call [tools](./tools.md) (for example retrieval/RAG) without being agents; in this repo, "agent" implies an iterative loop over tool calls and updated state.
 
 ## Examples
 
-- Customer support chat
-- An internal IT helpdesk bot
-- A "docs Q&A" assistant
+- Customer support chatbot
+- A chat UI for a [workspace agent](./workspace-agent.md) that edits files and runs commands
 
 ## Synonyms
 
-chat assistant, conversational assistant (product terms).
+chat assistant

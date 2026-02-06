@@ -13,4 +13,4 @@ Training includes large-scale [pretraining](./pretraining.md) as well as further
 
 ## Synonyms
 
-model training, optimization
+model training

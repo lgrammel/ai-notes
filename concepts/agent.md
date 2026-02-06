@@ -6,6 +6,8 @@ This loop is typically implemented and operated by an [agent runtime](./agent-ru
 
 Some agents are [workspace agents](./workspace-agent.md), meaning their tool use is centered on a longer-lived project/workspace state (often a filesystem in a sandbox).
 
+Agents are often exposed to users through a [chatbot](./chatbot.md) interface, but "agent" describes the backend behavior (a tool-using loop) rather than the UI; an agent can also run via an API, a background job, or an event-driven workflow without an interactive chat surface.
+
 ## Synonyms
 
-AI agent, LLM agent, tool-using agent (sometimes "autonomous agent").
+AI agent, LLM agent, tool-using agent, autonomous agent

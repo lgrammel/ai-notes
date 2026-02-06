@@ -12,4 +12,4 @@ It includes prompt/template design, retrieval and ranking, summarization and mem
 
 ## Synonyms
 
-prompt engineering (overlapping), context management.
+prompt engineering, context management

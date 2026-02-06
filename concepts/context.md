@@ -12,4 +12,4 @@ Context is the set of information a [LLM](./llm.md) application provides alongsi
 
 ## Synonyms
 
-model context, input context (overlapping).
+model context, input context

@@ -9,7 +9,7 @@ A tool call is typically structured (tool name plus arguments); tool outputs can
 - Web search/retrieval APIs that return snippets or documents
 - Database query tools that return rows
 - Code execution tools (Python interpreter, shell commands) running in a sandbox
-- Workspace file tools that read/write files
+- Workspace file tools that read/write files (common in [workspace agents](./workspace-agent.md))
 - "Send message" tools that post to email/chat and return a message ID
 
 ## Synonyms

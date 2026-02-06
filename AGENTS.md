@@ -101,6 +101,7 @@ Only include links when they materially help define or clarify the concept (i.e.
 - Keep notes **practical**--prefer clear definitions plus 1-2 sentences on practical implications (in the definition or additional context).
 - **Connect concepts** when relevant (e.g. how telemetry feeds evals, how evals gate releases).
 - For non-concept files, reference/link to concept notes rather than duplicating definitions.
+- Keep `concepts/index.md` sorted alphabetically by the visible concept name.
 
 ## Tools
 

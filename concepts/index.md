@@ -1,9 +1,9 @@
 # Concepts
 
-- [Agent](./agent.md)
-- [Agent Runtime](./agent-runtime.md)
 - [AI Gateway](./ai-gateway.md)
 - [AI Infrastructure](./ai-infrastructure.md)
+- [Agent](./agent.md)
+- [Agent Runtime](./agent-runtime.md)
 - [Chatbot](./chatbot.md)
 - [Context](./context.md)
 - [Context Engineering](./context-engineering.md)
@@ -26,3 +26,4 @@
 - [Training](./training.md)
 - [Transformer Architecture](./transformer-architecture.md)
 - [Tools](./tools.md)
+- [Workspace Agent](./workspace-agent.md)

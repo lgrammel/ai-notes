@@ -6,7 +6,7 @@ Agent runtimes often handle orchestration concerns such as tool routing, retries
 
 ## Examples
 
-- A local agent runner embedded in an IDE that can edit files and run shell commands.
+- A local agent runner embedded in an IDE that can edit files and run shell commands (a [workspace agent](./workspace-agent.md)).
 - A hosted service that executes agent workflows and manages tool credentials and rate limits.
 - An agent framework/runtime library that provides a state machine, tool calling, and checkpointing.
 

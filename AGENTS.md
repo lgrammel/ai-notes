@@ -1,6 +1,6 @@
 # Agent Instructions
 
-This repository is a lightweight knowledge base of my notes on **AI** and **security for AI systems**. The content is intentionally short and "definition-first": each note captures a concept, role, or practice in a way that's easy to reference while designing, building, or reviewing AI products.
+This repository is a lightweight knowledge workspace about AI systems built on transformer architecture models. The content is intentionally short and "definition-first": each note captures a concept, role, or practice in a way that's easy to reference while designing, building, or reviewing AI products.
 
 ## How agents should reason (use the repo's definitions)
 

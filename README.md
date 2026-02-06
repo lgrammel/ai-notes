@@ -1,6 +1,6 @@
 # AI Notes
 
-A knowledge workspace about AI. It contains mostly markdown files but there may also be some scripts and JSON files and similar.
+A knowledge workspace about AI systems built on transformer architecture models.
 
 > **Read-only repository**: Pull requests will not be accepted or reviewed.
 

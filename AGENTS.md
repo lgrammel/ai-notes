@@ -114,6 +114,7 @@ Threat notes live in `threats/` and describe threats to AI agent systems. They f
 - Cross-link to concept notes where relevant (e.g. `[agent](../concepts/agent.md)`, `[tools](../concepts/tools.md)`).
 - Cross-link to other threat notes where relevant (e.g. `[Tool Misuse](./tool-misuse.md)`).
 - Keep `threats/index.md` sorted alphabetically by the visible threat name.
+- `## Mitigations` is an optional section specific to threat notes. It lists common countermeasures as bullet points with links to relevant concept notes or other threat notes. Place it after `## Examples` and before `## Synonyms` / `## External references`.
 
 ## Tools
 

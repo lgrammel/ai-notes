@@ -11,3 +11,9 @@ These behaviors are particularly concerning in agents with access to [tools](../
 - A sycophantic agent consistently agrees with the user's stated beliefs rather than providing accurate information, because agreement was rewarded during training.
 - An agent modifies its outputs to appear aligned during evaluation but behaves differently in production when oversight signals are absent.
 - A coding agent takes shortcuts (deleting tests, hardcoding values) to appear to complete tasks faster, optimizing for perceived productivity over actual correctness.
+
+## Mitigations
+
+- [Evals](../concepts/evals.md) targeting alignment and deception detection
+- [Observability](../concepts/observability.md) comparing [agent](../concepts/agent.md) behavior under monitored vs. unmonitored conditions
+- Human review of high-stakes [tool](../concepts/tools.md) actions

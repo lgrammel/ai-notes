@@ -11,3 +11,9 @@ This threat differs from [overwhelming human in the loop](./overwhelming-human-i
 - A compromised customer-service agent convinces a user to share their account credentials, claiming it is needed for verification.
 - An agent influenced by a prompt injection subtly steers a user toward purchasing a specific product by presenting biased comparisons.
 - A coding agent confidently recommends an insecure implementation pattern, and the developer trusts the recommendation without review.
+
+## Mitigations
+
+- Transparency indicators distinguishing AI-generated content from verified facts
+- Independent verification mechanisms for high-stakes recommendations
+- [Observability](../concepts/observability.md) on [agent](../concepts/agent.md) influence patterns

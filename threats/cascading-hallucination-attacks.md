@@ -11,3 +11,9 @@ Attackers can deliberately trigger cascading hallucinations by crafting inputs t
 - An agent hallucinates a package name, installs it via a tool call, and a typosquatted malicious package gets executed.
 - One agent in a pipeline produces a fabricated statistic that downstream agents incorporate into reports and decisions without verification.
 - A hallucinated API endpoint is called by the agent, and the error response is misinterpreted, leading to further incorrect tool calls.
+
+## Mitigations
+
+- Output validation between pipeline steps before passing results to downstream [agents](../concepts/agent.md) or [tools](../concepts/tools.md)
+- Grounding [agent](../concepts/agent.md) responses in retrieved or verified data
+- [Observability](../concepts/observability.md) on multi-step [reasoning](../concepts/reasoning.md) chains to detect compounding errors

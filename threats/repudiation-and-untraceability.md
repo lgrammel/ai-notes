@@ -11,3 +11,9 @@ This threat enables other attacks to go undetected: an attacker who achieves [to
 - An agent deletes production data via a tool call, but no audit log records which reasoning chain or input triggered the deletion.
 - In a multi-agent system, a harmful action is traced to an intermediate agent, but the original request and delegation chain are not logged, making root-cause analysis impossible.
 - An attacker exploits the absence of tamper-evident logging to modify agent logs after the fact, erasing evidence of unauthorized actions.
+
+## Mitigations
+
+- [Observability](../concepts/observability.md) with structured logs and traces linking [reasoning](../concepts/reasoning.md) steps to [tool](../concepts/tools.md) invocations
+- Tamper-evident audit trails
+- Provenance tracking for [agent](../concepts/agent.md) actions and delegation chains

@@ -11,3 +11,9 @@ The risk is elevated when agents generate and run code dynamically, because the 
 - An attacker crafts input that causes an agent's code interpreter to execute a reverse shell instead of the intended data analysis script.
 - A model generates code that includes a malicious dependency import, which runs arbitrary code when installed.
 - Adversarial input triggers server-side template injection in an agent-generated web page, achieving code execution on the host.
+
+## Mitigations
+
+- [Sandboxing](../concepts/sandbox.md) all agent-generated code execution
+- Restricting available system calls and network access in execution environments
+- Input sanitization before code generation and execution

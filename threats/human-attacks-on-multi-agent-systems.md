@@ -11,3 +11,9 @@ This threat is closely related to [identity spoofing & impersonation](./identity
 - An attacker submits a crafted request to a front-end agent that delegates to a privileged back-end agent, exploiting the delegation chain to access restricted resources.
 - A human adversary manipulates a multi-agent workflow by injecting [prompt injection](./prompt-injection.md) payloads that propagate through agent handoffs and affect agents the attacker has no direct access to.
 - An attacker exploits a poorly authenticated inter-agent API to submit tasks directly to a high-privilege agent, bypassing the intended workflow entry point.
+
+## Mitigations
+
+- Authentication and authorization at each [agent](../concepts/agent.md) handoff in delegation chains
+- Limiting permission propagation across agent boundaries
+- Input validation at every workflow entry point

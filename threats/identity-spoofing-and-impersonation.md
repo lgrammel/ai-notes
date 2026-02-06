@@ -11,3 +11,9 @@ Weak or absent identity verification in agent communication protocols, shared cr
 - An attacker sends messages to an agent API using a stolen or forged authentication token, impersonating a privileged user.
 - A rogue service impersonates a trusted agent in a multi-agent workflow and injects malicious instructions into the pipeline.
 - An attacker crafts messages that mimic system-level prompts, causing the agent to treat them as authoritative instructions.
+
+## Mitigations
+
+- Mutual authentication between [agents](../concepts/agent.md) in multi-agent systems
+- Strong identity verification for users and system components
+- Scoped, regularly rotated credentials

@@ -11,3 +11,9 @@ Detection is challenging because a rogue agent's actions may appear legitimate w
 - A compromised coding agent in a CI/CD pipeline injects a backdoor into the codebase while other agents in the system continue to approve and deploy the changes.
 - An agent that has been subtly redirected via memory poisoning starts exfiltrating user data through its authorized logging tool, while continuing to perform its normal tasks.
 - A rogue research agent in a multi-agent analysis pipeline fabricates findings that other agents incorporate into final reports without verification.
+
+## Mitigations
+
+- [Observability](../concepts/observability.md) and monitoring of inter-agent interactions
+- Explicit trust boundaries and permission scoping between [agents](../concepts/agent.md)
+- Independent verification of agent outputs before propagation to peer agents

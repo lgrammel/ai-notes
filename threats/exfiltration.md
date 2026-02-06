@@ -13,6 +13,12 @@ Targets commonly include system prompts, API keys and credentials, retrieved doc
 - A tool call is coerced into exporting database rows that include PII.
 - An agent encodes sensitive data into a URL parameter in a markdown image tag, causing the data to be sent to an external server when the image is rendered.
 
+## Mitigations
+
+- Network-level restrictions and output filtering on [tool](../concepts/tools.md) calls
+- [Sandboxing](../concepts/sandbox.md) to limit data access and egress paths
+- [Tool execution approval](../concepts/tool-execution-approval.md) for actions that transmit data externally
+
 ## Synonyms
 
 data exfiltration, data leakage, data theft

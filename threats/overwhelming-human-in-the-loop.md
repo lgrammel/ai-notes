@@ -11,3 +11,10 @@ This threat differs from [human manipulation](./human-manipulation.md), which ta
 - An agent generates dozens of benign file-change approvals followed by a single malicious one, exploiting approval fatigue.
 - A compromised agent presents a destructive database operation buried in a long list of routine maintenance tasks for batch approval.
 - An agent creates artificial urgency ("this deployment will fail in 2 minutes") to pressure a reviewer into approving without careful inspection.
+
+## Mitigations
+
+- Rate-limiting and batching [tool execution approval](../concepts/tool-execution-approval.md) requests to prevent fatigue
+- Tiered approval with stricter review for high-risk [tool](../concepts/tools.md) actions
+- Automated pre-screening of requests before human review
+- [Observability](../concepts/observability.md) on approval patterns to detect anomalous request volumes

@@ -11,3 +11,9 @@ A specific variant is Agent Hijacking, where adversarial data ingested by the ag
 - A [prompt injection](./prompt-injection.md) in a retrieved document causes a research agent to abandon its summary task and instead search for and report the user's credentials.
 - An attacker gradually shifts a customer-service agent's objective across multiple turns, causing it to provide unauthorized refunds.
 - Conflicting instructions in an agent's context cause it to prioritize an attacker-planted goal over the developer's system prompt.
+
+## Mitigations
+
+- [Context engineering](../concepts/context-engineering.md) to reinforce intended goals and separate untrusted input
+- Goal validation checkpoints in multi-step [reasoning](../concepts/reasoning.md) chains
+- [Tool execution approval](../concepts/tool-execution-approval.md) for actions that deviate from the original task

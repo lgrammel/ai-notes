@@ -11,3 +11,9 @@ Privilege compromise differs from [tool misuse](./tool-misuse.md) in that the at
 - An agent configured with a database admin token can drop tables, even though its task only requires read access.
 - An attacker exploits dynamic delegation in a multi-agent system to escalate from a low-privilege research agent to a high-privilege deployment agent.
 - A misconfigured API scope grants an agent write access to a production system when it was only intended to have sandbox access.
+
+## Mitigations
+
+- Least-privilege [tool](../concepts/tools.md) and credential scoping
+- Regular permission audits
+- Scoped, short-lived credentials rather than broad access tokens

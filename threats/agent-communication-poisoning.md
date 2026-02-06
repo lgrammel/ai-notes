@@ -11,3 +11,9 @@ Attack vectors include man-in-the-middle interception of agent-to-agent messages
 - An attacker intercepts the handoff message between a planning agent and an execution agent, replacing the approved action list with malicious instructions.
 - A poisoned entry is written to a shared key-value store that a downstream agent reads as a trusted directive from an upstream agent.
 - An attacker injects fabricated status messages into a multi-agent pipeline, causing agents to skip validation steps or re-execute completed tasks.
+
+## Mitigations
+
+- Authenticated and integrity-verified inter-agent communication channels
+- Input validation on messages received from peer [agents](../concepts/agent.md)
+- [Observability](../concepts/observability.md) on inter-agent message flows

@@ -11,3 +11,9 @@ Memory poisoning differs from [agent communication poisoning](./agent-communicat
 - An attacker embeds a hidden instruction in a document that the agent summarizes and stores; future queries retrieve the poisoned summary and follow the injected instruction.
 - A malicious user crafts conversation messages that get saved to long-term memory, causing the agent to behave differently for subsequent users.
 - Poisoned entries in a shared vector store cause an agent to recommend harmful actions whenever a related topic is queried.
+
+## Mitigations
+
+- Input validation and sanitization before writing to memory stores
+- Provenance tracking for memory entries
+- Periodic auditing of persisted memory for injected or anomalous content

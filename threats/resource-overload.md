@@ -11,3 +11,9 @@ Resource overload can also occur unintentionally through runaway agent loops or 
 - An attacker submits prompts designed to trigger unbounded recursive tool calls, exhausting the agent's API quota.
 - Crafted inputs cause an agent to repeatedly call a paid external API in a loop, running up thousands of dollars in charges before the loop is detected.
 - An adversary floods an agent system with concurrent requests, each triggering expensive inference and tool calls, causing cascading failures across shared infrastructure.
+
+## Mitigations
+
+- Resource limits on compute, API quotas, and cost
+- Bounded iteration limits on [tool](../concepts/tools.md) call loops and [reasoning](../concepts/reasoning.md) chains
+- [Observability](../concepts/observability.md) for detecting runaway loops and anomalous resource consumption

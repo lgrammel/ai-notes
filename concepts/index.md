@@ -16,7 +16,7 @@
 - [Instruction Following](./instruction-following.md)
 - [LLM](./llm.md)
 - [Model Developer (Model Creator)](./model-developer.md)
-- [Observability Tools](./observability-tools.md)
+- [Observability](./observability.md)
 - [Pretraining](./pretraining.md)
 - [Prompt](./prompt.md)
 - [Prompt Injection](./prompt-injection.md)

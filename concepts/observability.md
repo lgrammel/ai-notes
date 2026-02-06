@@ -1,4 +1,4 @@
-# Observability Tools
+# Observability
 
 Tools and practices for understanding and operating AI systems in production by collecting and correlating signals like logs (e.g., [prompts](./prompt.md)/outputs), traces, metrics, [LLM](./llm.md)/version metadata, and user feedback to support debugging, drift detection, and management of cost, latency, and safety.
 

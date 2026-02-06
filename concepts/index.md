@@ -9,6 +9,7 @@
 - [Context Size](./context-size.md)
 - [Evaluations (Evals)](./evaluations-evals.md)
 - [Fine-tuning](./fine-tuning.md)
+- [Inference](./inference.md)
 - [Inference Provider](./inference-provider.md)
 - [Model](./model.md)
 - [Model Developer (Model Creator)](./model-developer.md)
@@ -17,4 +18,5 @@
 - [Prompt Injection](./prompt-injection.md)
 - [Sandbox](./sandbox.md)
 - [Sandbox Service](./sandbox-service.md)
+- [Training](./training.md)
 - [Tools](./tools.md)

@@ -5,16 +5,19 @@ This repository is a lightweight knowledge workspace about AI systems built on t
 ## How agents should reason (use the repo's definitions)
 
 - Treat `concepts/` as the **canonical source of truth** for terminology and definitions in this repo.
-- Don't invent new definitions in-line. If you need a definition that's missing/unclear, **update or add a note under `concepts/`**, then proceed using it.
+- Treat `threats/` as the **canonical source of truth** for AI agent threat descriptions in this repo.
+- Don't invent new definitions in-line. If you need a definition that's missing/unclear, **update or add a note under `concepts/`** (or `threats/` for threats), then proceed using it.
 
 ## What you'll find here
 
 - **`concepts/`**: bite-sized markdown notes defining core terms (e.g. [LLMs](./concepts/llm.md), evals, fine-tuning, inference providers, observability/telemetry).
+- **`threats/`**: bite-sized markdown notes describing threats to AI agent systems (e.g. memory poisoning, tool misuse, privilege compromise).
 - **Occasional artifacts**: as the repo grows, it may also include small scripts, JSON, or other files that support the notes (examples, snippets, checklists, etc.).
 
 ## How to use it
 
 - Start with `concepts/` when you need a shared definition for a discussion, design doc, or review.
+- Start with `threats/` when you need a description of a specific AI agent threat.
 - Treat the notes as a living glossary: update entries as understanding changes or best practices evolve.
 
 ## Writing concept notes
@@ -102,6 +105,15 @@ Only include links when they materially help define or clarify the concept (i.e.
 - **Connect concepts** when relevant (e.g. how telemetry feeds evals, how evals gate releases).
 - For non-concept files, reference/link to concept notes rather than duplicating definitions.
 - Keep `concepts/index.md` sorted alphabetically by the visible concept name.
+
+## Writing threat notes
+
+Threat notes live in `threats/` and describe threats to AI agent systems. They follow the same structure and conventions as concept notes (see above), with these adjustments:
+
+- Threat notes describe attack vectors, vulnerabilities, or adversarial behaviors targeting AI agents.
+- Cross-link to concept notes where relevant (e.g. `[agent](../concepts/agent.md)`, `[tools](../concepts/tools.md)`).
+- Cross-link to other threat notes where relevant (e.g. `[Tool Misuse](./tool-misuse.md)`).
+- Keep `threats/index.md` sorted alphabetically by the visible threat name.
 
 ## Tools
 

@@ -7,3 +7,7 @@ A knowledge workspace about AI systems built on transformer architecture models.
 ## Concepts
 
 The `concepts/` folder contains a [lightweight, definition-first glossary for AI terms](concepts/index.md) used throughout this repo.
+
+## Threats
+
+The `threats/` folder contains notes on [threats to AI agent systems](threats/index.md), describing attack vectors and vulnerabilities relevant to AI agents.

@@ -1,7 +1,7 @@
 # Threats
 
 - [Context Poisoning](./context-poisoning.md)
-- [Exfiltration](./exfiltration.md)
+- [Data Exfiltration](./data-exfiltration.md)
 - [Goal Manipulation](./goal-manipulation.md)
 - [Misaligned Behaviors](./misaligned-behaviors.md)
 - [Multi-Agent System Threats](./multi-agent-system-threats.md)

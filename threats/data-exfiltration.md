@@ -1,8 +1,8 @@
-# Exfiltration
+# Data Exfiltration
 
-Exfiltration is the unauthorized extraction or disclosure of sensitive data from a system to an attacker-controlled destination. In [LLM](../concepts/llm.md) applications, this often happens when the model (or its [tools](../concepts/tools.md)) is manipulated into revealing secrets from its [context](../concepts/context.md) or connected systems.
+Data exfiltration is the unauthorized extraction or disclosure of sensitive data from a system to an attacker-controlled destination. In [LLM](../concepts/llm.md) applications, this often happens when the model (or its [tools](../concepts/tools.md)) is manipulated into revealing secrets from its [context](../concepts/context.md) or connected systems.
 
-Exfiltration can be direct (the model prints the data in its response) or indirect (the [agent](../concepts/agent.md) sends it via a tool call, writes it to a file, embeds it in a URL, or includes it in logs). It is frequently the end goal of [prompt injection](./prompt-injection.md) and [tool misuse](./tool-misuse.md) attacks: the attacker first gains control of the agent's behavior, then uses that control to extract sensitive data.
+Data exfiltration can be direct (the model prints the data in its response) or indirect (the [agent](../concepts/agent.md) sends it via a tool call, writes it to a file, embeds it in a URL, or includes it in logs). It is frequently the end goal of [prompt injection](./prompt-injection.md) and [tool misuse](./tool-misuse.md) attacks: the attacker first gains control of the agent's behavior, then uses that control to extract sensitive data.
 
 Targets commonly include system prompts, API keys and credentials, retrieved documents, user PII, and database contents.
 
@@ -21,4 +21,4 @@ Targets commonly include system prompts, API keys and credentials, retrieved doc
 
 ## Synonyms
 
-data exfiltration, data leakage, data theft
+exfiltration, data leakage, data theft

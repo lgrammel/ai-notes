@@ -9,7 +9,7 @@
 - [Context Engineering](./context-engineering.md)
 - [Context Size](./context-size.md)
 - [Eval Runner](./eval-runner.md)
-- [Evaluations (Evals)](./evaluations-evals.md)
+- [Evals](./evals.md)
 - [Exfiltration](./exfiltration.md)
 - [Fine-tuning](./fine-tuning.md)
 - [Inference](./inference.md)

@@ -9,7 +9,7 @@ Training includes large-scale [pretraining](./pretraining.md) as well as further
 ## Examples
 
 - [Pretraining](./pretraining.md) an [LLM](./llm.md) on large corpora to learn general language patterns
-- Instruction fine-tuning a base model to follow a specific format or policy
+- Instruction fine-tuning a base model to improve [instruction following](./instruction-following.md) (for example a specific format or policy)
 
 ## Synonyms
 

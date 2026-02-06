@@ -9,6 +9,7 @@
 - [Context Size](./context-size.md)
 - [Evaluations (Evals)](./evaluations-evals.md)
 - [Fine-tuning](./fine-tuning.md)
+- [Instruction Following](./instruction-following.md)
 - [Inference](./inference.md)
 - [Inference Provider](./inference-provider.md)
 - [LLM](./llm.md)

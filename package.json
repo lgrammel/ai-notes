@@ -6,7 +6,7 @@
     "prepare": "husky",
     "check-links": "markdown-link-check --config .markdown-link-check.json *.md concepts/*.md",
     "check-quotes": "node scripts/check-quotes.js",
-    "lint:md": "markdownlint-cli2",
+    "lint:md": "markdownlint-cli2 \"**/*.md\" \"#node_modules\"",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },

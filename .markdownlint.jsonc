@@ -15,4 +15,7 @@
 
   // Allow inline HTML if needed
   "MD033": false,
+
+  // Allow bare URLs (raw https://... without markdown link syntax)
+  "MD034": false,
 }

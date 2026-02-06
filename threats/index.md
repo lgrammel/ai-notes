@@ -6,7 +6,7 @@
 - [Approval Fatigue Exploitation](./approval-fatigue-exploitation.md)
 - [Belief Manipulation](./belief-manipulation.md)
 - [Memory Poisoning](./memory-poisoning.md)
-- [Misaligned & Deceptive Behaviors](./misaligned-and-deceptive-behaviors.md)
+- [Misaligned Behaviors](./misaligned-behaviors.md)
 - [Multi-Agent System Threats](./multi-agent-system-threats.md)
 - [Privilege Compromise](./privilege-compromise.md)
 - [Prompt Injection](./prompt-injection.md)

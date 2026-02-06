@@ -8,7 +8,7 @@ Note: Some workflows continue training an existing model on additional broad or 
 
 ## Examples
 
-- Pretraining a transformer language model on a mixture of web text and code using next-token prediction
+- Pretraining a [transformer architecture](./transformer-architecture.md) language model on a mixture of web text and code using next-token prediction
 - Continued pretraining of a base model on a large corpus of biomedical papers using the same objective
 
 ## Synonyms

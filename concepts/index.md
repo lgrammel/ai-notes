@@ -20,4 +20,5 @@
 - [Sandbox](./sandbox.md)
 - [Sandbox Service](./sandbox-service.md)
 - [Training](./training.md)
+- [Transformer Architecture](./transformer-architecture.md)
 - [Tools](./tools.md)

@@ -1,0 +1,15 @@
+# Transformer Architecture
+
+The transformer architecture is a neural network design for sequence modeling built around attention (especially self-attention), enabling a model to relate tokens to each other across a context window while processing inputs in parallel.
+
+In LLM systems, "transformer" usually refers to stacked attention and feed-forward layers used in variants such as decoder-only (autoregressive generation), encoder-only (representation learning), and encoder-decoder (sequence-to-sequence).
+
+## Examples
+
+- GPT-style decoder-only transformers for text generation.
+- BERT-style encoder-only transformers for embeddings and classification.
+- T5-style encoder-decoder transformers for translation or summarization.
+
+## Synonyms
+
+transformer, attention-based architecture

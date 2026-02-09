@@ -7,8 +7,8 @@ This repository is a lightweight knowledge workspace about AI systems built on t
 | Directory   | Contains                                                                   | Canonical for                      |
 | ----------- | -------------------------------------------------------------------------- | ---------------------------------- |
 | `concepts/` | Core term definitions (e.g. [LLMs](./concepts/llm.md), evals, fine-tuning) | Terminology and definitions        |
-| `threats/`  | AI agent threat descriptions (e.g. context poisoning, tool misuse)         | Attack vectors and vulnerabilities |
 | `ideas/`    | Speculative/emerging ideas attributed to external sources                  | Opinion-driven or unproven ideas   |
+| `threats/`  | AI agent threat descriptions (e.g. context poisoning, tool misuse)         | Attack vectors and vulnerabilities |
 
 Don't invent definitions in-line. If one is missing or unclear, **add or update a note** in the appropriate directory, then use it.
 
@@ -16,7 +16,7 @@ Treat notes as a living glossary: update entries as understanding changes.
 
 ## Writing notes
 
-All note types (concept, threat, idea) share these conventions. Type-specific rules follow in later sections.
+All note types (concept, idea, threat) share these conventions. Type-specific rules follow in later sections.
 
 ### Naming
 
@@ -85,18 +85,18 @@ Concept notes live in `concepts/` and define core terms. Keep them **concise**, 
 
 The main section is **descriptive only**: it explains what the term is, how it behaves, and where it applies. If operational guidance is important, phrase it descriptively or put concrete instances under `## Examples`.
 
-## Threat notes
-
-Threat notes live in `threats/` and describe attack vectors, vulnerabilities, or adversarial behaviors targeting AI agents. They follow concept note conventions with these additions:
-
-- `## Mitigations` is an optional section listing countermeasures as bullet points with links to relevant notes. Place it after `## Examples` and before `## Synonyms` / `## External references`.
-
 ## Idea notes
 
 Idea notes live in `ideas/` and capture speculative, emerging, or opinion-driven ideas from specific external sources. They follow concept note conventions with these additions:
 
 - The main section **may use analytical and speculative language** ("the idea that...", "this suggests...", "this creates a potential...").
 - `## External references` is **mandatory**. Every idea must be attributed to at least one external source that was actually read. Ideas without attribution belong in `concepts/` or should not be written.
+
+## Threat notes
+
+Threat notes live in `threats/` and describe attack vectors, vulnerabilities, or adversarial behaviors targeting AI agents. They follow concept note conventions with these additions:
+
+- `## Mitigations` is an optional section listing countermeasures as bullet points with links to relevant notes. Place it after `## Examples` and before `## Synonyms` / `## External references`.
 
 ### Prose style
 

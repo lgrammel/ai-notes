@@ -9,6 +9,7 @@ It includes prompt/template design, retrieval and ranking, summarization and mem
 - RAG pipelines that retrieve and compress relevant passages before generating.
 - Summarizing a long chat history into a short "state" block.
 - Putting tool outputs in a strict schema and separating them from instructions.
+- [Skills](./skill.md) that inject task-specific instructions into an agent's context only when relevant, keeping the base prompt lean.
 
 ## Synonyms
 

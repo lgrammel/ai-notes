@@ -4,6 +4,8 @@ An [agent](./agent.md) that operates on a longer-lived workspace state (typicall
 
 Workspace agents are common in IDE and coding workflows where multi-step tasks depend on accumulating changes in a repository or project directory over time. A [coding agent](./coding-agent.md) is a specialized workspace agent focused on software engineering tasks.
 
+Because workspace agents operate on persistent project state, they are natural hosts for [skills](./skill.md) -- modular instruction sets stored alongside the workspace (e.g., in project directories) that the agent runtime discovers and loads into context when relevant.
+
 ## Examples
 
 - An IDE-integrated agent that edits project files and runs tests/linters via shell commands.

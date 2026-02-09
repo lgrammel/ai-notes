@@ -28,6 +28,7 @@
 - [Reasoning](./reasoning.md)
 - [Sandbox](./sandbox.md)
 - [Sandbox Service](./sandbox-service.md)
+- [Skill](./skill.md)
 - [Token](./token.md)
 - [Tokenizer](./tokenizer.md)
 - [Tool Execution Approval](./tool-execution-approval.md)

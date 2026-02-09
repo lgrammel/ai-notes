@@ -4,6 +4,8 @@ A [workspace agent](./workspace-agent.md) specialized for software engineering t
 
 Coding agents operate on a filesystem containing a codebase -- either directly on a developer's machine or inside a remote [sandbox](./sandbox.md). Their [tool](./tools.md) loop centers on the edit-build-test cycle: make a change, observe compiler/test/lint output, and iterate until the task is complete. Common capabilities include file reading/writing, shell command execution, code search, test/lint invocation, and git operations. Some coding agents also integrate with external services such as CI pipelines, issue trackers, or code-review platforms.
 
+Coding agents are commonly extended with [skills](./skill.md) -- reusable instruction sets that teach the agent project-specific conventions, workflows, or domain knowledge. Skills let teams codify practices like code-review checklists, deployment procedures, or API design patterns so the agent applies them consistently.
+
 ## Examples
 
 - Cursor agents (background and inline) operating on a local project inside the IDE.

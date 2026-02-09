@@ -6,18 +6,21 @@ This repository is a lightweight knowledge workspace about AI systems built on t
 
 - Treat `concepts/` as the **canonical source of truth** for terminology and definitions in this repo.
 - Treat `threats/` as the **canonical source of truth** for AI agent threat descriptions in this repo.
-- Don't invent new definitions in-line. If you need a definition that's missing/unclear, **update or add a note under `concepts/`** (or `threats/` for threats), then proceed using it.
+- Treat `ideas/` as the **canonical source of truth** for speculative and emerging ideas about AI systems in this repo.
+- Don't invent new definitions in-line. If you need a definition that's missing/unclear, **update or add a note under `concepts/`** (or `threats/` for threats, `ideas/` for speculative ideas), then proceed using it.
 
 ## What you'll find here
 
 - **`concepts/`**: bite-sized markdown notes defining core terms (e.g. [LLMs](./concepts/llm.md), evals, fine-tuning, inference providers, observability/telemetry).
 - **`threats/`**: bite-sized markdown notes describing threats to AI agent systems (e.g. context poisoning, tool misuse, privilege compromise).
+- **`ideas/`**: bite-sized markdown notes capturing speculative and emerging ideas about AI systems, attributed to specific external sources (e.g. agent UX, agent SEO, token economics of tool use).
 - **Occasional artifacts**: as the repo grows, it may also include small scripts, JSON, or other files that support the notes (examples, snippets, checklists, etc.).
 
 ## How to use it
 
 - Start with `concepts/` when you need a shared definition for a discussion, design doc, or review.
 - Start with `threats/` when you need a description of a specific AI agent threat.
+- Start with `ideas/` when you need a reference on a speculative or emerging idea, or when exploring higher-level reasoning about how AI concepts interact.
 - Treat the notes as a living glossary: update entries as understanding changes or best practices evolve.
 
 ## Writing concept notes
@@ -115,6 +118,19 @@ Threat notes live in `threats/` and describe threats to AI agent systems. They f
 - Cross-link to other threat notes where relevant (e.g. `[Tool Misuse](./tool-misuse.md)`).
 - Keep `threats/index.md` sorted alphabetically by the visible threat name.
 - `## Mitigations` is an optional section specific to threat notes. It lists common countermeasures as bullet points with links to relevant concept notes or other threat notes. Place it after `## Examples` and before `## Synonyms` / `## External references`.
+
+## Writing idea notes
+
+Idea notes live in `ideas/` and capture speculative, emerging, or opinion-driven ideas about AI systems from specific external sources. They follow the same structure and conventions as concept notes (see above), with these adjustments:
+
+- Idea notes describe unproven, analytical, or speculative ideas that build on top of established `concepts/` and `threats/`.
+- The main section **may use analytical and speculative language** (unlike concept notes, which are descriptive-only). Framing such as "the idea that...", "this suggests...", or "this creates a potential..." is appropriate.
+- `## External references` is **mandatory**. Every idea must be attributed to at least one external source that was actually read. Ideas without attribution belong in `concepts/` (if they are established) or should not be written.
+- Cross-link to concept notes where relevant (e.g. `[agent](../concepts/agent.md)`, `[tools](../concepts/tools.md)`).
+- Cross-link to threat notes where relevant (e.g. `[supply chain compromise](../threats/supply-chain-compromise.md)`).
+- Cross-link to other idea notes where relevant (e.g. `[Agent SEO](./agent-seo.md)`).
+- Keep `ideas/index.md` sorted alphabetically by the visible idea name.
+- Do not duplicate concept definitions; link to the canonical concept note instead.
 
 ## Tools
 

@@ -6,11 +6,12 @@ Agent systems are particularly exposed because they combine multiple external de
 
 Key attack vectors include:
 
-- **Trojanized models**: Backdoored model weights or poisoned [fine-tuning](../concepts/fine-tuning.md) datasets that cause the model to behave maliciously under specific trigger conditions while appearing normal otherwise.
+- **Trojanized models**: Backdoored model weights or poisoned [fine-tuning](../concepts/fine-tuning.md) datasets that cause the model to behave maliciously under specific trigger conditions while appearing normal otherwise. This can manifest as [misaligned model behaviors](./misaligned-model-behaviors.md) that are deliberately introduced rather than emergent.
 - **Malicious tools**: A compromised tool (for example, a malicious [MCP](../concepts/mcp.md) server) that exfiltrates data, executes unauthorized actions, or alters results when the agent invokes it.
 - **Malicious library packages**: Backdoored or typosquatted packages that get installed when the agent follows build instructions or recommends dependencies.
-- **Malicious skills**: Compromised [skill](../concepts/skill.md) definitions that inject harmful instructions, override safety behaviors, or exfiltrate data through the agent's normal workflow.
+- **Malicious skills**: Compromised [skill](../concepts/skill.md) definitions distributed through [skill repositories](../concepts/skill-repository.md) or other channels that inject harmful instructions, override safety behaviors, or exfiltrate data through the agent's normal workflow.
 - **Compromised APIs**: Third-party API endpoints that return manipulated data or inject [prompt injection](./prompt-injection.md) payloads into agent workflows.
+- **Compromised websites**: Attacker-controlled or manipulated web content that surfaces through web search tools, injecting misleading information, malicious instructions, or [prompt injection](./prompt-injection.md) payloads into the agent's [context](../concepts/context.md).
 
 Supply chain attacks differ from [context poisoning](./context-poisoning.md) (which targets runtime data sources) and [prompt injection](./prompt-injection.md) (which targets the model's instruction-following behavior). They target the components the agent is built from rather than the data it processes at runtime.
 
@@ -21,6 +22,7 @@ Supply chain attacks differ from [context poisoning](./context-poisoning.md) (wh
 - A [coding agent](../concepts/coding-agent.md) recommends a typosquatted npm package that executes a reverse shell on install.
 - An attacker distributes a skill file that injects hidden instructions causing the agent to bypass code review checks or insert backdoors into generated code.
 - An attacker compromises a third-party API used by an agent for data enrichment, causing it to return responses containing [prompt injection](./prompt-injection.md) payloads.
+- An attacker creates SEO-optimized pages containing prompt injection payloads that surface when an agent uses a web search tool, causing the agent to follow attacker-supplied instructions.
 
 ## Mitigations
 

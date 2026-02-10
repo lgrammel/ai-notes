@@ -17,6 +17,7 @@
 - [Code Execution Tool](./code-execution-tool.md)
 - [Code Review Agent](./code-review-agent.md)
 - [Coding Agent](./coding-agent.md)
+- [Copilot Interface](./copilot-interface.md)
 - [Context](./context.md)
 - [Context Engineering](./context-engineering.md)
 - [Context Isolation](./context-isolation.md)

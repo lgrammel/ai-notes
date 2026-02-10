@@ -17,7 +17,7 @@ An open Agent Skills standard defines a portable skill format that works across 
 
 ## Synonyms
 
-agent skill, agent rule, custom command
+agent skill, agent rule, custom command, playbook
 
 ## External references
 

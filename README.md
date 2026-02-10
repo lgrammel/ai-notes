@@ -1,4 +1,4 @@
-# AI Notes
+# AI Engineering
 
 A knowledge workspace about AI engineering in practice: what matters when building, integrating, and operating AI-powered systems, and how they behave in production.
 

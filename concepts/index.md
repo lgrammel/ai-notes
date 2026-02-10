@@ -5,6 +5,7 @@
 - [Agent Hosting Platform](./agent-hosting-platform.md)
 - [Agent Memory](./agent-memory.md)
 - [Agent Runtime](./agent-runtime.md)
+- [Agentic RAG](./agentic-rag.md)
 - [Agentic Workloads](./agentic-workloads.md)
 - [AI Gateway](./ai-gateway.md)
 - [AI Infrastructure](./ai-infrastructure.md)

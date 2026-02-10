@@ -21,6 +21,7 @@ Because tools bridge the gap between model outputs and real-world actions, they 
 - Function tools: a developer-defined `get_weather(city)` or `query_database(sql)` tool
 - Provider-defined tools (developer-executed): Anthropic's computer use, bash, and text editor tools
 - Provider-executed tools: OpenAI web search, [code interpreter](./code-execution-tool.md), and file search; Google's grounding with search
+- Retrieval tools in [agentic RAG](./agentic-rag.md): the agent issues search or lookup tool calls, inspects results, and decides whether to refine the query or retrieve from additional sources
 
 ## Synonyms
 

@@ -14,7 +14,7 @@ During [inference](./inference.md), function tool schemas are included in the re
 
 Because tools bridge the gap between model outputs and real-world actions, they are a primary attack surface for threats such as [tool misuse](../threats/tool-misuse.md) (authorized but harmful tool calls), [unauthorized code execution](../threats/unauthorized-code-execution.md) (code injection through execution tools), [data exfiltration](../threats/data-exfiltration.md) (data extraction via tool calls), and [supply chain compromise](../threats/supply-chain-compromise.md) (malicious or backdoored tool integrations). [Tool execution approval](./tool-execution-approval.md) is a common mitigation that requires human confirmation before high-risk tool calls are executed.
 
-[MCP](./mcp.md) (Model Context Protocol) is an emerging open protocol that standardizes how agents discover and connect to external tool providers, decoupling tool implementation from the agent runtime.
+[MCP](./mcp.md) (Model Context Protocol) is an open protocol that standardizes how agents discover and connect to external tool providers. From the model's perspective, MCP-served tools are function tools: the MCP server declares a name, description, and parameter schema, and the [agent runtime](./agent-runtime.md) includes these schemas at [inference](./inference.md) time. This decouples function-tool implementation from the agent, allowing any MCP-compatible server to supply tools to any MCP-compatible client without custom integration code.
 
 ## Examples
 

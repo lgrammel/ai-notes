@@ -2,6 +2,8 @@
 
 Multi-Agent System Threats exploit the trust relationships, delegation chains, and communication channels between AI [agents](../concepts/agent.md) in multi-agent systems to compromise coordination, escalate privileges, or subvert the system's overall goals.
 
+## Details
+
 Multi-agent systems introduce attack surfaces that single-agent systems do not have. Agents typically trust messages from peer agents, propagate permissions through delegation, and coordinate via shared state or message passing. An attacker -- whether an external human or a compromised agent within the system -- can exploit these seams to influence agents that would otherwise be inaccessible.
 
 Key attack vectors include:

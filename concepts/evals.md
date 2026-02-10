@@ -2,6 +2,8 @@
 
 Evals (evaluations) are systematic tests used to measure and monitor [LLM](./llm.md) or system performance on specific tasks. Unlike conventional software tests that assert binary pass/fail on deterministic outputs, evals handle non-deterministic model behavior and typically use statistical or qualitative scoring (e.g., accuracy rates, human preference rankings). They are used to compare variants, catch regressions, and track metrics like accuracy, safety, and robustness.
 
+## Details
+
 Standardized [benchmarks](./benchmarks.md) are a subset of evals designed for repeatable comparisons, often with fixed datasets and scoring.
 
 Eval approaches include automated metrics (exact match, similarity scores), model-as-judge (using an LLM to grade outputs), and human evaluation. Evals can run offline (on curated datasets before deployment) or online (against live traffic in production).

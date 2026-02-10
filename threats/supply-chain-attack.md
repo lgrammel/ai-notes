@@ -2,6 +2,8 @@
 
 A supply chain attack targets the external components an AI [agent](../concepts/agent.md) system depends on -- models, [tools](../concepts/tools.md), packages, [skills](../concepts/skill.md), or APIs -- by introducing malicious or backdoored elements that the system trusts and integrates without sufficient verification.
 
+## Details
+
 Agent systems are particularly exposed because they combine multiple external dependencies: a base [LLM](../concepts/llm.md) (potentially [fine-tuned](../concepts/fine-tuning.md) on third-party data), tool integrations that execute with the agent's permissions, library packages the agent installs or recommends, skills that shape agent behavior, and external APIs the agent calls at runtime. A compromise at any point in this supply chain can grant an attacker persistent, hard-to-detect influence over the agent's behavior.
 
 Key attack vectors include:

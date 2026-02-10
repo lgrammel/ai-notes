@@ -2,6 +2,8 @@
 
 Pretraining is large-scale [training](./training.md) of a model on broad data to learn general representations, producing a general-purpose base model. For [LLMs](./llm.md), this typically involves self-supervised next-[token](./token.md) prediction over sequences from a [tokenizer](./tokenizer.md). Pretraining establishes broad capabilities; later [post-training](./post-training.md) phases such as [fine-tuning](./fine-tuning.md) adapt the model to specific tasks, formats, or policies. The temporal boundary of the pretraining data defines the model's [knowledge cutoff](./knowledge-cutoff.md).
 
+## Details
+
 Pretraining data is finite, and as available text data approaches exhaustion, the pretraining scaling recipe yields diminishing returns (see [scaling laws](./scaling-laws.md)). Pretraining achieves breadth through sheer data volume rather than deep [generalization](./generalization.md) -- coverage substitutes for robust transfer, which is why models can exhibit broad knowledge while generalizing dramatically worse than humans on novel tasks. The field has shifted significant compute toward [reinforcement learning](./reinforcement-learning.md) and other [post-training](./post-training.md) methods as pretraining alone reaches its limits.
 
 Note: Some workflows continue training an existing model on additional broad or domain data using the same pretraining objective ("continued pretraining"), which is often contrasted with fine-tuning even though both update weights.

@@ -29,7 +29,9 @@ All note types (concept, idea, threat) share these conventions. Type-specific ru
 ```markdown
 # Term Name
 
-A 1-2 sentence definition.
+A 1-2 sentence definition (executive summary).
+
+## Details
 
 Optional additional context: typical behaviors, scope, or how it works in practice.
 
@@ -46,12 +48,11 @@ synonym1, synonym2.
 - https://example.com/source
 ```
 
-**Required:** title + definition (1-2 sentences immediately after title).
+**Required:** title + executive summary (1-2 sentences immediately after title). The executive summary is the first paragraph after the H1 and stands alone as a useful definition of the term.
 
 **Optional sections** (include only when they add significant value, in this order):
 
-- Additional context paragraphs
-- `Note:` -- clarifications
+- `## Details` -- additional context paragraphs when the executive summary alone is insufficient (scope, boundaries, how it works in practice, `Note:` clarifications). Omit this section when the executive summary fully covers the term.
 - `## Examples` -- concrete instances
 - `## Synonyms` -- plain text only, no links
 - `## External references` -- external URLs only; include only references you actually fetched and used
@@ -72,29 +73,29 @@ synonym1, synonym2.
 
 ### Concise but complete
 
-A note is "complete" when a reader can understand the term without guessing key scope details. A good note typically covers:
+A note is "complete" when a reader can understand the term without guessing key scope details. The executive summary should stand alone as a useful definition; `## Details` expands with scope, boundaries, and variants. A good note typically covers:
 
-- What it is (core definition)
+- What it is (core definition -- in the executive summary)
 - Where it applies (scope)
 - Key boundary or distinction (what it's not)
 - If relevant, the most important variants (kept minimal)
 
 ## Concept notes
 
-Concept notes live in `concepts/` and define core terms. Keep them **concise**, **complete**, **definition-first**, and **linked** to related concepts.
+Concept notes live in `concepts/` and define core terms. Keep them **concise**, **complete**, **definition-first**, and **linked** to related concepts. All concept notes start with an executive summary paragraph, followed by an optional `## Details` section for additional context.
 
 The main section is **descriptive only**: it explains what the term is, how it behaves, and where it applies. If operational guidance is important, phrase it descriptively or put concrete instances under `## Examples`.
 
 ## Idea notes
 
-Idea notes live in `ideas/` and capture speculative, emerging, or opinion-driven ideas from specific external sources. They follow concept note conventions with these additions:
+Idea notes live in `ideas/` and capture speculative, emerging, or opinion-driven ideas from specific external sources. They follow concept note conventions (including the executive summary + optional `## Details` structure) with these additions:
 
 - The main section **may use analytical and speculative language** ("the idea that...", "this suggests...", "this creates a potential...").
 - `## External references` is **mandatory**. Every idea must be attributed to at least one external source that was actually read. Ideas without attribution belong in `concepts/` or should not be written.
 
 ## Threat notes
 
-Threat notes live in `threats/` and describe attack vectors, vulnerabilities, or adversarial behaviors targeting AI agents. They follow concept note conventions with these additions:
+Threat notes live in `threats/` and describe attack vectors, vulnerabilities, or adversarial behaviors targeting AI agents. They follow concept note conventions (including the executive summary + optional `## Details` structure) with these additions:
 
 - `## Mitigations` is an optional section listing countermeasures as bullet points with links to relevant notes. Place it after `## Examples` and before `## Synonyms` / `## External references`.
 

@@ -2,6 +2,8 @@
 
 Instruction following is an [LLM](./llm.md) behavior where the model treats parts of the input (often system/developer/user messages in a [prompt](./prompt.md)) as instructions and generates outputs that aim to satisfy those constraints.
 
+## Details
+
 It is typically strengthened during [post-training](./post-training.md) via instruction [fine-tuning](./fine-tuning.md) and preference-based methods (for example RLHF), and it strongly influences how "chat" models behave across multi-turn conversations.
 
 Note: Instruction following is not the same as task capability; a model can understand an instruction yet fail to complete it due to missing knowledge, weak [reasoning](./reasoning.md), or missing tools.

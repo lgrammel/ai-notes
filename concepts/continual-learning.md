@@ -2,6 +2,8 @@
 
 Continual learning is a [training](./training.md) paradigm where a model learns incrementally from new data or experiences over time, updating its weights rather than being trained once and frozen.
 
+## Details
+
 This is distinct from [in-context learning](./in-context-learning.md) (which adapts behavior within a single context window without weight updates) and from [agent memory](./agent-memory.md) (which persists information across sessions in external stores without changing model weights). Continual learning changes what the model knows at the weight level, enabling it to accumulate skills and domain knowledge through ongoing experience.
 
 A key challenge in continual learning is catastrophic forgetting: updating weights on new data can degrade previously learned capabilities. In practice, continual learning occupies a middle ground between [pretraining](./pretraining.md) (broad, one-time training on large data) and [fine-tuning](./fine-tuning.md) (narrow, one-time adaptation), adding a temporal dimension where the model improves through sustained interaction with its deployment environment.

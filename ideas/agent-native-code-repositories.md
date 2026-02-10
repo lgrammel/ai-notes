@@ -2,6 +2,8 @@
 
 Agent-native code repositories is the idea that code hosting platforms could be redesigned with AI [agents](../concepts/agent.md) -- particularly [coding agents](../concepts/coding-agent.md) -- as first-class participants rather than human developers who occasionally receive AI assistance.
 
+## Details
+
 Current platforms like GitHub are built around human-centric workflows: intuitive UIs, linear commit histories, social features, and rate-limited APIs sized for manual collaboration. An agent-native platform would instead optimize for machine-scale throughput, autonomous workflows, and semantic code understanding, while keeping humans in an oversight and strategic role.
 
 Key shifts from traditional repositories include agent-optimized storage backends offering low-latency, high-throughput access (millions of commits and branch operations per day without rate limits), automatic knowledge graphs mapping code relationships and dependencies so agents can query a codebase holistically, native agent orchestration where agents handle end-to-end tasks like pull request analysis, test generation, bug fixing, and deployment with transparent audit trails, and built-in security guardrails such as [sandboxed](../concepts/sandbox.md) execution and mandatory human approval for sensitive operations to mitigate risks like [context poisoning](../threats/context-poisoning.md) from malicious issues.

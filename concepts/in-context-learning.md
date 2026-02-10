@@ -2,6 +2,8 @@
 
 In-context learning is the ability of an [LLM](./llm.md) to adapt its behavior based on examples or instructions provided in the [context](./context.md) at [inference](./inference.md) time, without any update to the model's weights.
 
+## Details
+
 Unlike [fine-tuning](./fine-tuning.md), which permanently alters model weights, in-context learning works entirely through the input [prompt](./prompt.md): the model attends over provided examples and generalizes from them within a single request. This capability emerges from [pretraining](./pretraining.md) on large corpora and is enabled by the attention mechanism of the [transformer architecture](./transformer-architecture.md).
 
 In-context learning spans a spectrum of example density. Zero-shot prompting provides only instructions and no examples. Few-shot prompting includes a handful of input-output demonstrations. Many-shot prompting scales to tens or hundreds of examples, bounded by the model's [context size](./context-size.md). Example selection, ordering, and formatting all affect output quality, making this a key concern of [context engineering](./context-engineering.md).

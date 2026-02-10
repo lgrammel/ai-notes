@@ -2,6 +2,8 @@
 
 Tools are capabilities exposed to an [LLM](./llm.md) that let it request actions beyond text generation (e.g., query a system, read/write data, run code) and receive results back as context. A tool call is typically structured (tool name plus arguments). Tools differ in who defines them and who executes them.
 
+## Details
+
 **Function tools** are defined by the application developer: the developer specifies a name, description, and parameter schema, then passes these to the model at [inference](./inference.md) time. When the model generates a function tool call, the developer's code executes it and returns the result. The model relies on its general tool-calling ability combined with the in-context schema description; it has no built-in knowledge of any specific function tool.
 
 **Provider-defined tools** have schemas and interfaces standardized by an [inference provider](./inference-provider.md) or [model developer](./model-developer.md), but are executed by the developer's code. The model is specifically [trained](./training.md) on these tool interfaces, so it has built-in knowledge of their semantics and expected input/output formats. The developer opts in to enabling them and handles execution in their own environment (e.g., a local [sandbox](./sandbox.md)).

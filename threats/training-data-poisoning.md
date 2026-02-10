@@ -2,6 +2,8 @@
 
 Training data poisoning is an attack that corrupts a model's behavior by injecting malicious, biased, or backdoored examples into its [training](../concepts/training.md) dataset, causing the resulting model to exhibit attacker-chosen behaviors during [inference](../concepts/inference.md).
 
+## Details
+
 Training data poisoning targets the model development phase rather than runtime inputs. Unlike [context poisoning](./context-poisoning.md) (which manipulates data the model reads at inference time) and [supply chain attack](./supply-chain-attack.md) (which targets external components the agent depends on), training data poisoning embeds malicious behavior directly into the model's weights during [pretraining](../concepts/pretraining.md) or [fine-tuning](../concepts/fine-tuning.md). The resulting [misaligned model behaviors](./misaligned-model-behaviors.md) can be difficult to detect because they may only activate under specific trigger conditions (backdoor attacks) while the model performs normally on standard [evals](../concepts/evals.md).
 
 Poisoning can occur at multiple stages: during large-scale pretraining data collection (where an attacker contributes content to web sources that get scraped), during fine-tuning on curated datasets (where poisoned examples are inserted), or during preference data collection for [RLHF](../concepts/rlhf.md) (where annotators or automated pipelines introduce biased preferences). [Synthetic data](../concepts/synthetic-data.md) pipelines introduce an additional vector: if the generator model is compromised or its outputs are not validated, poisoned examples can propagate at scale.

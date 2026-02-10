@@ -2,6 +2,8 @@
 
 A prompt is the input sent to an [LLM](./llm.md) to elicit a desired behavior -- typically a combination of **instructions**, **[context](./context.md)**, and **examples**.
 
+## Details
+
 Modern LLM APIs structure prompts as a sequence of **messages**, each tagged with a **role**:
 
 - **System**: sets the model's overall persona, behavioral constraints, and ground rules for the conversation. Placed at the beginning of the message sequence and typically treated as the highest-priority instructions by the model.

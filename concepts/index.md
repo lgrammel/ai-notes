@@ -46,6 +46,7 @@
 - [RAG](./rag.md)
 - [Reasoning](./reasoning.md)
 - [Red Teaming](./red-teaming.md)
+- [Reinforcement Learning](./reinforcement-learning.md)
 - [RLHF](./rlhf.md)
 - [Sampling Parameters](./sampling-parameters.md)
 - [Sandbox](./sandbox.md)

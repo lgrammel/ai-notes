@@ -6,7 +6,7 @@ Skills are typically stored as markdown files (e.g., `SKILL.md`) in a project, u
 
 Skills are a [context engineering](./context-engineering.md) mechanism: rather than embedding all procedural knowledge in the base [prompt](./prompt.md), skills allow task-specific instructions to be loaded selectively, keeping the base prompt lean and the context focused. They differ from [tools](./tools.md) in that they provide knowledge and instructions rather than executable capabilities, though a skill may reference or orchestrate tools as part of its instructions.
 
-An open Agent Skills standard defines a portable skill format that works across multiple [coding agents](./coding-agent.md) and IDEs. Community directories such as skills.sh aggregate and rank skills by installation telemetry.
+An open Agent Skills standard defines a portable skill format that works across multiple [coding agents](./coding-agent.md) and IDEs. [Skill repositories](./skill-repository.md) such as skills.sh aggregate and rank skills by installation telemetry.
 
 ## Examples
 

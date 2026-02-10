@@ -40,6 +40,7 @@
 - [Sandbox](./sandbox.md)
 - [Sandbox Service](./sandbox-service.md)
 - [Skill](./skill.md)
+- [Skill Repository](./skill-repository.md)
 - [Structured Output](./structured-output.md)
 - [Token](./token.md)
 - [Tokenizer](./tokenizer.md)

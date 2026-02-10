@@ -18,4 +18,4 @@ Users tend to treat agent responses as authoritative, especially when the agent 
 
 ## Synonyms
 
-Belief Manipulation
+belief manipulation

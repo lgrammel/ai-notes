@@ -35,4 +35,4 @@ Supply chain attacks differ from [context poisoning](./context-poisoning.md) (wh
 
 ## Synonyms
 
-supply chain compromise.
+supply chain compromise

@@ -1,6 +1,6 @@
 # Agent Instructions
 
-This repository is a lightweight knowledge workspace about AI systems built on transformer architecture models. Each note captures a concept, role, or practice in a concise, definition-first format for reference while designing, building, or reviewing AI products.
+This repository is a lightweight knowledge workspace about AI systems built on transformer architecture models. Each note captures a concept, role, or practice in a concise, definition-first format, with a focus on practical applicability: what matters when building and operating agent systems and how real systems behave in production.
 
 ## Repository structure
 

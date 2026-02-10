@@ -13,7 +13,7 @@ Key attack vectors include:
 - **Malicious library packages**: Backdoored or typosquatted packages that get installed when the agent follows build instructions or recommends dependencies.
 - **Malicious skills**: Compromised [skill](../concepts/skill.md) definitions distributed through [skill repositories](../concepts/skill-repository.md) or other channels that inject harmful instructions, override safety behaviors, or exfiltrate data through the agent's normal workflow.
 - **Compromised APIs**: Third-party API endpoints that return manipulated data or inject [prompt injection](./prompt-injection.md) payloads into agent workflows.
-- **Compromised websites**: Attacker-controlled or manipulated web content that surfaces through web search tools, injecting misleading information, malicious instructions, or [prompt injection](./prompt-injection.md) payloads into the agent's [context](../concepts/context.md).
+- **Compromised websites**: Attacker-controlled or manipulated web content that surfaces through [web search tools](../concepts/web-search-tool.md), injecting misleading information, malicious instructions, or [prompt injection](./prompt-injection.md) payloads into the agent's [context](../concepts/context.md).
 
 Supply chain attacks differ from [context poisoning](./context-poisoning.md) (which targets runtime data sources) and [prompt injection](./prompt-injection.md) (which targets the model's instruction-following behavior). They target the components the agent is built from rather than the data it processes at runtime.
 
@@ -24,7 +24,7 @@ Supply chain attacks differ from [context poisoning](./context-poisoning.md) (wh
 - A [coding agent](../concepts/coding-agent.md) recommends a typosquatted npm package that executes a reverse shell on install.
 - An attacker distributes a skill file that injects hidden instructions causing the agent to bypass code review checks or insert backdoors into generated code.
 - An attacker compromises a third-party API used by an agent for data enrichment, causing it to return responses containing [prompt injection](./prompt-injection.md) payloads.
-- An attacker creates SEO-optimized pages containing prompt injection payloads that surface when an agent uses a web search tool, causing the agent to follow attacker-supplied instructions.
+- An attacker creates SEO-optimized pages containing prompt injection payloads that surface when an agent uses a [web search tool](../concepts/web-search-tool.md), causing the agent to follow attacker-supplied instructions.
 
 ## Mitigations
 

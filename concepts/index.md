@@ -80,4 +80,5 @@
 - [Transformer Architecture](./transformer-architecture.md)
 - [Value Function](./value-function.md)
 - [Vector Database](./vector-database.md)
+- [Web Search Tool](./web-search-tool.md)
 - [Workspace Agent](./workspace-agent.md)

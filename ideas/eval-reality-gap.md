@@ -1,6 +1,6 @@
 # Eval-Reality Gap
 
-The eval-reality gap is the disconnect between strong [eval](../concepts/evals.md) performance and weak real-world utility, where models ace hard benchmarks but fail at basic tasks in practical deployment.
+The eval-reality gap is the disconnect between strong [eval](../concepts/evals.md) performance and weak real-world utility, where models ace hard [benchmarks](../concepts/benchmarks.md) but fail at basic tasks in practical deployment.
 
 One explanation is that [RL](../concepts/reinforcement-learning.md) environment design is inadvertently shaped by evals: teams create training environments inspired by the benchmarks they want to perform well on, producing models that are highly specialized for eval-like distributions. This is compounded by inadequate [generalization](../concepts/generalization.md) -- because models do not transfer skills robustly, narrow RL training on benchmark-like tasks does not translate into broad real-world capability, even when the underlying knowledge is present.
 

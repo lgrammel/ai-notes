@@ -9,6 +9,7 @@
 - [AI Gateway](./ai-gateway.md)
 - [AI Infrastructure](./ai-infrastructure.md)
 - [Alignment](./alignment.md)
+- [Benchmarks](./benchmarks.md)
 - [Chatbot](./chatbot.md)
 - [Chunking](./chunking.md)
 - [Cloud Coding Agent](./cloud-coding-agent.md)

@@ -8,6 +8,8 @@ Approval gates are typically configured by risk level: low-risk or read-only too
 
 Tool execution approval is a primary defense against [tool misuse](../threats/tool-misuse.md) and [prompt injection](../threats/prompt-injection.md)-driven attacks, because it gives a human the opportunity to catch harmful tool calls before they take effect. However, it reduces agent autonomy and throughput, and its effectiveness degrades under [tool approval fatigue exploitation](../threats/tool-approval-fatigue-exploitation.md) attacks that exploit reviewer fatigue or cognitive overload.
 
+A common calibration heuristic crosses stakes (low/high) with reversibility (easy/hard): low-stakes reversible actions (e.g., organizing files) can be auto-applied, low-stakes irreversible actions (e.g., publishing to a feed) warrant a quick confirmation, high-stakes reversible actions (e.g., code changes) benefit from a suggest-then-apply flow, and high-stakes irreversible actions (e.g., sending emails, financial transactions) require explicit approval.
+
 ## Examples
 
 - An IDE-based [coding agent](./coding-agent.md) that requires user confirmation before executing shell commands or writing to files outside the current project.

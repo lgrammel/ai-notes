@@ -1,6 +1,6 @@
 # Tool Execution Approval
 
-Tool execution approval is a safety mechanism in [agent](./agent.md) systems where certain [tool](./tools.md) calls require explicit human confirmation before the [agent runtime](./agent-runtime.md) executes them, inserting a human review step into the agent's autonomous loop.
+Tool execution approval is a [human-in-the-loop](./human-in-the-loop.md) safety mechanism in [agent](./agent.md) systems where certain [tool](./tools.md) calls require explicit human confirmation before the [agent runtime](./agent-runtime.md) executes them, inserting a human review step into the agent's autonomous loop.
 
 Approval gates are typically configured by risk level: low-risk or read-only tool calls (e.g., file reads, searches) may proceed automatically, while high-risk actions (e.g., file deletions, code execution, external API calls, financial transactions) are paused and presented to a human reviewer. The reviewer can approve, reject, or modify the proposed action before execution continues.
 
@@ -14,4 +14,4 @@ Tool execution approval is a primary defense against [tool misuse](../threats/to
 
 ## Synonyms
 
-human in the loop, human-in-the-loop approval, tool approval, action confirmation, human approval gate
+tool approval, action confirmation, human approval gate

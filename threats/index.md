@@ -1,6 +1,7 @@
 # Threats
 
 - [Context Poisoning](./context-poisoning.md)
+- [Cross-Tenant / Cross-Session Data Leakage](./cross-tenant-data-leakage.md)
 - [Data Exfiltration](./data-exfiltration.md)
 - [Goal Manipulation](./goal-manipulation.md)
 - [Guardrail Bypass](./guardrail-bypass.md)

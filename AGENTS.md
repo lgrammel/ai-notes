@@ -97,6 +97,7 @@ ML engineering concepts (e.g. training, pretraining, reinforcement learning, tra
 Idea notes live in `ideas/` and capture speculative, emerging, or opinion-driven ideas from specific external sources. They follow concept note conventions (including the executive summary + optional `## Details` structure) with these additions:
 
 - The main section **may use analytical and speculative language** ("the idea that...", "this suggests...", "this creates a potential...").
+- `## Counterarguments` is an optional section listing the strongest objections or limitations as bullet points. Place it after `## Examples` and before `## Synonyms` / `## External references`. Counterarguments should be substantive and specific rather than generic disclaimers.
 - `## External references` is optional. When present, every listed source must have been actually read.
 
 ## Threat notes

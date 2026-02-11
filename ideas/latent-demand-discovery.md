@@ -10,6 +10,12 @@ Over time, the developer can add domain tools for common patterns (making them f
 
 This changes the product development feedback loop. Traditional development requires imagining what users want, building it, and seeing if the guess was right. Agent-native development starts with a capable foundation and learns from what emerges, with the agent mediating between user intent and system capability.
 
+## Counterarguments
+
+- Observing what users ask an agent to do conflates demand with curiosity. Users experiment with novel interfaces, and the requests an agent receives during early adoption may not reflect sustained needs. Formalizing features based on exploratory usage risks building for novelty rather than durable demand.
+- The signal quality depends on the agent being capable enough to attempt (or clearly fail at) the requested task. If the agent silently produces poor results rather than clearly failing, the developer gets a false positive - apparent success that masks an unmet need rather than revealing one.
+- This approach favors incremental feature discovery within the existing tool space. It is less effective at surfacing needs that require fundamentally new tools or capabilities the agent cannot approximate by composing existing primitives.
+
 ## External references
 
 - https://every.to/guides/agent-native

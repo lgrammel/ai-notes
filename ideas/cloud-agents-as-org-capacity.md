@@ -12,6 +12,12 @@ The organizational implications go beyond tooling: deploying a cloud agent resem
 
 Taken to its extreme, this framing leads to [dark software factories](./dark-software-factory.md) where agents handle the entire development lifecycle - writing, testing, and validating code - with humans defining specifications and scenarios rather than touching the code. At this level, engineering budgets shift from salaries to [inference cost](../concepts/inference-cost.md), and the "capacity" the organization deploys is measured in token spend rather than headcount.
 
+## Counterarguments
+
+- The "hiring" analogy overstates agent reliability. Deploying a cloud agent does not resemble hiring because agents cannot yet be held accountable, do not improve from feedback the way employees do, and require human oversight that scales with agent throughput. The organizational capacity framing may lead to over-delegation before agent reliability justifies it.
+- Usage-based pricing assumes that agent output quality is consistent enough to charge by volume. If a significant fraction of agent sessions produce unusable output that requires human rework, the effective cost per useful unit of work may exceed per-seat developer tooling, undermining the economic argument.
+- The framing underplays the knowledge-encoding bottleneck. Converting organizational expertise into [skills](../concepts/skill.md) and playbooks is itself expensive, requires deep domain knowledge, and produces artifacts that need ongoing maintenance as the codebase and practices evolve. The "encode once, execute repeatedly" promise assumes a level of stability that most engineering organizations do not have.
+
 ## External references
 
 - <https://cognition.ai/blog/devin-generally-available>

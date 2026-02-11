@@ -18,3 +18,9 @@ The broader consequence is that code hosting evolves from version control into a
 - Agent-optimized storage tiers (warm/cold) priced for high-volume machine access, enabling agents to run parallel experimental branches at negligible cost.
 - Multi-agent coordination where separate agents handle frontend, backend, and infrastructure changes on the same project, merging their work through an orchestration layer (see [repository as agent workspace](./repository-as-agent-workspace.md)).
 - An open ecosystem of shareable agent templates (e.g., "debugging agent," "test generator") deployable via CI/CD and fine-tunable on repo-specific data.
+
+## Counterarguments
+
+- Network effects strongly favor incumbents. GitHub's value comes from its user base, ecosystem integrations, and institutional inertia, not its storage backend or UI design. An agent-native platform must overcome massive switching costs, and existing platforms are likely to add agent-friendly features incrementally rather than losing ground to specialized challengers.
+- The assumed volume of agent operations (millions of commits/day) may not materialize for most repositories. The vast majority of codebases are small enough that current platform limits are not a constraint, and the specialized infrastructure described may only be justified for a small number of very large, very active projects.
+- Optimizing repository structure for machine readability (standardized metadata, modular dependencies, machine-readable conventions) imposes upfront costs on humans who still need to understand and manage the codebase. If agents require fundamentally different repository conventions than humans, maintaining both creates overhead rather than eliminating it.

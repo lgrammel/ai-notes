@@ -16,6 +16,12 @@ Awareness alone is not sufficient - an offering also needs low friction to stay 
 - An e-commerce business optimizing its web presence so that agentic shopping assistants can discover and recommend its products.
 - A software library maintainer producing token-efficient documentation designed for [coding agent](../concepts/coding-agent.md) consumption rather than human reading.
 
+## Counterarguments
+
+- Model retraining cycles may invalidate training-time SEO investments faster than they pay off. A vendor who pays to get into one model version's training data may find the next version trained on different data, requiring ongoing investment with uncertain returns.
+- Context-time information ([RAG](../concepts/rag.md), [MCP](../concepts/mcp.md) tool descriptions, documentation loaded into [context](../concepts/context.md)) may dominate over training-time knowledge for tool selection. If agents increasingly rely on runtime context rather than parametric knowledge to choose tools, the "awareness" problem shifts from training influence to documentation quality - a more level playing field.
+- The analogy to traditional SEO may overstate the manipulability of agent preferences. Unlike web search engines, where ranking algorithms are fixed between updates, [LLM](../concepts/llm.md) outputs are influenced by the full context window, making it harder to reliably game agent behavior through any single channel.
+
 ## External references
 
 - https://steve-yegge.medium.com/software-survival-3-0-97a2a6255f7b

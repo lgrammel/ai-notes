@@ -20,6 +20,12 @@ The central open question is trust: how do you prove that software works when no
 - A coding agent receives a full API specification for a SaaS service and produces a self-contained behavioral clone as a single binary, which then serves as a rate-limit-free test target for other agents.
 - Specifications are stored as markdown documents describing the system's intended behavior, fed into a coding agent harness that produces, tests, and iterates on the implementation without human intervention.
 
+## Counterarguments
+
+- The approach assumes that the hard part of software is writing code, but in practice the hardest part is often discovering and specifying what the software should do. Holdout scenarios can only catch failure modes someone anticipated - and writing sufficiently precise specifications is essentially the same specification problem that has limited formal methods for decades. Incomplete specifications will produce confidently wrong software.
+- Agents writing both implementation and validation (even with holdout separation) creates a systemic monoculture risk: if the underlying [LLM](../concepts/llm.md) has a consistent blind spot, the same flaw can appear in both the implementation and the digital twin used to validate it, passing all checks while harboring a shared deficiency.
+- The economic case depends on current [inference cost](../concepts/inference-cost.md) trajectories and the assumption that token costs will remain the dominant constraint. If agent reliability plateaus before specifications can be made precise enough, the cost of iterating to convergence may exceed traditional development for complex systems.
+
 ## External references
 
 - <https://simonwillison.net/2026/Feb/7/software-factory/>

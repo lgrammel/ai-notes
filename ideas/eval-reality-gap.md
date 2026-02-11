@@ -16,6 +16,12 @@ This is a form of systemic [reward hacking](../concepts/reward-hacking.md): not 
 - A model that solves hard math competition problems but makes basic errors in applied settings with unfamiliar framing
 - An RL-trained model whose training environments were designed to match specific eval distributions, producing high benchmark scores that do not predict deployment quality
 
+## Counterarguments
+
+- The gap may be transient rather than structural. As [benchmarks](../concepts/benchmarks.md) improve (more diverse, more realistic, harder to overfit) and training pipelines mature, the disconnect between eval scores and real-world performance may narrow without requiring a fundamentally different approach to generalization. Previous generation gaps (e.g., early ImageNet overfitting) did close over time.
+- The "two students" analogy may misattribute the cause. Poor real-world performance could reflect insufficient scale, training data gaps, or inadequate [post-training](../concepts/post-training.md) rather than a fundamental generalization failure. Models that score well on benchmarks may also perform well in deployment once the deployment environment is better understood and the right [context engineering](../concepts/context-engineering.md) is applied.
+- The framing implies that benchmark optimization is wasted effort, but benchmarks remain one of the few standardized signals available for model comparison. The alternative - evaluating every model on bespoke real-world tasks - is expensive and does not scale. The practical solution may be better benchmarks rather than abandoning benchmark-driven development.
+
 ## External references
 
 - https://www.dwarkesh.com/p/ilya-sutskever-2

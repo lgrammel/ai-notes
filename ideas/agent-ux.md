@@ -14,6 +14,12 @@ This has a dual-use relationship with [hallucination exploitation](../threats/ha
 - A software library whose function names, parameter orders, and module structure mirror the conventions agents expect from similar well-known libraries.
 - Naming a tool's operations to match the verbs and patterns agents already use for similar tasks (e.g., mirroring git's command structure).
 
+## Counterarguments
+
+- Designing interfaces around what agents hallucinate optimizes for current model biases rather than good interface design. As models improve and hallucination patterns shift, interfaces shaped by today's model quirks may become misaligned with tomorrow's agent expectations, creating maintenance debt.
+- The approach may entrench the conventions of dominant models. If most agents hallucinate git-like commands because of training data distribution, tools that adopt those conventions lock in an ecosystem shaped by the training data of a few frontier models rather than by interface quality.
+- Hallucination-driven design is only feasible when model outputs are consistent enough to form stable desire paths. For less common tools or domains where model behavior is unpredictable, the signal-to-noise ratio of hallucinated patterns may be too low to guide useful design decisions.
+
 ## External references
 
 - https://steve-yegge.medium.com/software-survival-3-0-97a2a6255f7b

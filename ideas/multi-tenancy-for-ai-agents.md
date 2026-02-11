@@ -10,6 +10,12 @@ Namespace-based isolation is one emerging pattern: each tenant gets its own comp
 
 The trade-off is cost and operational complexity. Physical isolation per tenant is expensive at the infrastructure layer, and fine-grained permissioning (which agents can access which resources within a tenant) adds surface area for [privilege compromise](../threats/privilege-compromise.md) and misconfiguration. Whether the agent ecosystem converges on namespace-level physical isolation or develops more efficient shared-but-partitioned models remains open.
 
+## Counterarguments
+
+- The comparison to managed databases overstates the isolation requirement. Many agent workloads are stateless or short-lived enough that ephemeral [sandboxes](../concepts/sandbox.md) with proper cleanup provide sufficient isolation without the cost of persistent per-tenant infrastructure. The note's framing may push teams toward over-engineering isolation for workloads that do not require it.
+- Logical isolation techniques (row-level security, scoped credentials, namespace partitioning within shared infrastructure) have proven sufficient for traditional SaaS handling sensitive data (banking, healthcare). The argument that agents require fundamentally different isolation assumes agent access patterns cannot be adequately constrained at the application layer, which may not hold if agent permissions are properly scoped.
+- The cost of physical isolation per tenant may limit agent adoption to enterprise customers, preventing the broad accessibility that makes agent platforms valuable. Shared-but-partitioned models, while imperfect, may be the pragmatic path for most of the market.
+
 ## External references
 
 - https://www.terminaluse.com/

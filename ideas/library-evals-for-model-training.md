@@ -13,6 +13,12 @@ This creates a potential asymmetry: well-funded vendors can pay for training inf
 - A tool vendor collaborating with a frontier lab to build evals demonstrating correct and incorrect tool invocations, then using those evals to adjust training.
 - A database vendor creating eval suites that teach models to generate correct queries for their specific SQL dialect.
 
+## Counterarguments
+
+- Model developers have strong incentives to resist vendor-specific training influence that could compromise model generality. A model trained to favor one database's SQL dialect over equivalent alternatives becomes less useful for the broader user base, creating tension between vendor revenue and model quality.
+- The mechanism assumes that eval-driven training produces durable familiarity. In practice, model knowledge of specific libraries may be fragile - shifting with each training run, new data mixture, or architecture change - making the return on eval investment unpredictable across model versions.
+- The asymmetry between funded vendors and open-source tools may be offset by organic adoption. If open-source tools generate enough public usage data (Stack Overflow posts, GitHub repositories, tutorials), they may achieve comparable training-time awareness without paid eval partnerships, limiting the practical advantage of the paid channel.
+
 ## External references
 
 - https://steve-yegge.medium.com/software-survival-3-0-97a2a6255f7b

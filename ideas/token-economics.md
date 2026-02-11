@@ -25,6 +25,12 @@ The overall effect is that token cost acts as a selection pressure on system des
 - Structuring all prompts with a stable system prefix to maximize [prompt caching](../concepts/prompt-caching.md) hit rates across requests.
 - A [dark software factory](./dark-software-factory.md) spending $1,000/day per human engineer on agent-driven development, testing, and validation - shifting the dominant engineering cost from salaries to inference.
 
+## Counterarguments
+
+- Inference costs have been roughly halving every 6-8 months. Many of the optimization patterns described (aggressive [model routing](../concepts/model-routing.md), [prompt compaction](../concepts/prompt-compaction.md), elaborate caching strategies) add architectural complexity that may not pay off over a 12-18 month horizon as baseline costs drop. Premature cost optimization can lock in complexity that outlasts the cost pressure that motivated it.
+- The framing of token cost as the dominant constraint may overweight inference relative to other costs that scale with agent adoption: human review time, debugging non-deterministic failures, and the operational overhead of running multi-model routing systems. For many teams, engineering time spent on cost optimization exceeds the inference cost savings.
+- The tool-offloading argument assumes that the overhead of tool schemas, call formatting, and result parsing is always small relative to the inference saved. For simple computations or short lookups, the token overhead of the tool-call round trip can exceed the cost of the model just producing the answer directly.
+
 ## External references
 
 - https://steve-yegge.medium.com/software-survival-3-0-97a2a6255f7b

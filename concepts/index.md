@@ -7,6 +7,7 @@
 - [Agent Runtime](./agent-runtime.md)
 - [Agentic RAG](./agentic-rag.md)
 - [Agentic Workloads](./agentic-workloads.md)
+- [AI Engineering](./ai-engineering.md)
 - [AI Gateway](./ai-gateway.md)
 - [AI Infrastructure](./ai-infrastructure.md)
 - [Alignment](./alignment.md)

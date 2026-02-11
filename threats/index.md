@@ -15,6 +15,7 @@
 - [Supply Chain Attack](./supply-chain-attack.md)
 - [System Prompt Extraction](./system-prompt-extraction.md)
 - [Tool Misuse](./tool-misuse.md)
+- [Tool Output Poisoning](./tool-output-poisoning.md)
 - [Training Data Poisoning](./training-data-poisoning.md)
 - [Unauthorized Code Execution](./unauthorized-code-execution.md)
 - [User Manipulation](./user-manipulation.md)

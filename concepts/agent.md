@@ -1,6 +1,6 @@
 # Agent
 
-An agent is a system that uses an [LLM](./llm.md) as a decision-making policy to run [tools](./tools.md) in a loop: observe context/state, choose an action (tool call or message), execute it, incorporate the result, and repeat until a stop condition is met.
+An agent is a system that uses an [LLM](./llm.md) as a decision-making policy to run [tools](./tools.md) in a loop: observe context/state, choose an action (tool call or message), execute it, incorporate the result, and repeat until a stop condition is met. Unlike an [AI workflow](./ai-workflow.md), the control flow is determined by the model at runtime rather than fixed at design time.
 
 ## Details
 

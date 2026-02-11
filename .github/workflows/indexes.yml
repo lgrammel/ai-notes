@@ -28,4 +28,3 @@ jobs:
 
       - name: Check indexes
         run: pnpm check-indexes
-

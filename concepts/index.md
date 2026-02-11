@@ -10,6 +10,7 @@
 - [AI Engineering](./ai-engineering.md)
 - [AI Gateway](./ai-gateway.md)
 - [AI Infrastructure](./ai-infrastructure.md)
+- [AI Workflow](./ai-workflow.md)
 - [Alignment](./alignment.md)
 - [Benchmarks](./benchmarks.md)
 - [Chatbot](./chatbot.md)

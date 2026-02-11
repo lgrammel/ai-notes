@@ -11,7 +11,7 @@ The focus is AI engineering - the application layer of building with foundation 
 | Directory   | Contains                                                                   | Canonical for                      |
 | ----------- | -------------------------------------------------------------------------- | ---------------------------------- |
 | `concepts/` | Core term definitions (e.g. [LLMs](./concepts/llm.md), evals, fine-tuning) | Terminology and definitions        |
-| `ideas/`    | Speculative/emerging ideas attributed to external sources                  | Opinion-driven or unproven ideas   |
+| `ideas/`    | Speculative/emerging ideas, optionally attributed to external sources      | Opinion-driven or unproven ideas   |
 | `threats/`  | AI agent threat descriptions (e.g. context poisoning, tool misuse)         | Attack vectors and vulnerabilities |
 
 Don't invent definitions in-line. If one is missing or unclear, **add or update a note** in the appropriate directory, then use it.
@@ -97,7 +97,7 @@ ML engineering concepts (e.g. training, pretraining, reinforcement learning, tra
 Idea notes live in `ideas/` and capture speculative, emerging, or opinion-driven ideas from specific external sources. They follow concept note conventions (including the executive summary + optional `## Details` structure) with these additions:
 
 - The main section **may use analytical and speculative language** ("the idea that...", "this suggests...", "this creates a potential...").
-- `## External references` is **mandatory**. Every idea must be attributed to at least one external source that was actually read. Ideas without attribution belong in `concepts/` or should not be written.
+- `## External references` is optional. When present, every listed source must have been actually read.
 
 ## Threat notes
 

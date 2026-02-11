@@ -16,4 +16,4 @@ In-context learning spans a spectrum of example density. Zero-shot prompting pro
 
 ## Synonyms
 
-ICL, few-shot learning, few-shot prompting
+ICL, zero-shot prompting, few-shot learning, few-shot prompting, many-shot prompting

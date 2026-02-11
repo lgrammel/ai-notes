@@ -1,6 +1,6 @@
 # Context Size
 
-Context size is the maximum amount of input (measured in [tokens](./token.md)) a model can attend to in a single request--its context window.
+Context size is the maximum amount of input (measured in [tokens](./token.md)) a model can attend to in a single request - its context window.
 
 ## Details
 

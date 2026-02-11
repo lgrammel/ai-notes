@@ -11,7 +11,7 @@ Code execution tools are a primary surface for [unauthorized code execution](../
 ## Examples
 
 - OpenAI Code Interpreter (provider-executed): runs Python in a server-side sandbox during [inference](./inference.md) and returns results inline.
-- Anthropic's bash and code execution tools (provider-defined): the model emits structured calls; the developer's [agent runtime](./agent-runtime.md) executes them locally or in a remote sandbox.
+- Anthropic's [bash/shell](./shell-tool.md) and code execution tools (provider-defined): the model emits structured calls; the developer's [agent runtime](./agent-runtime.md) executes them locally or in a remote sandbox.
 - Custom function tools that wrap a language runtime (e.g., a `run_python(code)` function tool backed by a Docker container).
 
 ## Synonyms

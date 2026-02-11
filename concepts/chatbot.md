@@ -11,7 +11,7 @@ Note: "chatbot" is a UI pattern and product surface; it does not imply tool use.
 ## Examples
 
 - Customer support chatbot
-- A chat UI for a [workspace agent](./workspace-agent.md) that edits files and runs commands
+- A chat UI for a [filesystem agent](./filesystem-agent.md) that edits files and runs commands
 
 ## Synonyms
 

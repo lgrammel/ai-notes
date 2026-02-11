@@ -12,7 +12,7 @@ A common calibration heuristic crosses stakes (low/high) with reversibility (eas
 
 ## Examples
 
-- An IDE-based [coding agent](./coding-agent.md) that requires user confirmation before executing shell commands or writing to files outside the current project.
+- An IDE-based [coding agent](./coding-agent.md) that requires user confirmation before executing [shell](./shell-tool.md) commands or writing to files outside the current project.
 - An agent runtime that automatically approves read-only database queries but pauses for human review before any write or delete operations.
 - A deployment agent that requires explicit approval before pushing changes to production.
 

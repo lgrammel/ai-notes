@@ -1,6 +1,6 @@
 # Local Coding Agent
 
-A [coding agent](./coding-agent.md) that runs within a developer's local environment - typically an IDE or terminal - sharing the same filesystem, shell, and tools as the developer.
+A [coding agent](./coding-agent.md) that runs within a developer's local environment - typically an IDE or terminal - sharing the same filesystem, [shell](./shell-tool.md), and tools as the developer.
 
 ## Details
 

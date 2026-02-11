@@ -1,6 +1,6 @@
 # Cloud Coding Agent
 
-A [coding agent](./coding-agent.md) that runs on remote cloud infrastructure rather than a developer's local machine, operating asynchronously in its own [sandboxed](./sandbox.md) environment with a shell, editor, and browser.
+A [coding agent](./coding-agent.md) that runs on remote cloud infrastructure rather than a developer's local machine, operating asynchronously in its own [sandboxed](./sandbox.md) environment with a [shell](./shell-tool.md), editor, and browser.
 
 ## Details
 

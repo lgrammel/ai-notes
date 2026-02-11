@@ -24,6 +24,8 @@ All three types rely on tool-calling ability learned during [training](./trainin
 
 [Computer use tools](./computer-use-tool.md) let an agent interact with graphical user interfaces by capturing screenshots and performing mouse/keyboard actions. They enable a [computer use agent](./computer-use-agent.md) to operate any desktop or web application the same way a human would, providing a universal interface that works without dedicated APIs.
 
+[Shell tools](./shell-tool.md) give an agent access to a system shell (bash, zsh), enabling it to run arbitrary command-line programs, scripts, and pipelines. They are a core building block for [filesystem agents](./filesystem-agent.md) and [coding agents](./coding-agent.md), providing open-ended access to the operating system for builds, tests, package management, and git operations. Shell tools are typically provider-defined: the model is trained on the tool interface, but execution happens in the developer's environment or [sandbox](./sandbox.md).
+
 Retrieval tools in [agentic RAG](./agentic-rag.md) let the agent issue search or lookup calls against knowledge bases, inspect results, and decide whether to refine the query or retrieve from additional sources.
 
 ### Model Context Protocol (MCP)
@@ -35,7 +37,7 @@ Because tools bridge the gap between model outputs and real-world actions, they 
 ## Examples
 
 - Function tools: a developer-defined `get_weather(city)` or `query_database(sql)` tool
-- Provider-defined tools (developer-executed): Anthropic's computer use, bash, and text editor tools
+- Provider-defined tools (developer-executed): Anthropic's computer use, [bash/shell](./shell-tool.md), and text editor tools
 - Provider-executed tools: OpenAI [web search](./web-search-tool.md), [code interpreter](./code-execution-tool.md), and file search; Google's grounding with search
 
 ## Synonyms

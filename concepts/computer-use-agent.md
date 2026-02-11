@@ -4,7 +4,7 @@ An [agent](./agent.md) that uses a [computer use tool](./computer-use-tool.md) a
 
 ## Details
 
-Computer use agents run a perception-reasoning-action loop: the agent captures a screenshot, reasons about the current screen state and what step to take next, executes a GUI action (click, type, scroll), and repeats. This loop is the same [tool](./tools.md)-using agent loop, but with the computer use tool as the dominant capability. Many computer use agents augment GUI interaction with supplementary tools like shell (bash) and text editor tools, or a [code execution tool](./code-execution-tool.md), for tasks where direct file or command-line access is more efficient than navigating a GUI.
+Computer use agents run a perception-reasoning-action loop: the agent captures a screenshot, reasons about the current screen state and what step to take next, executes a GUI action (click, type, scroll), and repeats. This loop is the same [tool](./tools.md)-using agent loop, but with the computer use tool as the dominant capability. Many computer use agents augment GUI interaction with supplementary tools like [shell](./shell-tool.md) (bash) and text editor tools, or a [code execution tool](./code-execution-tool.md), for tasks where direct file or command-line access is more efficient than navigating a GUI.
 
 The core advantage is universality: a computer use agent can operate any application designed for human use without requiring dedicated integrations or APIs. This makes it applicable to the "long tail" of software that lacks programmatic interfaces - legacy enterprise applications, complex web workflows, and desktop software. In practice, computer use agents are most commonly deployed for web-based task automation (form filling, data entry, multi-step web workflows) because browser environments are easier to sandbox and reproduce than full desktop environments.
 
@@ -15,7 +15,7 @@ Because computer use agents have broad, unstructured access to whatever is on sc
 ## Examples
 
 - OpenAI Operator: a consumer-facing web agent powered by CUA that performs web tasks (shopping, booking, research) in a cloud browser with user confirmation for sensitive actions.
-- Anthropic's computer use reference implementation: a Docker-based Linux desktop where Claude controls applications through screenshots and mouse/keyboard, combining the computer use tool with bash and text editor tools.
+- Anthropic's computer use reference implementation: a Docker-based Linux desktop where Claude controls applications through screenshots and mouse/keyboard, combining the computer use tool with [bash/shell](./shell-tool.md) and text editor tools.
 - Browser automation agents built on open-source frameworks that use vision models to navigate web UIs for testing, scraping, or workflow automation.
 
 ## Synonyms

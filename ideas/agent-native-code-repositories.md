@@ -10,7 +10,7 @@ Key shifts from traditional repositories include agent-optimized storage backend
 
 This also implies a shift in repository structure itself: modular code with explicit dependency declarations, standardized prompts and task definitions, and machine-readable metadata replace conventions designed for human scanning. Ephemeral branches for agent experimentation become cheap and disposable rather than cluttering project history.
 
-The broader consequence is that code hosting evolves from version control into an agentic software development lifecycle platform, potentially fragmenting the current monopoly of general-purpose hosts by enabling specialized providers for agent-driven development.
+The broader consequence is that code hosting evolves from version control into an agentic software development lifecycle platform, potentially fragmenting the current monopoly of general-purpose hosts by enabling specialized providers for agent-driven development. [Dark software factories](./dark-software-factory.md) - where agents handle the full development lifecycle without human code review - amplify these demands, requiring platforms that support high-throughput agent access, scenario-based validation infrastructure, and separation between implementation and holdout test environments.
 
 ## Examples
 

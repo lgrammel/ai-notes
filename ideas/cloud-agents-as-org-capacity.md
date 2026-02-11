@@ -10,6 +10,8 @@ This shifts the natural pricing model from per-seat (tied to individual develope
 
 The organizational implications go beyond tooling: deploying a cloud agent resembles hiring more than purchasing software. Effective adoption involves strategic task selection, knowledge encoding, analytics for tracking impact, permissions and governance, and change management to shift engineering workflows. Organizations that treat cloud agents as infrastructure to be onboarded compound advantages over those that treat them as tools to be purchased.
 
+Taken to its extreme, this framing leads to [dark software factories](./dark-software-factory.md) where agents handle the entire development lifecycle - writing, testing, and validating code - with humans defining specifications and scenarios rather than touching the code. At this level, engineering budgets shift from salaries to [inference cost](../concepts/inference-cost.md), and the "capacity" the organization deploys is measured in token spend rather than headcount.
+
 ## External references
 
 - <https://cognition.ai/blog/devin-generally-available>

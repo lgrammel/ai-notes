@@ -5,6 +5,7 @@
 - [Agent-Native Applications](./agent-native-applications.md)
 - [Agent-Native Code Repositories](./agent-native-code-repositories.md)
 - [Cloud Agents as Org Capacity](./cloud-agents-as-org-capacity.md)
+- [Dark Software Factory](./dark-software-factory.md)
 - [Eval-Reality Gap](./eval-reality-gap.md)
 - [Latent Demand Discovery](./latent-demand-discovery.md)
 - [Library Evals for Model Training](./library-evals-for-model-training.md)

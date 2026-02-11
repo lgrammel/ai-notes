@@ -23,6 +23,7 @@ The overall effect is that token cost acts as a selection pressure on system des
 - An agent using a calculator tool for arithmetic instead of spending tokens on multi-step multiplication via inference.
 - A SaaS product offering tiered access where free users get a small model and paying users get a frontier model.
 - Structuring all prompts with a stable system prefix to maximize [prompt caching](../concepts/prompt-caching.md) hit rates across requests.
+- A [dark software factory](./dark-software-factory.md) spending $1,000/day per human engineer on agent-driven development, testing, and validation - shifting the dominant engineering cost from salaries to inference.
 
 ## External references
 

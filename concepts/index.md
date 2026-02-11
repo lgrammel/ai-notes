@@ -32,6 +32,7 @@
 - [Eval Runner](./eval-runner.md)
 - [Evals](./evals.md)
 - [Fine-tuning](./fine-tuning.md)
+- [Function Calling](./function-calling.md)
 - [Grounding](./grounding.md)
 - [Guardrail](./guardrail.md)
 - [Hallucination](./hallucination.md)

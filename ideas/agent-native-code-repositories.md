@@ -16,5 +16,5 @@ The broader consequence is that code hosting evolves from version control into a
 
 - A platform where opening an issue automatically dispatches a coding agent that analyzes the codebase via a knowledge graph, generates a fix with tests, and opens a pull request - with humans reviewing only the final result.
 - Agent-optimized storage tiers (warm/cold) priced for high-volume machine access, enabling agents to run parallel experimental branches at negligible cost.
-- Multi-agent coordination where separate agents handle frontend, backend, and infrastructure changes on the same project, merging their work through an orchestration layer.
+- Multi-agent coordination where separate agents handle frontend, backend, and infrastructure changes on the same project, merging their work through an orchestration layer (see [repository as agent workspace](./repository-as-agent-workspace.md)).
 - An open ecosystem of shareable agent templates (e.g., "debugging agent," "test generator") deployable via CI/CD and fine-tunable on repo-specific data.

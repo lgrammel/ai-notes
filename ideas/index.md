@@ -9,4 +9,5 @@
 - [Latent Demand Discovery](./latent-demand-discovery.md)
 - [Library Evals for Model Training](./library-evals-for-model-training.md)
 - [Multi-Tenancy for AI Agents](./multi-tenancy-for-ai-agents.md)
+- [Repository as Agent Workspace](./repository-as-agent-workspace.md)
 - [Token Economics](./token-economics.md)

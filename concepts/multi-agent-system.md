@@ -15,3 +15,4 @@ Multi-agent systems introduce trust and security surfaces that single-agent syst
 - A parent agent that breaks a complex task into subtasks and delegates each to a specialized [subagent](./subagent.md).
 - A research pipeline where one agent retrieves sources, another summarizes them, and a third synthesizes the final report.
 - A CI/CD workflow where a coding agent generates changes, a review agent checks them, and a deployment agent rolls them out.
+- Multiple specialized agents (coding, security, documentation, testing) operating on the same git repository, coordinating through branches, commits, and pull requests rather than direct message passing (see [repository as agent workspace](../ideas/repository-as-agent-workspace.md)).

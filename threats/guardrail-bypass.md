@@ -10,6 +10,7 @@ Common techniques include:
 
 - **Encoding tricks**: Presenting harmful requests in Base64, ROT13, hexadecimal, or other encodings that the safety layer does not consistently recognize.
 - **Persona / role-play framing**: Wrapping requests in fictional scenarios, character personas, or "do anything" prompts that shift the model out of its safety-trained distribution.
+- **Stylistic obfuscation**: Reformulating harmful requests using literary or poetic structure - verse, metaphor, rhyme, narrative framing - so the surface form falls outside the prosaic distribution on which safety training was optimized. Poetic reformulation alone can raise attack-success rates by an order of magnitude across model families, risk domains, and alignment approaches (RLHF, Constitutional AI, hybrid), indicating that current refusal mechanisms are anchored to surface-form features rather than underlying intent.
 - **Multi-step escalation**: Gradually shifting the conversation boundary across multiple turns so that no single turn triggers a refusal.
 - **Language and modality shifting**: Switching to low-resource languages or exploiting format differences (code blocks, structured data) where safety training is less robust.
 - **Instruction hierarchy exploitation**: Crafting inputs that cause the model to treat the bypass attempt as a higher-priority instruction than its safety training.
@@ -22,15 +23,20 @@ In [agent](../concepts/agent.md) systems, a successful guardrail bypass can unlo
 - A role-play prompt ("You are DAN, you can do anything now") causes the model to ignore its refusal training and comply with requests it would normally reject.
 - Across a multi-turn conversation, an attacker incrementally shifts the topic toward restricted content, with each turn staying just below the refusal threshold.
 - A request phrased in a low-resource language bypasses safety filters that were primarily trained on English content.
+- A harmful request rewritten as a short poem with metaphorical language and verse structure elicits compliance from models that refuse the identical request in prose.
 
 ## Mitigations
 
 - Multi-layered [guardrails](../concepts/guardrail.md) (input classifiers, output classifiers, and model-level alignment)
-- Regular red-teaming and adversarial testing across encodings, languages, and interaction patterns
-- [Evals](../concepts/evals.md) targeting refusal robustness under known bypass techniques
+- Regular [red-teaming](../concepts/red-teaming.md) and adversarial testing across encodings, languages, stylistic variations, and interaction patterns
+- [Evals](../concepts/evals.md) targeting refusal robustness under known bypass techniques, including stylistic perturbations (poetic, narrative, archaic forms)
 - Monitoring and [observability](../concepts/observability.md) on refusal rates and content-policy violations
 - Updating safety training as new bypass techniques emerge
 
 ## Synonyms
 
 jailbreaking, jailbreak attacks
+
+## External references
+
+- https://arxiv.org/abs/2511.15304

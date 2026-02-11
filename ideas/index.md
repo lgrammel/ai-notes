@@ -1,9 +1,9 @@
 # Ideas
 
-- [Agent-Native Applications](./agent-native-applications.md)
-- [Agent-Native Code Repositories](./agent-native-code-repositories.md)
 - [Agent SEO](./agent-seo.md)
 - [Agent UX](./agent-ux.md)
+- [Agent-Native Applications](./agent-native-applications.md)
+- [Agent-Native Code Repositories](./agent-native-code-repositories.md)
 - [Cloud Agents as Org Capacity](./cloud-agents-as-org-capacity.md)
 - [Eval-Reality Gap](./eval-reality-gap.md)
 - [Files as Agent Interface](./files-as-agent-interface.md)

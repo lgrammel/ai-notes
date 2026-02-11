@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "prepare": "husky",
+    "check-indexes": "node scripts/check-indexes.js",
     "check-links": "node scripts/check-links.js *.md concepts/*.md ideas/*.md threats/*.md",
     "check-quotes": "node scripts/check-quotes.js",
     "lint:md": "markdownlint-cli2 \"**/*.md\" \"#node_modules\"",
@@ -21,6 +22,7 @@
     "*.md": [
       "prettier --write",
       "markdownlint-cli2",
+      "node scripts/check-indexes.js",
       "node scripts/check-links.js",
       "node scripts/check-quotes.js"
     ],

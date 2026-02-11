@@ -160,3 +160,10 @@ Validates markdown links (both relative and external). Only dead links are repor
 - **Manual check**: `pnpm check-links <file.md>`
 - **Script**: `scripts/check-links.js`
 - **Config**: `.markdown-link-check.json` (timeouts, retries, ignored patterns)
+
+### Index checking (check-indexes)
+
+Validates that each directory index (`concepts/index.md`, `ideas/index.md`, `threats/index.md`) lists all `.md` files in that directory (excluding `index.md`) and that entries are sorted alphabetically by visible name.
+
+- **Check all indexes**: `pnpm check-indexes`
+- **Script**: `scripts/check-indexes.js`

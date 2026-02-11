@@ -1,23 +1,28 @@
 # Token Economics
 
-Token economics is the idea that [agents](../concepts/agent.md) face a cost trade-off on every step: spend [tokens](../concepts/token.md) on GPU-based [inference](../concepts/inference.md) to reason through a problem, or delegate to a [tool](../concepts/tools.md) that executes on a CPU. Tools offer the traditional advantages of algorithms - they are cheaper to run, faster, and produce precise, deterministic results. Inference is flexible and general-purpose but expensive per unit of work.
+Token economics is the idea that [inference cost](../concepts/inference-cost.md) is a primary architectural constraint in [LLM](../concepts/llm.md) systems, shaping decisions from [model](../concepts/llm.md) selection to user-facing access controls. Because every [token](../concepts/token.md) of [inference](../concepts/inference.md) costs money, cost pressure drives a set of recurring design patterns aimed at reducing token volume, shifting work to cheaper execution modes, or limiting who spends tokens and when.
 
 ## Details
 
-The decision boundary shifts with the task. Arithmetic, text search, data retrieval, and code compilation are far cheaper and more reliable as tool calls. Open-ended reasoning, natural language generation, and ambiguous judgment calls have no tool equivalent and must stay in inference. The economic sweet spot for an agent is to use inference only for what tools cannot do: understanding intent, planning steps, and interpreting results.
+The most direct lever is [model routing](../concepts/model-routing.md): directing requests to the cheapest model that can handle them. Simple tasks go to [small language models](../concepts/small-language-model.md) or [distilled](../concepts/distillation.md) variants; complex tasks escalate to frontier models. The cost gap between tiers is large enough that routing even a fraction of traffic to cheaper models produces significant savings.
 
-Tool adoption follows a cost logic: a tool gets used when the tokens saved by delegating to it exceed the tokens spent on knowing about it (schema in context) and operating it (formatting calls, parsing results). Tools with very high savings-to-cost ratios (e.g., grep, calculators, compilers) become permanent infrastructure. Tools where the ratio is marginal may be replaced when models become cheaper or more capable.
+[Reasoning](../concepts/reasoning.md) tokens are a particularly expensive cost category because reasoning traces can be many times longer than the visible output. This creates pressure to avoid reasoning models for tasks that do not require multi-step deduction, to cap reasoning effort via model parameters where available, or to use [distillation](../concepts/distillation.md) to bake reasoning patterns into cheaper non-reasoning models.
 
-Some agents blur the boundary by generating tools on the fly through code execution - writing and running a short program instead of reasoning through the answer token by token. This turns inference into a tool factory: the model spends a small number of tokens producing code, then offloads the actual computation to a CPU-based runtime. Tasks like data transformation, numerical analysis, or format conversion become hybrid operations where inference handles the "what" and generated code handles the "how."
+Token volume reduction is another recurring pattern. [Prompt compaction](../concepts/prompt-compaction.md) condenses context to use fewer input tokens. [Prompt caching](../concepts/prompt-caching.md) reduces the compute cost of repeated prefixes. Structuring prompts so that stable content (system instructions, [tool](../concepts/tools.md) definitions) sits at the front maximizes cache reuse across requests.
 
-Tools that encode hard-won domain knowledge (e.g., git, databases, workflow engines) have strong survival characteristics, because the token cost of re-deriving that knowledge through inference is prohibitive.
+Offloading work from inference to [tools](../concepts/tools.md) is a cost optimization with structural consequences. CPU-based computation (arithmetic, text search, data retrieval, code execution) is orders of magnitude cheaper per unit of work than GPU-based inference. An [agent](../concepts/agent.md) that delegates arithmetic to a calculator or data processing to a code execution runtime spends a small number of tokens orchestrating the tool call instead of many tokens reasoning through the answer. Tools with high savings-to-overhead ratios (the tokens saved by delegating vs. the tokens spent on tool schemas and call formatting) become permanent infrastructure. (This inference-vs-tool cost boundary is explored in depth by Steve Yegge's "Software Survival 3.0" framing, which argues that tools encoding hard-won domain knowledge - git, databases, compilers - survive because re-deriving that knowledge through inference is prohibitively expensive.)
+
+On the operational side, cost pressure drives user-facing controls: per-user or per-tenant budgets, usage tiers, rate limiting, and throttling. These are typically enforced through [AI gateways](../concepts/ai-gateway.md) or application-level logic. [Observability](../concepts/observability.md) systems track token-level cost per request, per user, and per model to detect cost anomalies and inform optimization. Without these controls, [denial of service](../threats/denial-of-service.md) attacks (including "denial of wallet" variants) can inflict significant financial damage.
+
+The overall effect is that token cost acts as a selection pressure on system design: architectures that minimize unnecessary inference survive, while those that burn tokens on work better handled by cheaper execution modes or smaller models face cost scaling problems.
 
 ## Examples
 
-- An agent using a calculator tool for arithmetic rather than performing multiplication via inference, because CPU computation is cheaper and exact.
-- grep surviving as permanent infrastructure because CPU-based pattern matching vastly outperforms inference for text search.
-- A coding agent writing and executing a Python script to process a CSV file rather than reasoning through the transformation row by row in tokens.
-- A database query engine persisting because encoding decades of query optimization into inference would burn far more tokens than a tool call.
+- A coding agent using a fast, cheap model for file reads and reformatting, and a reasoning model only for architectural decisions.
+- Capping reasoning effort to "low" for classification tasks where chain-of-thought adds cost without improving accuracy.
+- An agent using a calculator tool for arithmetic instead of spending tokens on multi-step multiplication via inference.
+- A SaaS product offering tiered access where free users get a small model and paying users get a frontier model.
+- Structuring all prompts with a stable system prefix to maximize [prompt caching](../concepts/prompt-caching.md) hit rates across requests.
 
 ## External references
 

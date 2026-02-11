@@ -38,6 +38,7 @@
 - [Hybrid Search](./hybrid-search.md)
 - [In-Context Learning](./in-context-learning.md)
 - [Inference](./inference.md)
+- [Inference Cost](./inference-cost.md)
 - [Inference Provider](./inference-provider.md)
 - [Instruction Following](./instruction-following.md)
 - [Knowledge Cutoff](./knowledge-cutoff.md)

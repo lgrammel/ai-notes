@@ -4,7 +4,7 @@ Context engineering is the practice of selecting, structuring, and maintaining t
 
 ## Details
 
-It includes prompt/template design, [retrieval](./retrieval.md) and ranking (see [RAG](./rag.md)), [in-context learning](./in-context-learning.md) example selection, [prompt compaction](./prompt-compaction.md) and [memory](./agent-memory.md), formatting of tool outputs, redaction of sensitive data (to reduce [data exfiltration](../threats/data-exfiltration.md) risk), and provenance cues that help the model distinguish instructions from untrusted content (a key mitigation for [prompt injection](../threats/prompt-injection.md) and [context poisoning](../threats/context-poisoning.md)).
+It includes [prompt engineering](./prompt-engineering.md) (crafting instructions and examples), [retrieval](./retrieval.md) and ranking (see [RAG](./rag.md)), [in-context learning](./in-context-learning.md) example selection, [prompt compaction](./prompt-compaction.md) and [memory](./agent-memory.md), formatting of tool outputs, redaction of sensitive data (to reduce [data exfiltration](../threats/data-exfiltration.md) risk), and provenance cues that help the model distinguish instructions from untrusted content (a key mitigation for [prompt injection](../threats/prompt-injection.md) and [context poisoning](../threats/context-poisoning.md)).
 
 In [multi-agent systems](./multi-agent-system.md), context engineering extends to designing what crosses [context isolation](./context-isolation.md) boundaries: choosing which information a parent agent passes to a [subagent](./subagent.md) and how the subagent's result is formatted before re-entering the parent's context.
 
@@ -19,5 +19,3 @@ In [multi-agent systems](./multi-agent-system.md), context engineering extends t
 ## Synonyms
 
 context management
-
-Note: prompt engineering is a closely related but narrower practice focused primarily on crafting instructions and examples within a single prompt, whereas context engineering encompasses the full lifecycle of selecting, retrieving, compressing, and structuring all context sources.

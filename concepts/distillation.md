@@ -8,6 +8,8 @@ The goal is to transfer the teacher's capabilities into a model that is cheaper 
 
 Distillation often occupies a middle ground between [pretraining](./pretraining.md) (broad learning from raw data) and task-specific [fine-tuning](./fine-tuning.md) (narrow adaptation), but it can be applied at various stages of the training pipeline - including during pretraining itself (training a smaller model from scratch with teacher supervision) or after fine-tuning. The result is a model that retains much of the teacher's general ability while being significantly more efficient. Combined with [model quantization](./model-quantization.md), distillation is a primary technique for making large models practical in resource-constrained deployment settings. Distilled models are common targets in [model routing](./model-routing.md) configurations, where simpler requests are directed to smaller distilled variants while complex tasks go to frontier models.
 
+Cascade distillation is a variant that alternates pruning (removing less-important parameters) and distillation to produce progressively smaller models from a single parent. Each pruned model is trained to mimic the original teacher, then serves as the starting point for the next smaller variant. This approach can produce a family of [small language models](./small-language-model.md) at a fraction of the training cost of pretraining each size independently.
+
 ## Examples
 
 - A model developer releasing a 8B-parameter distilled variant of a 70B-parameter flagship model.

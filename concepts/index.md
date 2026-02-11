@@ -67,6 +67,7 @@
 - [Sandbox Service](./sandbox-service.md)
 - [Skill](./skill.md)
 - [Skill Repository](./skill-repository.md)
+- [Small Language Model](./small-language-model.md)
 - [Structured Output](./structured-output.md)
 - [Streaming](./streaming.md)
 - [Subagent](./subagent.md)

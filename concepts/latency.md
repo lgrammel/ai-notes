@@ -12,7 +12,7 @@ Key factors that affect latency include model size and architecture, input lengt
 
 - A chatbot optimized for low TTFT so users see a response begin within a few hundred milliseconds.
 - A coding agent where end-to-end latency matters more than TTFT because the full response is needed before the next tool call can execute.
-- Switching to a smaller or quantized model to reduce latency at an acceptable quality cost.
+- Switching to a [small language model](./small-language-model.md) or quantized model to reduce latency at an acceptable quality cost.
 
 ## Synonyms
 

@@ -25,6 +25,17 @@ This is one of the most common production architectures for enterprise AI applic
 - **Multi-turn conversation + RAG**: Conversation history influences retrieval queries across turns, creating a progressive steering effect where users shape both the conversational context and the retrieved context the model reasons over. An adversary in the corpus can plant content that is more likely to be retrieved as the conversation develops toward certain topics.
 - **Multi-turn injection + corpus injection**: Multi-turn [prompt injection](../threats/prompt-injection.md) and indirect injection through the corpus are independent attack vectors that can reinforce each other - an attacker who controls both can build adversarial context through conversation while planting supporting documents in the corpus.
 
+## Threats
+
+- [Prompt injection](../threats/prompt-injection.md) - untrusted input in conversation history (multi-turn injection built up across turns) and in retrieved documents (indirect injection through content stored in the indexed corpus) can override system instructions
+- [Hallucination exploitation](../threats/hallucination-exploitation.md) - crafted inputs that trigger confident but false outputs, potentially compounded by irrelevant or contradictory retrieved context that increases confabulation
+- [Guardrail bypass](../threats/guardrail-bypass.md) - techniques that circumvent safety constraints, including multi-turn jailbreaking where adversarial context is built up gradually across turns and retrieval-assisted bypass using corpus content
+- [System prompt extraction](../threats/system-prompt-extraction.md) - tricking the model into revealing its instructions across one or more conversation turns
+- [User manipulation](../threats/user-manipulation.md) - exploiting user trust in model outputs, amplified by both the conversational relationship and the perceived authority of responses grounded in retrieved documents
+- [Misaligned model behaviors](../threats/misaligned-model-behaviors.md) - intrinsic model tendencies that degrade output quality, potentially compounding over turns as the model reinforces its own prior responses
+- [Training data poisoning](../threats/training-data-poisoning.md) - compromised training data affecting the model's behavior when processing retrieved content or conversation history
+- [Context poisoning](../threats/context-poisoning.md) - malicious or manipulated documents in the indexed corpus that alter model outputs when retrieved, the primary architecture-specific attack vector for RAG systems
+
 ## Examples
 
 - A customer support chatbot that retrieves from a help-article knowledge base to answer questions across a multi-turn conversation.

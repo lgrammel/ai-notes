@@ -31,3 +31,22 @@ The [multi-turn conversation](../concepts/multi-turn-conversation.md) pattern me
 - **Web search + agent loop**: The agent can be directed (via [prompt injection](../threats/prompt-injection.md) in web content) to search for additional attacker-controlled pages, creating a chain of poisoned context that compounds across the agent loop.
 - **Agent memory + multi-turn conversation**: Memories persist across sessions and are loaded into future conversations as trusted context, creating a cross-session [context poisoning](../threats/context-poisoning.md) vector. A single compromised interaction can have lasting effects on future sessions.
 - **Broad tool set + user trust**: The combination of authoritative-seeming conversation, computation results, and web-sourced information amplifies [user manipulation](../threats/user-manipulation.md) risk - users are more likely to trust outputs that appear backed by code execution and web sources.
+
+## Threats
+
+- [Prompt injection](../threats/prompt-injection.md) - untrusted input in conversation history, uploaded file contents, web search results, or retrieved documents can override instructions and direct the agent to misuse its broad tool set
+- [Hallucination exploitation](../threats/hallucination-exploitation.md) - crafted inputs that trigger confident but false outputs, including incorrect code, misleading data analysis, or fabricated citations from web search
+- [Guardrail bypass](../threats/guardrail-bypass.md) - techniques that circumvent safety constraints on generation, code execution, or tool invocation, including multi-turn jailbreaking
+- [System prompt extraction](../threats/system-prompt-extraction.md) - tricking the model into revealing its system instructions through conversation or tool-mediated interactions
+- [User manipulation](../threats/user-manipulation.md) - exploiting user trust in outputs that appear backed by computation results, web sources, and authoritative multi-turn conversation
+- [Misaligned model behaviors](../threats/misaligned-model-behaviors.md) - intrinsic model tendencies that degrade output quality across the broad capability set, compounding over multi-turn sessions
+- [Training data poisoning](../threats/training-data-poisoning.md) - compromised training data affecting the model's code generation, tool selection, or reasoning behavior
+- [Context poisoning](../threats/context-poisoning.md) - malicious content in uploaded files, web search results, or persisted memories that alters agent reasoning when loaded into context
+- [Tool misuse](../threats/tool-misuse.md) - authorized but harmful tool calls such as generating misleading analysis, producing incorrect computations, or operating on user-uploaded files in unintended ways
+- [Tool output poisoning](../threats/tool-output-poisoning.md) - malicious data in code execution results or web search results that hijacks subsequent agent reasoning and tool selection
+- [Data exfiltration](../threats/data-exfiltration.md) - sensitive data from context transmitted through code execution network requests (if permitted), encoded in generated outputs, or exposed through web browsing actions
+- [Denial of service](../threats/denial-of-service.md) - generated code causing expensive computation, infinite loops, memory exhaustion, or excessive tool-call cycles that exhaust resources
+- [Goal manipulation](../threats/goal-manipulation.md) - untrusted input in uploaded files or web content redirecting agent objectives, causing it to pursue attacker goals through its tool capabilities
+- [Unauthorized code execution](../threats/unauthorized-code-execution.md) - the primary code-interpreter threat; generated code can do anything the sandbox permits, and sandbox quality is the sole containment mechanism
+- [Persistence attacks](../threats/persistence-attacks.md) - limited by the ephemeral sandbox (files and state are discarded after the session), but agent memory provides a cross-session persistence vector where poisoned memories influence future conversations
+- [Privilege compromise](../threats/privilege-compromise.md) - sandbox escape or misconfiguration granting code execution or browsing access beyond the intended isolation boundary

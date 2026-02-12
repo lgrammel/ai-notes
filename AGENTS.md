@@ -118,7 +118,8 @@ Example system notes follow concept note conventions (including the executive su
 - `## Capabilities` is a required section listing the system's capabilities as a bulleted list of links to concept notes. Place it after the executive summary (or after `## Details` if present).
 - `## Trust analysis` is a required section with prose analysis of the system's specific trust model - how the capabilities compose, where the boundaries are, what is unique to this composition. Reference threat notes inline where relevant rather than maintaining a separate exhaustive threat list. Place it after `## Capabilities`.
 - `## Interaction effects` is a required section describing emergent risks from the specific combination of capabilities that are not captured by any single capability in isolation. Place it after `## Trust analysis`.
-- `## Examples` is an optional section for generic category notes (e.g., "Enterprise RAG Chatbot") to list concrete product instances. Named product notes (e.g., "Cursor") typically do not need this section.
+- `## Threats` is a required section listing all applicable threats as bullet points. Each bullet links to a threat note and includes a brief description of the specific attack vector for this system. Place it after `## Interaction effects`.
+- `## Examples` is an optional section for generic category notes (e.g., "Enterprise RAG Chatbot") to list concrete product instances. Named product notes (e.g., "Cursor") typically do not need this section. Place it after `## Threats`.
 
 ### Prose style
 

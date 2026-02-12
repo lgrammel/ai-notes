@@ -21,6 +21,16 @@ This is the baseline trust model that all more complex systems inherit. Every ad
 
 Minimal - this is the atomic unit. No capabilities interact because there is only one capability (text generation from a prompt). The trust surface is contained entirely within the prompt/response boundary.
 
+## Threats
+
+- [Prompt injection](../threats/prompt-injection.md) - untrusted input in the assembled context (user-supplied text, third-party data) can override system instructions, causing the model to produce attacker-chosen outputs instead of the intended classification or extraction
+- [Hallucination exploitation](../threats/hallucination-exploitation.md) - crafted inputs that trigger confident but false outputs, leading to incorrect classifications, fabricated extractions, or misleading summaries
+- [Guardrail bypass](../threats/guardrail-bypass.md) - techniques that circumvent safety constraints on the model's output format or content restrictions
+- [System prompt extraction](../threats/system-prompt-extraction.md) - tricking the model into revealing its instructions instead of producing the expected structured output
+- [User manipulation](../threats/user-manipulation.md) - exploiting user or downstream system trust in model outputs that appear authoritative (e.g., a classification label treated as ground truth)
+- [Misaligned model behaviors](../threats/misaligned-model-behaviors.md) - intrinsic model tendencies (sycophancy, shortcut-taking) that degrade output accuracy, producing systematically biased classifications or incomplete extractions
+- [Training data poisoning](../threats/training-data-poisoning.md) - compromised training data causing the model to exhibit attacker-chosen behaviors, such as systematic misclassification of specific input patterns
+
 ## Examples
 
 - A content moderation classifier that labels user-submitted text as safe or unsafe.

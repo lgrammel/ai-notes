@@ -21,6 +21,7 @@ Four forces drive this shift:
 - Library maintainers continuously fix bugs, patch security vulnerabilities, and adapt to upstream changes. Generated code freezes at a point in time and shifts the maintenance burden entirely to the project owner, who may not notice when the original library addresses a critical issue.
 - The approach works best for well-isolated, computationally focused functionality. Libraries with complex state management, plugin systems, or cross-cutting concerns may not decompose cleanly into standalone reimplementations.
 - Widespread adoption fragments the ecosystem: instead of one well-tested library with thousands of users finding bugs, there are thousands of bespoke implementations each tested only against their own narrow use case.
+- Productized services - the same kind of software built repeatedly for many customers around shared domain concepts - invert the economics. A shared library encapsulates domain logic once and propagates fixes across every customer project, while bespoke generated code must be patched, audited, and evolved independently in each instance. At scale, the maintenance cost of owning duplicated implementations across many customer projects far exceeds the cost of depending on a shared library.
 
 ## External references
 

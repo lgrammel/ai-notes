@@ -27,14 +27,16 @@ This is one of the most common production architectures for enterprise AI applic
 
 ## Threats
 
-- [Prompt injection](../threats/prompt-injection.md) - untrusted input in conversation history (multi-turn injection built up across turns) and in retrieved documents (indirect injection through content stored in the indexed corpus) can override system instructions
-- [Hallucination exploitation](../threats/hallucination-exploitation.md) - crafted inputs that trigger confident but false outputs, potentially compounded by irrelevant or contradictory retrieved context that increases confabulation
-- [Guardrail bypass](../threats/guardrail-bypass.md) - techniques that circumvent safety constraints, including multi-turn jailbreaking where adversarial context is built up gradually across turns and retrieval-assisted bypass using corpus content
-- [System prompt extraction](../threats/system-prompt-extraction.md) - tricking the model into revealing its instructions across one or more conversation turns
-- [User manipulation](../threats/user-manipulation.md) - exploiting user trust in model outputs, amplified by both the conversational relationship and the perceived authority of responses grounded in retrieved documents
-- [Misaligned model behaviors](../threats/misaligned-model-behaviors.md) - intrinsic model tendencies that degrade output quality, potentially compounding over turns as the model reinforces its own prior responses
-- [Training data poisoning](../threats/training-data-poisoning.md) - compromised training data affecting the model's behavior when processing retrieved content or conversation history
-- [Context poisoning](../threats/context-poisoning.md) - malicious or manipulated documents in the indexed corpus that alter model outputs when retrieved, the primary architecture-specific attack vector for RAG systems
+| Threat                                                                 | Relevance | Note                                                                                                           |
+| ---------------------------------------------------------------------- | --------- | -------------------------------------------------------------------------------------------------------------- |
+| [Prompt injection](../threats/prompt-injection.md)                     | Primary   | Two surfaces: multi-turn conversation history and indirect injection through indexed corpus documents          |
+| [Context poisoning](../threats/context-poisoning.md)                   | Primary   | Indexed corpus is the main architecture-specific injection surface; anyone with write access affects all users |
+| [Hallucination exploitation](../threats/hallucination-exploitation.md) | Elevated  | Compounded by irrelevant or contradictory retrieved context                                                    |
+| [Guardrail bypass](../threats/guardrail-bypass.md)                     | Elevated  | Multi-turn jailbreaking and retrieval-assisted bypass using corpus content                                     |
+| [User manipulation](../threats/user-manipulation.md)                   | Elevated  | Amplified by perceived authority of retrieval-grounded responses                                               |
+| [System prompt extraction](../threats/system-prompt-extraction.md)     | Standard  | Multi-turn extraction across conversation turns                                                                |
+| [Misaligned model behaviors](../threats/misaligned-model-behaviors.md) | Standard  | Compounding over turns as model reinforces prior responses                                                     |
+| [Training data poisoning](../threats/training-data-poisoning.md)       | Standard  | Baseline risk, no architecture-specific amplifier                                                              |
 
 ## Examples
 

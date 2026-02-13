@@ -43,19 +43,21 @@ The [multi-turn conversation](../concepts/multi-turn-conversation.md) pattern me
 
 ## Threats
 
-- [Prompt injection](../threats/prompt-injection.md) - untrusted input in conversation history, uploaded file contents, images (visual prompt injection), web search results, or retrieved documents can override instructions and direct the agent to misuse its broad tool set
-- [Hallucination exploitation](../threats/hallucination-exploitation.md) - crafted inputs that trigger confident but false outputs, including incorrect code, misleading data analysis, or fabricated citations from web search
-- [Guardrail bypass](../threats/guardrail-bypass.md) - techniques that circumvent safety constraints on generation, code execution, image generation, or tool invocation, including multi-turn jailbreaking and visual prompt injection that evades text-based filters
-- [System prompt extraction](../threats/system-prompt-extraction.md) - tricking the model into revealing its system instructions through conversation or tool-mediated interactions
-- [User manipulation](../threats/user-manipulation.md) - exploiting user trust in outputs that appear backed by computation results, generated images, web sources, and authoritative multi-turn conversation
-- [Misaligned model behaviors](../threats/misaligned-model-behaviors.md) - intrinsic model tendencies that degrade output quality across the broad capability set, compounding over multi-turn sessions
-- [Training data poisoning](../threats/training-data-poisoning.md) - compromised training data affecting the model's code generation, tool selection, or reasoning behavior
-- [Context poisoning](../threats/context-poisoning.md) - malicious content in uploaded files, images (visual prompt injection), web search results, or persisted memories that alters agent reasoning when loaded into context
-- [Tool misuse](../threats/tool-misuse.md) - authorized but harmful tool calls such as generating misleading analysis, producing incorrect computations, generating deceptive or harmful images, or operating on user-uploaded files in unintended ways
-- [Tool output poisoning](../threats/tool-output-poisoning.md) - malicious data in code execution results or web search results that hijacks subsequent agent reasoning and tool selection
-- [Data exfiltration](../threats/data-exfiltration.md) - sensitive data from context transmitted through code execution network requests (if permitted), encoded in generated outputs, or exposed through web browsing actions
-- [Denial of service](../threats/denial-of-service.md) - generated code causing expensive computation, infinite loops, memory exhaustion, or excessive tool-call cycles that exhaust resources
-- [Goal manipulation](../threats/goal-manipulation.md) - untrusted input in uploaded files or web content redirecting agent objectives, causing it to pursue attacker goals through its tool capabilities
-- [Unauthorized code execution](../threats/unauthorized-code-execution.md) - the primary code-interpreter threat; generated code can do anything the sandbox permits, and sandbox quality is the sole containment mechanism
-- [Persistence attacks](../threats/persistence-attacks.md) - limited by the ephemeral sandbox (files and state are discarded after the session), but agent memory provides a cross-session persistence vector where poisoned memories influence future conversations
-- [Privilege compromise](../threats/privilege-compromise.md) - sandbox escape or misconfiguration granting code execution or browsing access beyond the intended isolation boundary
+| Threat                                                                   | Relevance | Note                                                                                           |
+| ------------------------------------------------------------------------ | --------- | ---------------------------------------------------------------------------------------------- |
+| [Prompt injection](../threats/prompt-injection.md)                       | Primary   | Multiple surfaces: conversation, uploaded files, images (visual injection), web search results |
+| [Context poisoning](../threats/context-poisoning.md)                     | Primary   | Uploaded files, images, web search results, and persisted memories all enter context           |
+| [Unauthorized code execution](../threats/unauthorized-code-execution.md) | Primary   | Generated code can do anything the sandbox permits; sandbox is sole containment                |
+| [Persistence attacks](../threats/persistence-attacks.md)                 | Elevated  | Ephemeral sandbox limits local persistence, but agent memory persists across sessions          |
+| [User manipulation](../threats/user-manipulation.md)                     | Elevated  | Amplified by computation results, generated images, and web-sourced information                |
+| [Tool misuse](../threats/tool-misuse.md)                                 | Elevated  | Misleading analysis, incorrect computations, deceptive image generation                        |
+| [Goal manipulation](../threats/goal-manipulation.md)                     | Elevated  | Uploaded files or web content redirect objectives across broad tool set                        |
+| [Data exfiltration](../threats/data-exfiltration.md)                     | Elevated  | Code execution network requests, web browsing actions, encoded outputs                         |
+| [Guardrail bypass](../threats/guardrail-bypass.md)                       | Elevated  | Multi-turn jailbreaking; visual prompt injection evades text-based filters                     |
+| [Hallucination exploitation](../threats/hallucination-exploitation.md)   | Elevated  | Incorrect code, misleading analysis, fabricated web search citations                           |
+| [Tool output poisoning](../threats/tool-output-poisoning.md)             | Elevated  | Code execution or web search results hijack subsequent reasoning                               |
+| [Denial of service](../threats/denial-of-service.md)                     | Elevated  | Expensive computation, infinite loops, memory exhaustion in sandbox                            |
+| [Privilege compromise](../threats/privilege-compromise.md)               | Elevated  | Sandbox escape granting access beyond intended isolation boundary                              |
+| [System prompt extraction](../threats/system-prompt-extraction.md)       | Standard  | Through conversation or tool-mediated interactions                                             |
+| [Misaligned model behaviors](../threats/misaligned-model-behaviors.md)   | Standard  | Compounding over multi-turn sessions across broad capability set                               |
+| [Training data poisoning](../threats/training-data-poisoning.md)         | Standard  | Baseline risk, no architecture-specific amplifier                                              |

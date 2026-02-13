@@ -38,20 +38,22 @@ The system typically serves many customers through shared infrastructure. [Conte
 
 ## Threats
 
-- [Prompt injection](../threats/prompt-injection.md) - untrusted input in customer messages, retrieved knowledge base documents, or CRM data can override instructions and direct the agent to misuse its transactional tools or leak sensitive customer data
-- [Hallucination exploitation](../threats/hallucination-exploitation.md) - crafted inputs that trigger confident but false outputs, leading to incorrect policy interpretations, wrong order information, or fabricated account details that cause the agent to take inappropriate actions
-- [Guardrail bypass](../threats/guardrail-bypass.md) - techniques that circumvent action authorization controls, PII filters, or content safety constraints, including multi-turn jailbreaking where adversarial context is built gradually across turns
-- [System prompt extraction](../threats/system-prompt-extraction.md) - tricking the model into revealing its system instructions, tool schemas, or internal policy rules through conversation
-- [User manipulation](../threats/user-manipulation.md) - exploiting customer trust in agent responses that appear authoritative because they are grounded in retrieved policy documents and real account data
-- [Misaligned model behaviors](../threats/misaligned-model-behaviors.md) - intrinsic model tendencies like sycophancy leading to unauthorized concessions (extra refunds, policy exceptions) or shortcut-taking that skips verification steps before executing transactions
-- [Training data poisoning](../threats/training-data-poisoning.md) - compromised training data affecting the model's policy interpretation, tool selection, or customer interaction behavior
-- [Context poisoning](../threats/context-poisoning.md) - manipulated knowledge base documents that alter how the agent interprets policies or handles customer requests, with direct financial impact when poisoned policy content influences tool-mediated actions
-- [Tool misuse](../threats/tool-misuse.md) - authorized but harmful tool calls such as processing refunds for the wrong amount, modifying the wrong account, or creating tickets with attacker-chosen content, enabled by prompt injection or model error
-- [Tool output poisoning](../threats/tool-output-poisoning.md) - malicious or corrupted data in CRM responses, order lookups, or backend system outputs that hijacks the agent's subsequent reasoning and leads to incorrect actions
-- [Data exfiltration](../threats/data-exfiltration.md) - customer PII (order history, payment details, account information) extracted through agent responses, encoded in tool call arguments, or leaked via manipulated conversation flow
-- [Cross-tenant / cross-session data leakage](../threats/cross-tenant-data-leakage.md) - insufficient session isolation causing one customer's data (account details, conversation context, tool results) to leak into another customer's session through shared infrastructure components
-- [Denial of service](../threats/denial-of-service.md) - prompt injection triggering expensive tool-call loops, excessive CRM queries, or unbounded agent iterations that exhaust backend resources or inflate inference costs
-- [Goal manipulation](../threats/goal-manipulation.md) - injected instructions in customer messages or retrieved documents that redirect the agent's objectives toward unauthorized refunds, account modifications, or information disclosure
+| Threat                                                                               | Relevance | Note                                                                                         |
+| ------------------------------------------------------------------------------------ | --------- | -------------------------------------------------------------------------------------------- |
+| [Prompt injection](../threats/prompt-injection.md)                                   | Primary   | Customer messages, knowledge base docs, and CRM data can direct transactional tools          |
+| [Context poisoning](../threats/context-poisoning.md)                                 | Primary   | Poisoned knowledge base documents have direct financial impact through tool-mediated actions |
+| [Tool misuse](../threats/tool-misuse.md)                                             | Primary   | Wrong refund amounts, wrong account modifications; real financial consequences               |
+| [Data exfiltration](../threats/data-exfiltration.md)                                 | Elevated  | Customer PII accumulates across turns from CRM lookups and conversation                      |
+| [Cross-tenant / cross-session data leakage](../threats/cross-tenant-data-leakage.md) | Elevated  | Multi-tenant shared infrastructure; customer data isolation failures                         |
+| [Goal manipulation](../threats/goal-manipulation.md)                                 | Elevated  | Suppressing escalation, redirecting toward unauthorized refunds or account changes           |
+| [Tool output poisoning](../threats/tool-output-poisoning.md)                         | Elevated  | Corrupted CRM or backend data hijacks subsequent reasoning                                   |
+| [Misaligned model behaviors](../threats/misaligned-model-behaviors.md)               | Elevated  | Sycophancy leads to unauthorized concessions; skipping verification before transactions      |
+| [Hallucination exploitation](../threats/hallucination-exploitation.md)               | Elevated  | Incorrect policy interpretations cause inappropriate transactional actions                   |
+| [Guardrail bypass](../threats/guardrail-bypass.md)                                   | Elevated  | Circumventing action authorization, PII filters; multi-turn jailbreaking                     |
+| [Denial of service](../threats/denial-of-service.md)                                 | Elevated  | Tool-call loops exhaust backend resources or inflate inference costs                         |
+| [System prompt extraction](../threats/system-prompt-extraction.md)                   | Standard  | Revealing tool schemas or internal policy rules                                              |
+| [User manipulation](../threats/user-manipulation.md)                                 | Standard  | Customer trust in retrieval-grounded responses                                               |
+| [Training data poisoning](../threats/training-data-poisoning.md)                     | Standard  | Baseline risk, no architecture-specific amplifier                                            |
 
 ## Examples
 

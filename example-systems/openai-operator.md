@@ -30,19 +30,21 @@ On-screen [prompt injection](../threats/prompt-injection.md) - malicious instruc
 
 ## Threats
 
-- [Prompt injection](../threats/prompt-injection.md) - on-screen content (web pages, documents, images, invisible HTML elements) containing adversarial instructions that the agent follows when processing screenshots, the primary architecture-specific attack vector
-- [Hallucination exploitation](../threats/hallucination-exploitation.md) - crafted visual inputs that trigger confident but false interpretations of screen content, leading to incorrect GUI actions such as clicking wrong elements or misreading form fields
-- [Guardrail bypass](../threats/guardrail-bypass.md) - visual tricks, UI manipulation, or adversarial page designs that evade content filters or domain restrictions
-- [System prompt extraction](../threats/system-prompt-extraction.md) - tricking the model into revealing its instructions through GUI interactions, such as typing them into a web form or text field
-- [User manipulation](../threats/user-manipulation.md) - exploiting user trust in the agent's browsing actions and results, particularly when the agent presents information gathered from web sources as authoritative
-- [Misaligned model behaviors](../threats/misaligned-model-behaviors.md) - intrinsic model tendencies that cause unintended or suboptimal GUI actions, such as repeatedly attempting failed interactions or taking unnecessary steps
-- [Training data poisoning](../threats/training-data-poisoning.md) - compromised training data affecting the model's visual understanding, UI element recognition, or action selection behavior
-- [Context poisoning](../threats/context-poisoning.md) - on-screen content captured in screenshots that alters agent reasoning across the browsing session, compounding as visual context accumulates over multiple navigation steps
-- [Tool misuse](../threats/tool-misuse.md) - authorized but harmful GUI actions such as making unauthorized purchases, sending messages, navigating to malicious sites, modifying account settings, or submitting forms with attacker-chosen data
-- [Tool output poisoning](../threats/tool-output-poisoning.md) - malicious content rendered on screen that, when captured as screenshots, hijacks subsequent agent behavior and directs further harmful GUI actions
-- [Data exfiltration](../threats/data-exfiltration.md) - sensitive data extracted by typing it into web forms on attacker-controlled sites, navigating to URLs that encode context data, or copying information through GUI actions
-- [Denial of service](../threats/denial-of-service.md) - unbounded GUI interaction loops, repeated expensive browsing actions, or navigation cycles that exhaust session resources or time budgets
-- [Goal manipulation](../threats/goal-manipulation.md) - on-screen instructions embedded in web pages that redirect the agent's objectives away from the user's intended task toward attacker-chosen goals
-- [Privilege compromise](../threats/privilege-compromise.md) - sandbox misconfiguration or browser escape granting the agent access to resources beyond the intended cloud browser isolation boundary
-- [Human approval fatigue exploitation](../threats/human-approval-fatigue-exploitation.md) - high volumes of approval requests for sensitive browsing actions (purchases, logins, form submissions) that degrade the user's review attentiveness over extended sessions
-- [Persistence attacks](../threats/persistence-attacks.md) - limited by the sandbox, but browser cookies, saved passwords, session tokens, or browser extension state could persist across tasks and influence future browsing sessions
+| Threat                                                                                   | Relevance | Note                                                                                                |
+| ---------------------------------------------------------------------------------------- | --------- | --------------------------------------------------------------------------------------------------- |
+| [Prompt injection](../threats/prompt-injection.md)                                       | Primary   | On-screen content (web pages, images, invisible HTML) is the main injection surface via screenshots |
+| [Context poisoning](../threats/context-poisoning.md)                                     | Primary   | Visual context compounds across browsing session as screenshots accumulate                          |
+| [Goal manipulation](../threats/goal-manipulation.md)                                     | Primary   | On-screen instructions redirect agent objectives away from user's task                              |
+| [Tool misuse](../threats/tool-misuse.md)                                                 | Elevated  | Unbounded GUI actions within browser: purchases, form submissions, navigation                       |
+| [Tool output poisoning](../threats/tool-output-poisoning.md)                             | Elevated  | Malicious screen content captured as screenshots hijacks subsequent behavior                        |
+| [Human approval fatigue exploitation](../threats/human-approval-fatigue-exploitation.md) | Elevated  | High volume of approval requests in extended browsing sessions                                      |
+| [Data exfiltration](../threats/data-exfiltration.md)                                     | Elevated  | Typing sensitive data into web forms or encoding it in URLs                                         |
+| [Hallucination exploitation](../threats/hallucination-exploitation.md)                   | Elevated  | False interpretations of screen content lead to wrong GUI actions                                   |
+| [Guardrail bypass](../threats/guardrail-bypass.md)                                       | Elevated  | Visual tricks and UI manipulation evade content filters or domain restrictions                      |
+| [Denial of service](../threats/denial-of-service.md)                                     | Elevated  | Unbounded GUI interaction loops exhaust session resources                                           |
+| [Privilege compromise](../threats/privilege-compromise.md)                               | Elevated  | Sandbox misconfiguration or browser escape                                                          |
+| [Persistence attacks](../threats/persistence-attacks.md)                                 | Elevated  | Limited by sandbox, but browser cookies and session tokens may persist across tasks                 |
+| [System prompt extraction](../threats/system-prompt-extraction.md)                       | Standard  | Typing instructions into web forms or text fields                                                   |
+| [User manipulation](../threats/user-manipulation.md)                                     | Standard  | Trust in agent browsing results presented as authoritative                                          |
+| [Misaligned model behaviors](../threats/misaligned-model-behaviors.md)                   | Standard  | Repeatedly attempting failed interactions or taking unnecessary steps                               |
+| [Training data poisoning](../threats/training-data-poisoning.md)                         | Standard  | Baseline risk, no architecture-specific amplifier                                                   |

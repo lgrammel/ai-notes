@@ -4,9 +4,7 @@ The eval-reality gap is the disconnect between strong [eval](../concepts/evals.m
 
 ## Details
 
-One explanation is that [RL](../concepts/reinforcement-learning.md) environment design is inadvertently shaped by evals: teams create training environments inspired by the benchmarks they want to perform well on, producing models that are highly specialized for eval-like distributions. This is compounded by inadequate generalization - because models do not transfer skills robustly, narrow RL training on benchmark-like tasks does not translate into broad real-world capability, even when the underlying knowledge is present.
-
-The analogy is two students: one who practiced 10,000 hours of competitive programming (memorized all proof techniques and algorithms, became one of the best) versus one who practiced 100 hours but has an intuitive "it" factor. The first student is the current model - heavily optimized for the benchmark distribution - while the second represents what robust generalization would look like. The 10,000-hour student's preparation does not necessarily transfer to a career building real software, just as a model trained on every competitive programming problem does not necessarily maintain a real codebase without oscillating between bugs.
+One explanation is that [RL](../concepts/reinforcement-learning.md) environment design is inadvertently shaped by evals: teams create training environments inspired by the benchmarks they want to perform well on, producing models that are highly specialized for eval-like distributions. This is compounded by inadequate generalization - because models do not transfer skills robustly, narrow RL training on benchmark-like tasks does not translate into broad real-world capability, even when the underlying knowledge is present. A model trained on every competitive programming problem does not necessarily maintain a real codebase without oscillating between bugs.
 
 This is a form of systemic [reward hacking](../concepts/reward-hacking.md): not the model exploiting its reward signal, but the human researchers inadvertently optimizing the training pipeline for eval scores rather than real-world performance.
 
@@ -19,7 +17,7 @@ This is a form of systemic [reward hacking](../concepts/reward-hacking.md): not 
 ## Counterarguments
 
 - The gap may be transient rather than structural. As [benchmarks](../concepts/benchmarks.md) improve (more diverse, more realistic, harder to overfit) and training pipelines mature, the disconnect between eval scores and real-world performance may narrow without requiring a fundamentally different approach to generalization. Previous generation gaps (e.g., early ImageNet overfitting) did close over time.
-- The "two students" analogy may misattribute the cause. Poor real-world performance could reflect insufficient scale, training data gaps, or inadequate [post-training](../concepts/post-training.md) rather than a fundamental generalization failure. Models that score well on benchmarks may also perform well in deployment once the deployment environment is better understood and the right [context engineering](../concepts/context-engineering.md) is applied.
+- Poor real-world performance could reflect insufficient scale, training data gaps, or inadequate [post-training](../concepts/post-training.md) rather than a fundamental generalization failure. Models that score well on benchmarks may also perform well in deployment once the deployment environment is better understood and the right [context engineering](../concepts/context-engineering.md) is applied.
 - The framing implies that benchmark optimization is wasted effort, but benchmarks remain one of the few standardized signals available for model comparison. The alternative - evaluating every model on bespoke real-world tasks - is expensive and does not scale. The practical solution may be better benchmarks rather than abandoning benchmark-driven development.
 
 ## External references

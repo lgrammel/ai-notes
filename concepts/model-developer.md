@@ -1,10 +1,10 @@
 # Model Developer
 
-An organization that develops [LLM](./llm.md) weights via [pretraining](./pretraining.md) and/or [post-training](./post-training.md) (for example [fine-tuning](./fine-tuning.md), preference-based alignment, or [distillation](./distillation.md)). The resulting models can be proprietary or open-weight.
+An organization that develops [LLM](./llm.md) weights via [pretraining](./pretraining.md) and/or [post-training](./post-training.md) (for example [fine-tuning](./fine-tuning.md), preference-based alignment, or [distillation](./distillation.md)). The resulting models can be proprietary or [open-weight](./open-weight-model.md).
 
 ## Details
 
-A model developer is distinct from an [inference provider](./inference-provider.md), which serves existing models via API, and from an application developer, which integrates models into end-user products. Model developers may distribute models directly (for example, releasing weights) and/or partner with an [inference provider](./inference-provider.md) to serve them via API.
+A model developer is distinct from an [inference provider](./inference-provider.md), which serves existing models via API, and from an application developer, which integrates models into end-user products. Model developers may distribute models directly as [open-weight models](./open-weight-model.md) and/or partner with an [inference provider](./inference-provider.md) to serve them via API.
 
 ## Examples
 

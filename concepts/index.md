@@ -76,6 +76,7 @@
 - [RLHF](./rlhf.md)
 - [Sampling Parameters](./sampling-parameters.md)
 - [Sandbox](./sandbox.md)
+- [Semantic Caching](./semantic-caching.md)
 - [Shell Tool](./shell-tool.md)
 - [Skill](./skill.md)
 - [Small Language Model](./small-language-model.md)

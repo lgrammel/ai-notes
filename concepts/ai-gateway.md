@@ -4,7 +4,7 @@ A service layer between an application/[agent](./agent.md) and one or more [mode
 
 ## Details
 
-Unlike a generic API gateway, an AI gateway is model-aware: it supports token-based [rate limiting](./rate-limiting.md), [model routing](./model-routing.md), [prompt caching](./prompt-caching.md), and LLM-specific [observability](./observability.md). Typical capabilities include [model routing](./model-routing.md) (model selection, fallbacks), unified auth and key management, [rate limiting](./rate-limiting.md)/[quotas](./quota-management.md), retries/timeouts, cost controls, caching, and logging/metrics (often with PII redaction).
+Unlike a generic API gateway, an AI gateway is model-aware: it supports token-based [rate limiting](./rate-limiting.md), [model routing](./model-routing.md), [prompt caching](./prompt-caching.md), and LLM-specific [observability](./observability.md). Typical capabilities include [model routing](./model-routing.md) (model selection, fallbacks), unified auth and key management, [rate limiting](./rate-limiting.md)/[quotas](./quota-management.md), retries/timeouts, cost controls, caching (including [semantic caching](./semantic-caching.md) for returning stored responses to semantically similar queries), and logging/metrics (often with PII redaction).
 
 ## Examples
 

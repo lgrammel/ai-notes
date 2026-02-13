@@ -1,6 +1,6 @@
 # Prompt Caching
 
-Prompt caching is a provider-side optimization that stores the intermediate computation (KV-cache) produced during the prefill phase of [inference](./inference.md), so that subsequent requests sharing the same [token](./token.md)-level prefix can skip redundant processing and begin generation from the cached state.
+Prompt caching is a provider-side optimization that stores the intermediate computation (KV-cache) produced during the prefill phase of [inference](./inference.md), so that subsequent requests sharing the same [token](./token.md)-level prefix can skip redundant processing and begin generation from the cached state. Unlike [semantic caching](./semantic-caching.md), which matches queries by embedding similarity and returns stored responses without invoking the model, prompt caching still runs inference but reduces the cost and latency of the prefill phase.
 
 ## Details
 

@@ -10,7 +10,7 @@ Sampling parameter choices affect output quality, diversity, and reliability. Lo
 
 ## Examples
 
-- Setting temperature to 0 for deterministic [tool](./tools.md) call generation in an [agent](./agent.md) system.
+- Setting temperature to 0 for near-deterministic [tool](./tools.md) call generation in an [agent](./agent.md) system (GPU floating-point non-determinism means identical prompts may occasionally produce slightly different outputs even at temperature 0).
 - Using top-p of 0.9 with moderate temperature for creative writing tasks.
 - Lowering temperature during [evals](./evals.md) to reduce variance across runs and produce more comparable results.
 

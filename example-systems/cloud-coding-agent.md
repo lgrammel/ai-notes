@@ -1,6 +1,6 @@
 # Cloud Coding Agent
 
-A [cloud coding agent](../concepts/cloud-coding-agent.md) system runs autonomously in a remote [sandboxed](../concepts/sandbox.md) environment, receiving tasks through issue trackers, chat interfaces, or APIs, and producing pull requests for human review - shifting the trust model from real-time approval of individual actions to post-hoc review of committed output.
+A cloud [coding agent](../concepts/coding-agent.md) system runs autonomously in a remote [sandboxed](../concepts/sandbox.md) environment, receiving tasks through issue trackers, chat interfaces, or APIs, and producing pull requests for human review - shifting the trust model from real-time approval of individual actions to post-hoc review of committed output.
 
 ## Details
 

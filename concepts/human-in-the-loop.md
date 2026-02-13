@@ -12,7 +12,7 @@ Human-in-the-loop acts as a system-level [guardrail](./guardrail.md): it catches
 
 ## Examples
 
-- A [local coding agent](./local-coding-agent.md) working in a pair-programming model where the developer reviews each proposed change before it is applied.
+- A local [coding agent](./coding-agent.md) working in a pair-programming model where the developer reviews each proposed change before it is applied.
 - A content generation pipeline where a human editor reviews and approves agent-drafted articles before publication.
 - A [multi-agent system](./multi-agent-system.md) that escalates to a human operator when agents disagree or encounter ambiguous instructions.
 - A customer support agent that handles routine queries autonomously but routes complex or sensitive cases to a human representative.

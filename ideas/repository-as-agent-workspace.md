@@ -15,7 +15,7 @@ The shift from single-agent to multi-agent repository use surfaces new challenge
 - A coding agent opens a feature branch, a linting agent auto-fixes style issues on the same branch, and a review agent evaluates the combined diff before a human merges.
 - A security agent continuously scans the main branch for vulnerabilities, while separate coding agents work on feature branches, with findings fed back as issues that other agents pick up.
 - A documentation agent monitors merged pull requests and automatically updates API docs and changelogs based on code changes it reads from the repository.
-- Multiple [cloud coding agents](../concepts/cloud-coding-agent.md) work on separate issues in parallel on isolated branches of the same repository, with an orchestration layer managing merge order and conflict resolution.
+- Multiple cloud [coding agents](../concepts/coding-agent.md) work on separate issues in parallel on isolated branches of the same repository, with an orchestration layer managing merge order and conflict resolution.
 - A [dark software factory](./dark-software-factory.md) where implementation agents, test agents, and validation agents all operate on the same repository, with branches and commits serving as the handoff mechanism between writing code, running scenarios, and reporting satisfaction metrics.
 
 ## Counterarguments

@@ -1,6 +1,6 @@
 # Cloud Agents as Org Capacity
 
-The idea that [cloud coding agents](../concepts/cloud-coding-agent.md) represent organizational capacity rather than individual developer tooling, making them fundamentally different from [local coding agents](../concepts/local-coding-agent.md) in how they scale, integrate, and create value.
+The idea that cloud [coding agents](../concepts/coding-agent.md) represent organizational capacity rather than individual developer tooling, making them fundamentally different from local coding agents in how they scale, integrate, and create value.
 
 ## Details
 

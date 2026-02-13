@@ -4,7 +4,7 @@ A sandbox service is a hosted service (usually exposed via an API) that provisio
 
 ## Details
 
-Sandbox services typically add lifecycle management (create/destroy, pooling), prebuilt images/templates, workspace mounting/sync, secrets injection, network controls, timeouts/quotas, snapshotting, and [observability](./observability.md) hooks.
+Sandbox services typically add lifecycle management (create/destroy, pooling), prebuilt images/templates, workspace mounting/sync, secrets injection, network controls, timeouts/[quotas](./quota-management.md), snapshotting, and [observability](./observability.md) hooks.
 
 They are commonly used to run remote [filesystem agents](./filesystem-agent.md) that need a longer-lived project directory and controlled tool execution.
 

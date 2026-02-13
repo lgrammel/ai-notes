@@ -14,7 +14,7 @@ Effective guardrail strategies are typically layered: no single guardrail is suf
 - An input classifier that detects and blocks [prompt injection](../threats/prompt-injection.md) attempts before they reach the model
 - An output filter that scans model responses for PII or policy-violating content before returning them to the user
 - [Tool execution approval](./tool-execution-approval.md) requiring human confirmation for high-risk agent actions
-- Rate limiting and resource caps that prevent [denial of service](../threats/denial-of-service.md) in agent systems
+- [Rate limiting](./rate-limiting.md) and resource caps that prevent [denial of service](../threats/denial-of-service.md) in agent systems
 
 ## Synonyms
 

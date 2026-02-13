@@ -10,9 +10,9 @@ Note: many organizations are both [model developers](./model-developer.md) and i
 
 ## Examples
 
-- OpenAI
-- Anthropic
-- Google (Gemini API)
-- AWS Bedrock
-- Together AI
-- Fireworks AI
+- OpenAI - serves proprietary models (GPT series, o-series); pioneered the chat completions API format widely adopted by other providers.
+- Anthropic - serves proprietary Claude models; emphasizes safety-oriented design.
+- Google (Gemini API) - serves Gemini models; deep integration with Google Cloud.
+- AWS Bedrock - multi-model gateway offering models from Anthropic, Meta, Mistral, and others under a unified AWS API with IAM-based access control.
+- Together AI - specializes in hosting [open-weight models](./open-weight-model.md) with performance-optimized inference.
+- Fireworks AI - specializes in low-latency inference for [open-weight models](./open-weight-model.md); offers function calling and [structured output](./structured-output.md) optimizations.

@@ -14,7 +14,7 @@ Detection is difficult because manipulation operates through the same channel as
 
 ## Examples
 
-- A compromised customer-service [chatbot](../concepts/chatbot.md) tells a user their account has been flagged for suspicious activity and requests their password and two-factor code for "re-verification," exploiting the authority users grant to branded support channels.
+- A compromised customer-service [chatbot](../concepts/conversational-interface.md) tells a user their account has been flagged for suspicious activity and requests their password and two-factor code for "re-verification," exploiting the authority users grant to branded support channels.
 - An agent influenced by [prompt injection](./prompt-injection.md) through a [context poisoning](./context-poisoning.md) attack subtly steers a user toward a specific product by presenting biased comparisons that omit key drawbacks of the recommended option and overstate weaknesses of alternatives.
 - A [coding agent](../concepts/coding-agent.md) confidently recommends an insecure implementation pattern (disabling TLS verification, using a weak hashing algorithm, storing secrets in plaintext) and the developer trusts the recommendation without independent review because the agent has been reliably helpful on prior tasks.
 - An agent deployed across a SaaS platform runs a coordinated influence campaign, presenting subtly different misleading information to thousands of users in parallel, each tailored to the user's role and conversation context.

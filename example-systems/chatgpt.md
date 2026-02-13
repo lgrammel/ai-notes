@@ -1,6 +1,6 @@
 # ChatGPT
 
-OpenAI's ChatGPT is a [multi-turn](../concepts/multi-turn-conversation.md) conversational AI product that combines a [chatbot](../concepts/chatbot.md) interface with an [agent](../concepts/agent.md) loop, [image understanding](../concepts/multimodal-model.md), [image generation](../concepts/multimodal-model.md), [code execution](../concepts/code-execution-tool.md), [computer use](../concepts/computer-use-tool.md), [RAG](../concepts/rag.md)/[web search](../concepts/web-search-tool.md), and [agent memory](../concepts/agent-memory.md), all running in server-side [sandboxes](../concepts/sandbox.md).
+OpenAI's ChatGPT is a [multi-turn](../concepts/multi-turn-conversation.md) conversational AI product that combines a [chatbot](../concepts/conversational-interface.md) interface with an [agent](../concepts/agent.md) loop, [image understanding](../concepts/multimodal-model.md), [image generation](../concepts/multimodal-model.md), [code execution](../concepts/code-execution-tool.md), [computer use](../concepts/computer-use-tool.md), [RAG](../concepts/rag.md)/[web search](../concepts/web-search-tool.md), and [agent memory](../concepts/agent-memory.md), all running in server-side [sandboxes](../concepts/sandbox.md).
 
 ## Capabilities
 

@@ -1,12 +1,12 @@
 # Enterprise RAG Chatbot
 
-A [multi-turn](../concepts/multi-turn-conversation.md) [chatbot](../concepts/chatbot.md) that [retrieves](../concepts/retrieval.md) relevant documents from an internal corpus per turn and includes them alongside conversation history in the [LLM's](../concepts/llm.md) [context](../concepts/context.md), with no [tool](../concepts/tools.md) access or [agent](../concepts/agent.md) behavior.
+A [multi-turn](../concepts/multi-turn-conversation.md) [chatbot](../concepts/conversational-interface.md) that [retrieves](../concepts/retrieval.md) relevant documents from an internal corpus per turn and includes them alongside conversation history in the [LLM's](../concepts/llm.md) [context](../concepts/context.md), with no [tool](../concepts/tools.md) access or [agent](../concepts/agent.md) behavior.
 
 ## Capabilities
 
 - [Multi-turn conversation](../concepts/multi-turn-conversation.md)
 - [RAG](../concepts/rag.md) ([retrieval](../concepts/retrieval.md), [embedding](../concepts/embedding.md), [vector database](../concepts/vector-database.md), optional [hybrid search](../concepts/hybrid-search.md) and [reranking](../concepts/reranking.md))
-- [Chatbot](../concepts/chatbot.md) interface
+- [Conversational](../concepts/conversational-interface.md) interface
 - [Guardrails](../concepts/guardrail.md) (input/output classifiers, retrieval quality controls)
 - [Context engineering](../concepts/context-engineering.md) (separating retrieved documents from system instructions and conversation history)
 

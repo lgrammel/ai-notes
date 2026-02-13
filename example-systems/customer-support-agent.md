@@ -1,6 +1,6 @@
 # Customer Support Agent
 
-A customer-facing [chatbot](../concepts/chatbot.md) that combines a [multi-turn](../concepts/multi-turn-conversation.md) [agent](../concepts/agent.md) loop with [agentic RAG](../concepts/agentic-rag.md) over a knowledge base and schema-constrained business API [tools](../concepts/tools.md) that can take real-world actions (process refunds, modify orders, update accounts), with [human-in-the-loop](../concepts/human-in-the-loop.md) escalation to human agents for complex or sensitive cases.
+A customer-facing [chatbot](../concepts/conversational-interface.md) that combines a [multi-turn](../concepts/multi-turn-conversation.md) [agent](../concepts/agent.md) loop with [agentic RAG](../concepts/agentic-rag.md) over a knowledge base and schema-constrained business API [tools](../concepts/tools.md) that can take real-world actions (process refunds, modify orders, update accounts), with [human-in-the-loop](../concepts/human-in-the-loop.md) escalation to human agents for complex or sensitive cases.
 
 ## Details
 
@@ -13,7 +13,7 @@ This architecture extends the [Enterprise RAG Chatbot](./enterprise-rag-chatbot.
 - [Agentic RAG](../concepts/agentic-rag.md) (dynamic knowledge base [retrieval](../concepts/retrieval.md) via tool calls)
 - [Function calling](../concepts/tools.md) (schema-constrained business API tools: order lookup, refund processing, account modification, ticket creation, escalation routing)
 - [Human-in-the-loop](../concepts/human-in-the-loop.md) (escalation to human agents for complex/sensitive cases, approval gates for high-value actions)
-- [Chatbot](../concepts/chatbot.md) interface
+- [Conversational](../concepts/conversational-interface.md) interface
 - [Guardrails](../concepts/guardrail.md) (input/output classifiers, action authorization, PII filtering)
 - [Context engineering](../concepts/context-engineering.md) (separating customer data, conversation history, retrieved documents, system instructions)
 - [Structured output](../concepts/structured-output.md)

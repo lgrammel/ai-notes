@@ -8,7 +8,7 @@ Local coding agents ship in two form factors that share the same core architectu
 
 **CLI agents** (e.g. Claude Code) run as standalone terminal processes, making them editor-agnostic and usable in headless automation (CI/CD pipelines, scripted workflows). The developer reviews proposed actions as terminal text. A headless mode removes the [human-in-the-loop](../concepts/human-in-the-loop.md) boundary entirely, making every other defense layer load-bearing.
 
-**IDE-embedded agents** (e.g. Cursor, Windsurf) operate as a [copilot interface](../concepts/copilot-interface.md) inside the editor. IDE embedding adds capabilities absent from a CLI: rich diff views for reviewing multi-file edits, inline tab completions, background agents that work on tasks asynchronously, and multi-model routing that dispatches requests to different [LLMs](../concepts/llm.md) by task type. The richer review UX can improve human oversight quality for complex changes compared to terminal-only review, but the higher interaction surface (auto-applied suggestions, background edits) also creates more opportunities for actions to bypass deliberate review.
+**IDE-embedded agents** (e.g. Cursor, Windsurf) operate as a [copilot interface](../concepts/conversational-interface.md) inside the editor. IDE embedding adds capabilities absent from a CLI: rich diff views for reviewing multi-file edits, inline tab completions, background agents that work on tasks asynchronously, and multi-model routing that dispatches requests to different [LLMs](../concepts/llm.md) by task type. The richer review UX can improve human oversight quality for complex changes compared to terminal-only review, but the higher interaction surface (auto-applied suggestions, background edits) also creates more opportunities for actions to bypass deliberate review.
 
 Both form factors share the same trust-critical property: the agent runs with the developer's full permissions on a shared filesystem that serves simultaneously as workspace, instruction source, and attack surface.
 
@@ -24,7 +24,7 @@ Both form factors share the same trust-critical property: the agent runs with th
 - [MCP](../concepts/mcp.md) (external tool server connections)
 - [Reasoning](../concepts/reasoning.md) (extended thinking traces before tool selection and responses)
 - [Prompt compaction](../concepts/prompt-compaction.md) (context management for long sessions)
-- [Copilot interface](../concepts/copilot-interface.md) (IDE-embedded variants: rich diff review, inline completions, background agents)
+- [Copilot interface](../concepts/conversational-interface.md) (IDE-embedded variants: rich diff review, inline completions, background agents)
 
 ## Trust analysis
 

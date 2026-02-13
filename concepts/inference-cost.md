@@ -8,7 +8,7 @@ Inference cost is the monetary cost of running [LLM](./llm.md) requests, determi
 
 Cost scales with model capability: frontier models are significantly more expensive per token than [small language models](./small-language-model.md) or [distilled](./distillation.md) variants. This creates a cost-quality-[latency](./latency.md) tradeoff triangle that shapes most production architecture decisions. For a given quality target, the goal is to minimize cost and latency; for a given budget, the goal is to maximize quality.
 
-In [agent](./agent.md) systems, inference cost compounds across multi-step loops where each reasoning step, [tool](./tools.md) call interpretation, and result evaluation requires additional token generation. [Observability](./observability.md) systems track token-level cost in production to detect regressions, and [AI gateways](./ai-gateway.md) enforce cost controls such as per-request or per-user [budgets](./quota-management.md).
+In [agent](./agent.md) systems, inference cost compounds across multi-step loops where each reasoning step, [tool](./tools.md) call interpretation, and result evaluation requires additional token generation. The architectural patterns that respond to these cost pressures - [model routing](./model-routing.md), token volume reduction, tool offloading, and operational controls - are described under [token economics](./token-economics.md).
 
 ## Examples
 

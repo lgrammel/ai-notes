@@ -29,6 +29,7 @@
 - [Embedding](./embedding.md)
 - [Embedding Model](./embedding-model.md)
 - [Eval Runner](./eval-runner.md)
+- [Eval-Reality Gap](./eval-reality-gap.md)
 - [Evals](./evals.md)
 - [Filesystem Agent](./filesystem-agent.md)
 - [Fine-tuning](./fine-tuning.md)

@@ -8,7 +8,6 @@
 - [Cloud Agents as Org Capacity](./cloud-agents-as-org-capacity.md)
 - [Dark Software Factory](./dark-software-factory.md)
 - [Dependency-Free Software](./dependency-free-software.md)
-- [Eval-Reality Gap](./eval-reality-gap.md)
 - [Latent Demand Discovery](./latent-demand-discovery.md)
 - [Multi-Tenancy for AI Agents](./multi-tenancy-for-ai-agents.md)
 - [Repository as Agent Workspace](./repository-as-agent-workspace.md)

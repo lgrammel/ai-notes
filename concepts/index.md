@@ -80,6 +80,7 @@
 - [Shell Tool](./shell-tool.md)
 - [Skill](./skill.md)
 - [Small Language Model](./small-language-model.md)
+- [Speculative Decoding](./speculative-decoding.md)
 - [Streaming](./streaming.md)
 - [Structured Output](./structured-output.md)
 - [Subagent](./subagent.md)

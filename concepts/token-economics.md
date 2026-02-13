@@ -8,6 +8,8 @@ The most direct lever is [model routing](./model-routing.md): directing requests
 
 The high relative cost of [reasoning](./reasoning.md) tokens creates pressure to avoid reasoning models for tasks that do not require multi-step deduction, to cap reasoning effort via model parameters where available, or to use [distillation](./distillation.md) to bake reasoning patterns into cheaper non-reasoning models.
 
+For workloads that do not require real-time responses, [batch inference](./batch-inference.md) provides a direct cost reduction by processing requests asynchronously at discounted rates, making it a natural fit for [evals](./evals.md), [synthetic data](./synthetic-data.md) generation, and bulk classification.
+
 Token volume reduction is another recurring pattern. [Prompt compaction](./prompt-compaction.md) condenses context to use fewer input tokens. [Prompt caching](./prompt-caching.md) reduces the effective cost of repeated prefixes. Structuring prompts so that stable content (system instructions, [tool](./tools.md) definitions) sits at the front maximizes cache reuse across requests.
 
 Offloading work from inference to [tools](./tools.md) is a cost optimization with structural consequences. CPU-based computation (arithmetic, text search, data retrieval, code execution) is orders of magnitude cheaper per unit of work than GPU-based inference. An [agent](./agent.md) that delegates arithmetic to a calculator or data processing to a code execution runtime spends a small number of tokens orchestrating the tool call instead of many tokens reasoning through the answer. Tools with high savings-to-overhead ratios (the tokens saved by delegating vs. the tokens spent on tool schemas and call formatting) become permanent infrastructure.

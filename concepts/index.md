@@ -12,6 +12,7 @@
 - [AI Infrastructure](./ai-infrastructure.md)
 - [AI Workflow](./ai-workflow.md)
 - [Alignment](./alignment.md)
+- [Batch Inference](./batch-inference.md)
 - [Benchmarks](./benchmarks.md)
 - [Chatbot](./chatbot.md)
 - [Chunking](./chunking.md)

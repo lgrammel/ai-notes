@@ -1,0 +1,13 @@
+{
+  "name": "@ai-notes/lint",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check-indexes": "node scripts/check-indexes.js",
+    "check-links": "node scripts/check-links.js",
+    "check-quotes": "node scripts/check-quotes.js"
+  },
+  "devDependencies": {
+    "markdown-link-check": "^3.13.6"
+  }
+}

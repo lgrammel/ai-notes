@@ -8,8 +8,11 @@ The focus is AI engineering - the application layer of building with foundation 
 
 ## Repository structure
 
+This is a pnpm monorepo. Content directories live at the root; tooling lives under `apps/`.
+
 | Directory          | Contains                                                                   | Canonical for                      |
 | ------------------ | -------------------------------------------------------------------------- | ---------------------------------- |
+| `apps/lint/`       | Markdown linting and validation scripts                                    | Custom lint tooling                |
 | `example-systems/` | Analyses of concrete AI systems as compositions of concepts                | Trust analysis of real systems     |
 | `concepts/`        | Core term definitions (e.g. [LLMs](./concepts/llm.md), evals, fine-tuning) | Terminology and definitions        |
 | `ideas/`           | Speculative/emerging ideas, optionally attributed to external sources      | Opinion-driven or unproven ideas   |
@@ -167,7 +170,7 @@ Enforces plain ASCII characters for consistency and tooling compatibility.
 | Ellipsis character              | `...`                     |
 
 - **Manual check**: `pnpm check-quotes <file.md>`
-- **Script**: `scripts/check-quotes.js`
+- **Script**: `apps/lint/scripts/check-quotes.js`
 
 ### Link checking (check-links)
 
@@ -175,7 +178,7 @@ Validates markdown links (both relative and external). Only dead links are repor
 
 - **Check all files**: `pnpm check-links`
 - **Manual check**: `pnpm check-links <file.md>`
-- **Script**: `scripts/check-links.js`
+- **Script**: `apps/lint/scripts/check-links.js`
 - **Config**: `.markdown-link-check.json` (timeouts, retries, ignored patterns)
 
 ### Index checking (check-indexes)
@@ -183,4 +186,4 @@ Validates markdown links (both relative and external). Only dead links are repor
 Validates that each directory index (`example-systems/index.md`, `concepts/index.md`, `ideas/index.md`, `threats/index.md`) lists all `.md` files in that directory (excluding `index.md`) and that entries are sorted alphabetically by visible name.
 
 - **Check all indexes**: `pnpm check-indexes`
-- **Script**: `scripts/check-indexes.js`
+- **Script**: `apps/lint/scripts/check-indexes.js`

@@ -4,9 +4,9 @@
   "type": "module",
   "scripts": {
     "prepare": "husky",
-    "check-indexes": "node scripts/check-indexes.js",
-    "check-links": "node scripts/check-links.js *.md concepts/*.md ideas/*.md threats/*.md",
-    "check-quotes": "node scripts/check-quotes.js",
+    "check-indexes": "node apps/lint/scripts/check-indexes.js",
+    "check-links": "node apps/lint/scripts/check-links.js *.md concepts/*.md ideas/*.md threats/*.md",
+    "check-quotes": "node apps/lint/scripts/check-quotes.js",
     "lint:md": "markdownlint-cli2 \"**/*.md\" \"#node_modules\"",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
@@ -14,7 +14,6 @@
   "devDependencies": {
     "husky": "^9.1.7",
     "lint-staged": "^15.4.3",
-    "markdown-link-check": "^3.13.6",
     "markdownlint-cli2": "^0.17.2",
     "prettier": "^3.5.1"
   },
@@ -22,9 +21,9 @@
     "*.md": [
       "prettier --write",
       "markdownlint-cli2",
-      "node scripts/check-indexes.js",
-      "node scripts/check-links.js",
-      "node scripts/check-quotes.js"
+      "node apps/lint/scripts/check-indexes.js",
+      "node apps/lint/scripts/check-links.js",
+      "node apps/lint/scripts/check-quotes.js"
     ],
     "*.{js,ts,json,jsonc}": [
       "prettier --write"

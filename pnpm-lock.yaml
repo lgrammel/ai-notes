@@ -14,15 +14,18 @@ importers:
       lint-staged:
         specifier: ^15.4.3
         version: 15.5.2
-      markdown-link-check:
-        specifier: ^3.13.6
-        version: 3.14.2
       markdownlint-cli2:
         specifier: ^0.17.2
         version: 0.17.2
       prettier:
         specifier: ^3.5.1
         version: 3.8.1
+
+  apps/lint:
+    devDependencies:
+      markdown-link-check:
+        specifier: ^3.13.6
+        version: 3.14.2
 
 packages:
 

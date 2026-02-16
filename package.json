@@ -7,7 +7,7 @@
     "check-indexes": "node apps/lint/scripts/check-indexes.js",
     "check-links": "node apps/lint/scripts/check-links.js *.md concepts/*.md ideas/*.md threats/*.md",
     "check-quotes": "node apps/lint/scripts/check-quotes.js",
-    "lint:md": "markdownlint-cli2 \"**/*.md\" \"#node_modules\"",
+    "lint:md": "markdownlint-cli2 \"**/*.md\" \"#**/node_modules\"",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },

@@ -6,6 +6,7 @@
 - [Agent-Native Applications](./agent-native-applications.md)
 - [Agent-Native Code Repositories](./agent-native-code-repositories.md)
 - [Cloud Agents as Org Capacity](./cloud-agents-as-org-capacity.md)
+- [Cognitive Debt](./cognitive-debt.md)
 - [Dark Software Factory](./dark-software-factory.md)
 - [Dependency-Free Software](./dependency-free-software.md)
 - [Latent Demand Discovery](./latent-demand-discovery.md)

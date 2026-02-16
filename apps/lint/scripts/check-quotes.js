@@ -57,3 +57,5 @@ if (hasErrors) {
   console.error("\nTypography check failed. Please fix the issues above.");
   process.exit(1);
 }
+
+console.log(`Typography check passed: ${files.length} file(s) checked.`);

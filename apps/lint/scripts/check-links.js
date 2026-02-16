@@ -77,6 +77,10 @@ async function run() {
     );
     process.exit(1);
   }
+
+  console.log(
+    `Link check passed: ${checkedCount} link(s) checked across ${fileCount} file(s).`
+  );
 }
 
 run().catch((err) => {

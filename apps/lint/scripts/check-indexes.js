@@ -114,8 +114,13 @@ async function checkIndex(dir) {
 
 async function main() {
   const allErrors = [];
+  const stats = [];
 
   for (const dir of INDEX_DIRS) {
+    const indexPath = path.join(ROOT, dir, "index.md");
+    const indexContent = await fs.readFile(indexPath, "utf8");
+    const entries = parseIndexEntries(indexContent, `${dir}/index.md`);
+    stats.push({ dir, entries: entries.length });
     allErrors.push(...(await checkIndex(dir)));
   }
 
@@ -124,7 +129,10 @@ async function main() {
     process.exit(1);
   }
 
-  console.log("Index checks passed.");
+  const totalEntries = stats.reduce((sum, s) => sum + s.entries, 0);
+  console.log(
+    `Index checks passed: ${stats.length} indexes, ${totalEntries} entries (${stats.map((s) => `${s.dir}: ${s.entries}`).join(", ")}).`
+  );
 }
 
 await main();

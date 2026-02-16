@@ -2,6 +2,7 @@
 
 - [Agent](./agent.md)
 - [Agent Checkpointing](./agent-checkpointing.md)
+- [Agent Credential Management](./agent-credential-management.md)
 - [Agent Hosting Platform](./agent-hosting-platform.md)
 - [Agent Memory](./agent-memory.md)
 - [Agent Runtime](./agent-runtime.md)

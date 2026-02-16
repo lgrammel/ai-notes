@@ -1,6 +1,6 @@
 # Agent Hosting Platform
 
-A hosted platform for deploying, running, and managing [agents](./agent.md) in production - handling containerized deployment, task lifecycle, versioning, filesystem orchestration, and operational concerns (secrets, logs, environments) so teams ship agents without building custom infrastructure.
+A hosted platform for deploying, running, and managing [agents](./agent.md) in production - handling containerized deployment, task lifecycle, versioning, filesystem orchestration, and operational concerns ([secrets](./agent-credential-management.md), logs, environments) so teams ship agents without building custom infrastructure.
 
 ## Details
 

@@ -20,6 +20,7 @@ Privilege compromise differs from [tool misuse](./tool-misuse.md) in that the at
 - Least-privilege [tool](../concepts/tools.md) and credential scoping
 - Regular permission audits
 - Scoped, short-lived credentials rather than broad access tokens
+- [Credential brokering](../concepts/agent-credential-management.md) where a trusted credential manager mediates authentication so the agent never handles raw secrets
 - Runtime permission boundary enforcement that blocks actions outside the agent's intended scope
 - [Observability](../concepts/observability.md) on permission usage patterns to detect escalation attempts
 

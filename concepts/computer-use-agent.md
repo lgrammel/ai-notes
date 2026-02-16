@@ -10,7 +10,7 @@ Because the computer use tool can operate any application designed for human use
 
 Computer use agents are significantly slower and less reliable than API-based agents. Small errors (misidentifying a button, clicking the wrong coordinates) cascade through multi-step tasks, and benchmark success rates on desktop tasks remain well below human performance, with web-based tasks faring better. Performance improves with more allowed steps, suggesting a test-time scaling dynamic where the agent self-corrects through additional iterations.
 
-The broad, unstructured screen access that makes these agents flexible also amplifies the [security risks inherent in the computer use tool](./computer-use-tool.md) - on-screen [prompt injection](../threats/prompt-injection.md) can hijack agent actions across multi-step workflows where each compromised action compounds.
+The broad, unstructured screen access that makes these agents flexible also amplifies the [security risks inherent in the computer use tool](./computer-use-tool.md) - on-screen [prompt injection](../threats/prompt-injection.md) can hijack agent actions across multi-step workflows where each compromised action compounds. Authentication is a recurring challenge: these agents frequently encounter web login forms, making [agent credential management](./agent-credential-management.md) critical - particularly credential brokering patterns where the agent never directly handles secrets.
 
 ## Examples
 

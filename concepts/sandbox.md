@@ -10,7 +10,7 @@ Typical controls: per-sandbox filesystem (ephemeral or mounted workspace), read/
 
 ## Sandbox services
 
-A sandbox service is a hosted service (usually exposed via an API) that provisions and manages sandboxes on demand and provides primitives to run commands/code, read/write files, and stream logs. Sandbox services typically add lifecycle management (create/destroy, pooling), prebuilt images/templates, workspace mounting/sync, secrets injection, network controls, timeouts/[quotas](./quota-management.md), snapshotting, and [observability](./observability.md) hooks. They are commonly used to run remote [filesystem agents](./filesystem-agent.md) that need a longer-lived project directory and controlled tool execution.
+A sandbox service is a hosted service (usually exposed via an API) that provisions and manages sandboxes on demand and provides primitives to run commands/code, read/write files, and stream logs. Sandbox services typically add lifecycle management (create/destroy, pooling), prebuilt images/templates, workspace mounting/sync, [secrets injection](./agent-credential-management.md), network controls, timeouts/[quotas](./quota-management.md), snapshotting, and [observability](./observability.md) hooks. They are commonly used to run remote [filesystem agents](./filesystem-agent.md) that need a longer-lived project directory and controlled tool execution.
 
 ## Examples
 

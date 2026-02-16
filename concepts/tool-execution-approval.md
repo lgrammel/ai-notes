@@ -15,6 +15,7 @@ A common calibration heuristic crosses stakes (low/high) with reversibility (eas
 - An IDE-based [coding agent](./coding-agent.md) that requires user confirmation before executing [shell](./shell-tool.md) commands or writing to files outside the current project.
 - An agent runtime that automatically approves read-only database queries but pauses for human review before any write or delete operations.
 - A deployment agent that requires explicit approval before pushing changes to production.
+- A [credential brokering](./agent-credential-management.md) system that prompts the user each time an agent requests access to stored credentials, so the agent never handles secrets without explicit per-use approval.
 
 ## Synonyms
 

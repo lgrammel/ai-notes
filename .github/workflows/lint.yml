@@ -1,4 +1,4 @@
-name: checks
+name: lint
 
 on:
   pull_request:
@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  index-checks:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,5 +26,17 @@ jobs:
       - name: Install
         run: pnpm install --frozen-lockfile=false
 
+      - name: Check formatting
+        run: pnpm format:check
+
+      - name: Lint markdown
+        run: pnpm lint:md
+
       - name: Check indexes
         run: pnpm check-indexes
+
+      - name: Check quotes
+        run: pnpm check-quotes
+
+      - name: Check links
+        run: pnpm check-links

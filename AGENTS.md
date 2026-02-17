@@ -90,6 +90,10 @@ A note is "complete" when a reader can understand the term without guessing key 
 
 When `## Details` has multiple paragraphs, try to structure them so the reader understands why each paragraph follows from what precedes it - either because it builds on the previous paragraph directly, or because an earlier framing paragraph has set up the topics that follow.
 
+### Conceptual boundaries
+
+When defining or reviewing a concept, verify that every mechanism or property attributed to it actually belongs to that concept - not to a related but distinct one. Key test: if concept A is defined partly by contrast with concept B (e.g. workflows vs agents), the definition of A should not use primitives that are specific to B. For example, "tools" describes LLM-chosen actions in an agent loop; workflows use developer-defined programmatic logic, not tool invocations.
+
 ## Concept notes
 
 Concept notes live in `concepts/` and define core terms. Keep them **concise**, **complete**, **definition-first**, and **linked** to related concepts. All concept notes start with an executive summary paragraph, followed by an optional `## Details` section for additional context.

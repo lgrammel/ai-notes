@@ -9,7 +9,7 @@ The runtime is the infrastructure and orchestration layer, distinct from the [ag
 ## Examples
 
 - A local agent runner embedded in an IDE that can edit files and run [shell](./shell-tool.md) commands (a [filesystem agent](./filesystem-agent.md)).
-- A hosted service that executes agent loops and [AI workflows](./ai-workflow.md) and manages tool credentials and [rate limits](./rate-limiting.md).
+- A hosted service that executes agent loops and manages tool credentials and [rate limits](./rate-limiting.md).
 - An agent framework/runtime library that provides a state machine, tool calling, and [checkpointing](./agent-checkpointing.md).
 
 ## Synonyms

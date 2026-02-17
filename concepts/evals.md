@@ -8,7 +8,7 @@ Eval approaches include automated metrics (exact match, similarity scores), [mod
 
 Evals are commonly built from real user traffic and failure cases surfaced by [observability](./observability.md) telemetry, and they are often used as release gates when changing [prompts](./prompt.md), tools, [LLMs](./llm.md), or [infrastructure](./ai-infrastructure.md). An [eval runner](./eval-runner.md) is the software component that orchestrates eval execution end-to-end.
 
-Evals can inadvertently shape [reinforcement learning](./reinforcement-learning.md) training targets when teams design training environments to match the [benchmarks](./benchmarks.md) they want to score well on, creating a feedback loop that inflates benchmark scores without improving real-world utility (see [eval-reality gap](./eval-reality-gap.md)). This is a form of systemic [reward hacking](./reward-hacking.md) that operates at the pipeline level rather than the model level.
+Eval distributions can inadvertently influence [reinforcement learning](./reinforcement-learning.md) training when teams design training environments to match the [benchmarks](./benchmarks.md) they want to perform well on, creating a feedback loop that inflates benchmark scores without improving real-world utility (see [eval-reality gap](./eval-reality-gap.md) and [reward hacking](./reward-hacking.md)).
 
 ## Examples
 

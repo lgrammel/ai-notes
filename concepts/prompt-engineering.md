@@ -4,7 +4,7 @@ Prompt engineering is the practice of crafting and iterating on the instructions
 
 ## Details
 
-Techniques include writing clear system instructions, selecting and ordering [in-context learning](./in-context-learning.md) examples (few-shot prompting), specifying output format constraints ([structured output](./structured-output.md)), chain-of-thought elicitation for improved [reasoning](./reasoning.md), and adjusting [sampling parameters](./sampling-parameters.md) such as temperature.
+Techniques include writing clear system instructions, selecting and ordering [in-context learning](./in-context-learning.md) examples (few-shot prompting), specifying output format constraints ([structured output](./structured-output.md)), and chain-of-thought elicitation for improved [reasoning](./reasoning.md). [Sampling parameters](./sampling-parameters.md) such as temperature are a complementary inference-time lever often tuned alongside prompt iteration, but operate outside the prompt itself.
 
 Prompt engineering focuses on what the developer directly writes in the [prompt template](./prompt-template.md). [Context engineering](./context-engineering.md) is a broader practice that encompasses prompt engineering but extends to the full lifecycle of all context sources: [retrieval](./retrieval.md), ranking, [prompt compaction](./prompt-compaction.md), [memory](./agent-memory.md) management, tool-output formatting, and context-budget allocation under a given [context size](./context.md). As LLM applications grew from single-turn completions to [agent](./agent.md)-based systems with dynamic context from tools, documents, and multi-turn history, the term context engineering emerged to describe this expanded scope.
 

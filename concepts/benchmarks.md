@@ -1,8 +1,10 @@
 # Benchmarks
 
-Benchmarks are standardized evaluation suites (datasets, tasks, and scoring protocols) used to compare AI models or systems in a consistent way, often across teams or over time. They are a subset of [evals](./evals.md) where inputs and metrics are intentionally fixed to enable repeatable, apples-to-apples comparisons. Open-ended benchmarks (e.g., MT-Bench, AlpacaEval) increasingly use [model-as-a-judge](./model-as-a-judge.md) scoring where fixed-answer evaluation is impractical.
+Benchmarks are standardized evaluation suites (datasets, tasks, and scoring protocols) used to compare AI models or systems in a consistent way, often across teams or over time. They are a subset of [evals](./evals.md) where inputs and metrics are intentionally fixed to enable repeatable, apples-to-apples comparisons.
 
 ## Details
+
+Open-ended benchmarks (e.g., MT-Bench, AlpacaEval) increasingly use [model-as-a-judge](./model-as-a-judge.md) scoring where fixed-answer evaluation is impractical.
 
 Benchmarks are often published with leaderboards, which can create incentives to optimize for benchmark-specific distributions rather than real-world performance (see [eval-reality gap](./eval-reality-gap.md)). They can also be compromised by data contamination (benchmark examples leaking into [training](./training.md) data) or metric gaming - a form of [reward hacking](./reward-hacking.md) where [LLM](./llm.md) developers or [reinforcement learning](./reinforcement-learning.md) pipelines optimize for benchmark scores rather than genuine capability.
 

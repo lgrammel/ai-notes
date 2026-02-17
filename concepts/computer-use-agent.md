@@ -4,7 +4,7 @@ An [agent](./agent.md) that uses a [computer use tool](./computer-use-tool.md) a
 
 ## Details
 
-Computer use agents run the [computer use tool's](./computer-use-tool.md) screenshot-action loop as the dominant capability in a standard [tool](./tools.md)-using agent loop. Many augment GUI interaction with supplementary tools like [shell](./shell-tool.md) (bash) and text editor tools, or a [code execution tool](./code-execution-tool.md), for tasks where direct file or command-line access is more efficient than navigating a GUI.
+The [agent](./agent.md) loop centers on the [computer use tool's](./computer-use-tool.md) screenshot-action cycle but is often augmented with supplementary tools like [shell](./shell-tool.md) (bash) and text editor tools, or a [code execution tool](./code-execution-tool.md), for tasks where direct file or command-line access is more efficient than navigating a GUI.
 
 Because the computer use tool can operate any application designed for human use, these agents are most valuable for the "long tail" of software that lacks programmatic interfaces - legacy enterprise applications, complex web workflows, and desktop software. In practice, web-based task automation (form filling, data entry, multi-step web workflows) dominates because browser environments are easier to sandbox and reproduce than full desktop environments.
 

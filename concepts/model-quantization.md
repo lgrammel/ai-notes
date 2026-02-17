@@ -4,9 +4,9 @@ Model quantization is the process of reducing the numerical precision of a model
 
 ## Details
 
-Quantization makes it practical to run large [LLMs](./llm.md) on consumer hardware or to serve them at lower [inference cost](./inference-cost.md) and [latency](./latency.md) in production. It is primarily applied to [open-weight models](./open-weight-model.md) where the weights are available for modification; proprietary API-served models may also be quantized by the [inference provider](./inference-provider.md), but this is invisible to application developers. The trade-off is a potential loss in output quality: lower-precision representations can introduce rounding errors that degrade the model's capabilities, particularly on tasks requiring nuanced reasoning. The severity of this trade-off depends on the quantization method (post-training quantization vs. quantization-aware [training](./training.md)), the target precision, and the model size - larger models tend to be more robust to quantization.
+The trade-off is a potential loss in output quality: lower-precision representations can introduce rounding errors that degrade the model's capabilities, particularly on tasks requiring nuanced reasoning. The severity depends on the quantization method (post-training quantization vs. quantization-aware [training](./training.md)), the target precision, and the model size - larger models tend to be more robust to quantization.
 
-Combined with [distillation](./distillation.md), quantization is a primary technique for making large models deployable in resource-constrained settings. [Inference providers](./inference-provider.md) commonly apply quantization to reduce serving costs while maintaining acceptable quality.
+Quantization is primarily applied to [open-weight models](./open-weight-model.md) where the weights are available for modification; proprietary API-served models may also be quantized by the [inference provider](./inference-provider.md), but this is invisible to application developers. Combined with [distillation](./distillation.md), quantization is a primary technique for deploying large models in resource-constrained settings.
 
 ## Examples
 

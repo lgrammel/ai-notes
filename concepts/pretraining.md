@@ -4,7 +4,7 @@ Pretraining is large-scale [training](./training.md) of a model on broad data to
 
 ## Details
 
-Pretraining establishes broad capabilities; later [post-training](./post-training.md) phases such as [fine-tuning](./fine-tuning.md) and [reinforcement learning](./reinforcement-learning.md) adapt the model to specific tasks, formats, or policies. Some workflows continue training an existing model on additional broad or domain data using the same pretraining objective ("continued pretraining"), which is often contrasted with fine-tuning even though both update weights.
+Later [post-training](./post-training.md) phases such as [fine-tuning](./fine-tuning.md) and [reinforcement learning](./reinforcement-learning.md) adapt the base model to specific tasks, formats, or policies. Some workflows continue training an existing model on additional broad or domain data using the same pretraining objective ("continued pretraining"), which is often contrasted with fine-tuning even though both update weights.
 
 ## Synonyms
 

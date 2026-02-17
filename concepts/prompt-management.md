@@ -1,6 +1,6 @@
 # Prompt Management
 
-Prompt management is the practice of treating [prompts](./prompt.md) - whether authored as [prompt templates](./prompt-template.md) or assembled dynamically - as versioned, testable artifacts with their own lifecycle: versioning, testing, deploying, and monitoring them systematically rather than embedding them as hard-coded strings in application code.
+Prompt management is the practice of treating [prompts](./prompt.md) - whether authored as [prompt templates](./prompt-template.md) or assembled dynamically - as versioned, testable artifacts with their own lifecycle. It replaces hard-coded prompt strings in application code with systematic versioning, testing, deployment, and monitoring.
 
 ## Details
 

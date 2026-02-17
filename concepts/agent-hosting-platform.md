@@ -4,7 +4,7 @@ A hosted platform for deploying, running, and managing [agents](./agent.md) in p
 
 ## Details
 
-Agent hosting platforms manage the operational lifecycle of the [agent runtime](./agent-runtime.md), which is the software layer executing the agent loop. They build on [sandbox services](./sandbox.md), which provide isolated execution environments. Where a sandbox service provisions an environment and an inference provider handles model calls, an agent hosting platform manages deployment, version management, task routing, filesystem mounting, and production tooling (rollbacks, preview environments, [observability](./observability.md)).
+They sit above [sandbox services](./sandbox.md) (which provision isolated execution environments) and [inference providers](./inference-provider.md) (which handle model calls): the hosting platform adds deployment, version management, task routing, filesystem mounting, and production tooling (rollbacks, preview environments, [observability](./observability.md)) around the [agent runtime](./agent-runtime.md).
 
 Common capabilities include containerized agent packaging (typically Docker), event-based task lifecycle handlers (create/event/complete), per-task filesystem configuration with read/write controls, in-flight task migration across agent versions, [agent checkpointing](./agent-checkpointing.md), built-in messaging layers with persistence and streaming, and multi-tenant namespace isolation for B2B use cases.
 

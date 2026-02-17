@@ -10,7 +10,7 @@ Skills are a [context engineering](./context-engineering.md) mechanism: rather t
 
 An open Agent Skills standard defines a portable skill format that works across multiple [coding agents](./coding-agent.md) and IDEs. Skill repositories such as skills.sh aggregate and rank skills by installation telemetry.
 
-## Skill repositories
+### Skill repositories
 
 A skill repository is a directory or registry that aggregates, indexes, and distributes skills for AI agents. Skill repositories allow developers to discover, share, and install community-authored or vendor-provided skills across multiple [agent runtimes](./agent-runtime.md) and [coding agents](./coding-agent.md) using a single installation command. They typically track installation counts, surface trending or popular skills through leaderboards, and organize entries by category (e.g., frontend best practices, deployment, testing). Skills are often sourced from GitHub repositories and referenced by an `owner/repo` identifier. Installation pulls the skill's markdown files and supporting resources into a local project or user directory where the agent runtime can discover them.
 

@@ -178,6 +178,14 @@ Enforces plain ASCII characters for consistency and tooling compatibility.
 - **Manual check**: `pnpm check-quotes <file.md>`
 - **Script**: `apps/lint/scripts/check-quotes.js`
 
+### Structure checking (check-structure)
+
+Validates note structure against type-specific rules: kebab-case filenames, H1 title on line 1, executive summary present, correct section ordering, no unexpected sections, H3 subsections only under Details, no links in Synonyms, and external-only URLs in External references.
+
+- **Check all files**: `pnpm check-structure`
+- **Manual check**: `pnpm check-structure <file.md>`
+- **Script**: `apps/lint/scripts/check-structure.js`
+
 ### Link checking (check-links)
 
 Validates markdown links (both relative and external). Only dead links are reported, with file path, URL, and HTTP status.

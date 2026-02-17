@@ -7,6 +7,7 @@
     "check-indexes": "node apps/lint/scripts/check-indexes.js",
     "check-links": "node apps/lint/scripts/check-links.js *.md concepts/*.md ideas/*.md threats/*.md example-systems/*.md",
     "check-quotes": "node apps/lint/scripts/check-quotes.js *.md concepts/*.md ideas/*.md threats/*.md example-systems/*.md",
+    "check-structure": "node apps/lint/scripts/check-structure.js concepts/*.md ideas/*.md threats/*.md example-systems/*.md",
     "lint:md": "markdownlint-cli2 \"**/*.md\" \"#**/node_modules\"",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
@@ -23,7 +24,8 @@
       "markdownlint-cli2",
       "node apps/lint/scripts/check-indexes.js",
       "node apps/lint/scripts/check-links.js",
-      "node apps/lint/scripts/check-quotes.js"
+      "node apps/lint/scripts/check-quotes.js",
+      "node apps/lint/scripts/check-structure.js"
     ],
     "*.{js,ts,json,jsonc}": [
       "prettier --write"

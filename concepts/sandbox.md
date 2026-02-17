@@ -8,7 +8,7 @@ In [agent](./agent.md) systems, a sandbox is where tools run ([shell](./shell-to
 
 Typical controls: per-sandbox filesystem (ephemeral or mounted workspace), read/write allowlists, network egress rules, CPU/memory/time limits, process isolation, and audit logs. These controls are a key mitigation for [unauthorized code execution](../threats/unauthorized-code-execution.md) and help limit the blast radius of [tool misuse](../threats/tool-misuse.md) and [persistence attacks](../threats/persistence-attacks.md).
 
-## Sandbox services
+### Sandbox services
 
 A sandbox service is a hosted service (usually exposed via an API) that provisions and manages sandboxes on demand and provides primitives to run commands/code, read/write files, and stream logs. Sandbox services typically add lifecycle management (create/destroy, pooling), prebuilt images/templates, workspace mounting/sync, [secrets injection](./agent-credential-management.md), network controls, timeouts/[quotas](./quota-management.md), snapshotting, and [observability](./observability.md) hooks. They are commonly used to run remote [filesystem agents](./filesystem-agent.md) that need a longer-lived project directory and controlled tool execution.
 

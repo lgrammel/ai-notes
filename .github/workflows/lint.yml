@@ -38,5 +38,8 @@ jobs:
       - name: Check quotes
         run: pnpm check-quotes
 
+      - name: Check structure
+        run: pnpm check-structure
+
       - name: Check links
         run: pnpm check-links

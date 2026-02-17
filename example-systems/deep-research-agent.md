@@ -4,7 +4,7 @@ A deep research agent is an [agent](../concepts/agent.md) that autonomously [sea
 
 ## Details
 
-Deep research agents accept a research query, then operate autonomously for minutes to tens of minutes: planning sub-questions, issuing multiple [web searches](../concepts/web-search-tool.md), reading retrieved pages, evaluating source quality, refining queries based on intermediate findings, and assembling a final report with citations. The research loop is [agentic RAG](../concepts/agentic-rag.md) at scale - dozens to hundreds of retrieval-evaluate-refine cycles per task, with the agent deciding when it has sufficient coverage to stop.
+Deep research agents accept a research query, then operate autonomously for minutes to tens of minutes: [planning](../concepts/planning.md) sub-questions, issuing multiple [web searches](../concepts/web-search-tool.md), reading retrieved pages, evaluating source quality, refining queries based on intermediate findings, and assembling a final report with citations. The research loop is [agentic RAG](../concepts/agentic-rag.md) at scale - dozens to hundreds of retrieval-evaluate-refine cycles per task, with the agent deciding when it has sufficient coverage to stop.
 
 The autonomous execution model distinguishes deep research from conversational web search: there is no [human-in-the-loop](../concepts/human-in-the-loop.md) during the research phase. The user provides the initial query and receives the completed report. This makes the output the only review surface - the user cannot inspect or redirect the agent mid-process, and the dozens of intermediate search-and-read steps are opaque.
 

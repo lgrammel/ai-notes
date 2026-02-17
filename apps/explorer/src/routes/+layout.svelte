@@ -28,6 +28,15 @@
       <a href="/" onclick={() => (sidebarOpen = false)}>AI Notes</a>
     </div>
 
+    <a
+      href="/graph"
+      class="sidebar-graph-link"
+      class:active={isActive("/graph")}
+      onclick={() => (sidebarOpen = false)}
+    >
+      Knowledge Graph
+    </a>
+
     {#each data.categories as category}
       <details open={isCategoryActive(category.id)}>
         <summary>

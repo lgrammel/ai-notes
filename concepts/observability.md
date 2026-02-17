@@ -14,5 +14,5 @@ In [agent](./agent.md) systems, observability is also essential for security: st
 
 - A trace viewer that links each [agent](./agent.md) reasoning step to its tool invocations, showing [latency](./latency.md) and token cost at each node.
 - A dashboard that tracks per-model [inference cost](./inference-cost.md) and [latency](./latency.md) percentiles across model versions, alerting on regressions after a provider or [prompt](./prompt.md) change.
-- A logging pipeline that captures prompt/response pairs with PII redaction, feeding flagged interactions into an [eval](./evals.md) review queue.
+- A logging pipeline that captures prompt/response pairs with [PII redaction](./pii-handling.md), feeding flagged interactions into an [eval](./evals.md) review queue.
 - An audit-trail system backed by append-only storage that records every tool call an [agent](./agent.md) executes, supporting post-incident reconstruction.

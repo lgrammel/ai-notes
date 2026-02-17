@@ -22,7 +22,7 @@ Beyond overt tool calls, data can leak through channels the application does not
 - Network-level restrictions and output filtering on [tool](../concepts/tools.md) calls
 - [Sandboxing](../concepts/sandbox.md) to limit data access and egress paths
 - [Tool execution approval](../concepts/tool-execution-approval.md) for actions that transmit data externally
-- Structured logging with field-level redaction to prevent sensitive context from appearing in error messages or log entries
+- Structured logging with field-level [PII redaction](../concepts/pii-handling.md) to prevent sensitive context from appearing in error messages or log entries
 - Minimizing information in error responses returned to the model (e.g. generic error codes instead of full stack traces)
 
 ## Synonyms

@@ -57,6 +57,7 @@
 - [Multimodal Model](./multimodal-model.md)
 - [Observability](./observability.md)
 - [Open-Weight Model](./open-weight-model.md)
+- [PII Handling](./pii-handling.md)
 - [Planning](./planning.md)
 - [Post-training](./post-training.md)
 - [Pretraining](./pretraining.md)

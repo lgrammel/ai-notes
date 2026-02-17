@@ -16,7 +16,7 @@ Customer support agents illustrate elements of the [agent-native application](..
 - [Function calling](../concepts/tools.md) (schema-constrained business API tools: order lookup, refund processing, account modification, ticket creation, escalation routing)
 - [Human-in-the-loop](../concepts/human-in-the-loop.md) (escalation to human agents for complex/sensitive cases, approval gates for high-value actions)
 - [Conversational](../concepts/conversational-interface.md) interface
-- [Guardrails](../concepts/guardrail.md) (input/output classifiers, action authorization, PII filtering)
+- [Guardrails](../concepts/guardrail.md) (input/output classifiers, action authorization, [PII filtering](../concepts/pii-handling.md))
 - [Context engineering](../concepts/context-engineering.md) (separating customer data, conversation history, retrieved documents, system instructions)
 - [Structured output](../concepts/structured-output.md)
 

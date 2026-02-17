@@ -1,6 +1,6 @@
 # AI Workflow
 
-An AI workflow is a predefined sequence of steps - typically structured as a directed acyclic graph (DAG) - that orchestrates [LLM](./llm.md) calls, [tool](./tools.md) invocations, and data transformations to accomplish a task, with the control flow fixed at design time rather than decided by a model at runtime. Workflow outputs can still be non-deterministic when steps include LLM inference.
+An AI workflow is a predefined sequence of steps - typically structured as a directed acyclic graph (DAG) - that interleaves [LLM](./llm.md) calls with programmatic logic (data retrieval, transformations, conditional branching) to accomplish a task, with the control flow fixed at design time rather than decided by a model at runtime. Workflow outputs can still be non-deterministic when steps include LLM inference.
 
 ## Details
 

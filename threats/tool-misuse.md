@@ -1,10 +1,10 @@
 # Tool Misuse
 
-Tool Misuse occurs when attackers manipulate AI [agents](../concepts/agent.md) into abusing their integrated [tools](../concepts/tools.md) through deceptive prompts or adversarial data, causing the agent to perform harmful actions while operating within its authorized permissions.
+Tool misuse occurs when attackers manipulate AI [agents](../concepts/agent.md) into abusing their integrated [tools](../concepts/tools.md) through deceptive prompts or adversarial data, causing the agent to perform harmful actions while operating within its authorized permissions.
 
 ## Details
 
-The key characteristic of tool misuse is that the agent uses tools it is legitimately allowed to use, but applies them in unintended or harmful ways. This distinguishes it from [privilege compromise](./privilege-compromise.md) (where the attacker gains unauthorized permissions) and from [unauthorized code execution](./unauthorized-code-execution.md) (where the attacker exploits code execution vulnerabilities). Tool misuse is commonly enabled by [prompt injection](./prompt-injection.md).
+Tool misuse is distinguished from [privilege compromise](./privilege-compromise.md) (where the attacker gains unauthorized permissions) and from [unauthorized code execution](./unauthorized-code-execution.md) (where the attacker exploits code execution vulnerabilities) by the fact that each action falls within the agent's authorized permissions. Tool misuse is commonly enabled by [prompt injection](./prompt-injection.md).
 
 Because each individual action falls within policy, tool misuse is difficult to detect with permission checks alone. Misuse patterns include: correct tool but wrong target (reading a sensitive file instead of the intended one), correct tool but excessive scope (querying all rows instead of one), and correct tool but harmful sequence (a series of individually benign calls that together achieve an unauthorized objective such as bulk [data exfiltration](./data-exfiltration.md)). Detection often requires behavioral [observability](../concepts/observability.md) - correlating sequences of tool calls against expected task patterns rather than checking each call in isolation.
 

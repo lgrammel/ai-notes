@@ -1,6 +1,6 @@
 # Denial of Service
 
-Denial of Service targets the computational, memory, network, and service capacities of AI [agent](../concepts/agent.md) systems to degrade performance, cause failures, or inflict financial damage.
+Denial of service targets the computational, memory, network, and service capacities of AI [agent](../concepts/agent.md) systems to degrade performance, cause failures, or inflict financial damage.
 
 ## Details
 

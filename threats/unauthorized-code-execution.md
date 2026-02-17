@@ -1,6 +1,6 @@
 # Unauthorized Code Execution
 
-Unauthorized Code Execution occurs when attackers exploit AI-generated or AI-managed execution environments to inject malicious code, trigger unintended system behaviors, or execute unauthorized scripts outside the intended [sandbox](../concepts/sandbox.md) boundaries.
+Unauthorized code execution occurs when attackers exploit AI-generated or AI-managed execution environments to inject malicious code, trigger unintended system behaviors, or execute unauthorized scripts outside the intended [sandbox](../concepts/sandbox.md) boundaries.
 
 ## Details
 

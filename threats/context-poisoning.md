@@ -1,6 +1,6 @@
 # Context Poisoning
 
-Context Poisoning involves manipulating the [context](../concepts/context.md) an AI [agent](../concepts/agent.md) operates on - workspace files, persisted memory, conversation history, retrieved documents, tool outputs, or other resources - to introduce malicious or false data that alters the agent's decisions and actions.
+Context poisoning involves manipulating the [context](../concepts/context.md) an AI [agent](../concepts/agent.md) operates on - workspace files, persisted memory, conversation history, retrieved documents, tool outputs, or other resources - to introduce malicious or false data that alters the agent's decisions and actions.
 
 ## Details
 

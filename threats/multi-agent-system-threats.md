@@ -1,6 +1,6 @@
 # Multi-Agent System Threats
 
-Multi-Agent System Threats exploit the trust relationships, delegation chains, and communication channels between AI [agents](../concepts/agent.md) in multi-agent systems to compromise coordination, escalate privileges, or subvert the system's overall goals.
+Multi-agent system threats exploit the trust relationships, delegation chains, and communication channels between AI [agents](../concepts/agent.md) in multi-agent systems to compromise coordination, escalate privileges, or subvert the system's overall goals.
 
 ## Details
 

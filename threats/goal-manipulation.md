@@ -1,6 +1,6 @@
 # Goal Manipulation
 
-Goal Manipulation exploits vulnerabilities in an AI [agent's](../concepts/agent.md) planning and goal-setting capabilities, allowing attackers to redirect the agent's objectives, alter its [reasoning](../concepts/reasoning.md) chain, or cause it to abandon its original task.
+Goal manipulation exploits vulnerabilities in an AI [agent's](../concepts/agent.md) planning and goal-setting capabilities, allowing attackers to redirect the agent's objectives, alter its [reasoning](../concepts/reasoning.md) chain, or cause it to abandon its original task.
 
 ## Details
 

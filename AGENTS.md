@@ -81,18 +81,45 @@ synonym1, synonym2.
 
 ### Concise but complete
 
-A note is "complete" when a reader can understand the term without guessing key scope details. The executive summary should stand alone as a useful definition; `## Details` expands with scope, boundaries, and variants. A good note typically covers:
+A note is "complete" when a reader can understand the term without guessing key scope details. A good note typically covers:
 
 - What it is (core definition - in the executive summary)
 - Where it applies (scope)
 - Key boundary or distinction (what it's not)
 - If relevant, the most important variants (kept minimal)
 
-When `## Details` has multiple paragraphs, try to structure them so the reader understands why each paragraph follows from what precedes it - either because it builds on the previous paragraph directly, or because an earlier framing paragraph has set up the topics that follow.
+**Executive summary.** The executive summary defines _what_ the concept is. `## Details` explains _how_ it works, _where_ it applies in detail, and _what_ distinguishes it from adjacent concepts. The summary names mechanisms at most - it does not explain them. Test: a reader who sees only the executive summary can answer what the term is, roughly where it applies, and how it differs from the most closely related concept. If parsing the summary requires understanding mechanisms or implementation details, move those to Details. If a single sentence needs multiple subordinate clauses, split into two - prefer a crisp first sentence that names the concept and its category, followed by a second that adds the key differentiator or scope.
+
+**Details paragraphs.** Each paragraph in `## Details` should serve a recognizable purpose:
+
+- _Mechanism_ - how it works at the level an AI engineer needs (not ML internals, not tutorial-level)
+- _Distinction_ - how it differs from the most commonly confused or adjacent concept
+- _Scope/boundaries_ - where it applies, where it doesn't
+- _Variants_ - important sub-types or implementation strategies when they differ meaningfully
+- _Trust/security_ - when the concept creates a specific attack surface or has defining security properties
+
+The first sentence of Details should advance beyond the executive summary, not echo it. Structure paragraphs so the reader understands why each follows from what precedes it - the most important expansion (typically mechanism or key distinction) comes first. If a paragraph makes more than 3-4 distinct claims, consider splitting it. If a paragraph primarily enumerates related concepts, either explain why each connection matters to the reader or convert it to a list under an H3 subsection - a sentence linking to 5+ concepts without explaining their relevance needs restructuring. A paragraph that exists mainly to note where the concept appears ("X is used in Y, Z, and W") should either reveal a non-obvious insight about those connections or be folded into the paragraph where the connection naturally arises.
+
+Include trust or security implications when they are defining characteristics of the concept or when it creates a specific attack surface. Place security content at the end of Details unless it is the concept's primary concern. Link to threat notes rather than repeating threat definitions.
+
+Go deep enough that an AI engineer could evaluate a tradeoff or make a build-vs-buy decision. Stop before the note becomes a tutorial or requires ML-internal knowledge to follow.
+
+**H3 subsections.** Use `###` subsections under `## Details` when a concept has distinct named sub-concepts too substantial for inline mention but not significant enough for their own note. If a variant or sub-type needs more than 2-3 sentences, it likely warrants a subsection.
 
 ### Conceptual boundaries
 
 When defining or reviewing a concept, verify that every mechanism or property attributed to it actually belongs to that concept - not to a related but distinct one. Key test: if concept A is defined partly by contrast with concept B (e.g. workflows vs agents), the definition of A should not use primitives that are specific to B. For example, "tools" describes LLM-chosen actions in an agent loop; workflows use developer-defined programmatic logic, not tool invocations.
+
+### Prose style
+
+Every sentence must add new information.
+
+- **No origin stories or etymology.** Just use the term directly.
+- **No inline attribution.** The `## External references` section handles sourcing.
+- **No redundant restatements.** Each paragraph should advance the idea, not echo the previous one.
+- **Compress repeated patterns.** Merge items that make the same structural point into one tighter statement with inline examples.
+- **No filler analogies** unless essential to understanding.
+- **Keep examples distinct.** Each example should illustrate a different facet, not repeat the same point with different nouns.
 
 ## Concept notes
 
@@ -130,17 +157,6 @@ Example system notes follow concept note conventions (including the executive su
 - `## Interaction effects` is a required section describing emergent risks from the specific combination of capabilities that are not captured by any single capability in isolation. Place it after `## Trust analysis`.
 - `## Threats` is a required section listing all applicable threats as a table with three columns: Threat (linked name), Relevance (`Primary` / `Elevated` / `Standard`), and Note (brief architecture-specific phrase). **Primary**: defining threat for this architecture, uniquely amplified by or central to this specific composition of capabilities. **Elevated**: meaningfully present due to the system's capabilities, beyond baseline foundation model risk. **Standard**: baseline risk present in any LLM system, no architecture-specific amplifier. Notes are short phrases, not full sentences. Threats already discussed in `## Trust analysis` or `## Interaction effects` need only a brief pointer, not a full re-explanation. Place it after `## Interaction effects`.
 - `## Examples` is an optional section for generic category notes (e.g., "Enterprise RAG Chatbot") to list concrete product instances. Named product notes (e.g., "Cursor") typically do not need this section. Place it after `## Threats`.
-
-### Prose style
-
-Every sentence must add new information.
-
-- **No origin stories or etymology.** Just use the term directly.
-- **No inline attribution.** The `## External references` section handles sourcing.
-- **No redundant restatements.** Each paragraph should advance the idea, not echo the previous one.
-- **Compress repeated patterns.** Merge items that make the same structural point into one tighter statement with inline examples.
-- **No filler analogies** unless essential to understanding.
-- **Keep examples distinct.** Each example should illustrate a different facet, not repeat the same point with different nouns.
 
 ## Tools
 

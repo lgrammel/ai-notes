@@ -1,6 +1,6 @@
 # Local Coding Agent
 
-A local [coding agent](../concepts/coding-agent.md) system combines a [multi-turn](../concepts/multi-turn-conversation.md) [agent](../concepts/agent.md) loop with [filesystem](../concepts/filesystem-agent.md) and [shell](../concepts/shell-tool.md) access, [subagent](../concepts/subagent.md) delegation, [human-in-the-loop](../concepts/human-in-the-loop.md) approval, [skills](../concepts/skill.md) loaded from the workspace, and [MCP](../concepts/mcp.md) tool server connections - all running unsandboxed under the developer's identity.
+A local [coding agent](../concepts/coding-agent.md) system combines a [multi-turn](../concepts/multi-turn-conversation.md) [agent](../concepts/agent.md) loop with [filesystem](../concepts/filesystem-agent.md) and [shell](../concepts/shell-tool.md) access, [subagent](../concepts/subagent.md) delegation, [human-in-the-loop](../concepts/human-in-the-loop.md) approval, [skills](../concepts/skill.md) loaded from the workspace, and [MCP](../concepts/mcp.md) tool server connections. The defining trust property is that the agent runs unsandboxed under the developer's full identity and permissions.
 
 ## Details
 

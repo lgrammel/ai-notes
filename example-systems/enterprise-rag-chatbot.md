@@ -16,9 +16,7 @@ Three input surfaces feed the prompt: system instructions (developer-controlled)
 
 Conversation history accumulates untrusted user input across turns. The user's messages influence what gets retrieved, creating an indirect path from accumulated conversation to context selection - the user can steer retrieval toward specific corpus content across turns. This means [multi-turn conversation](../concepts/multi-turn-conversation.md) and [RAG](../concepts/rag.md) interact: prior turns shape which documents enter context in subsequent turns.
 
-There is no agentic loop - retrieval follows a fixed [AI workflow](../concepts/ai-workflow.md) per turn, not an iterative agent decision. The system cannot take actions beyond generating text, which limits the blast radius of any compromise to the quality and trustworthiness of the generated output.
-
-This is one of the most common production architectures for enterprise AI applications, including customer support bots, internal knowledge assistants, and documentation chatbots.
+There is no agentic loop - retrieval follows a fixed [AI workflow](../concepts/ai-workflow.md) per turn, not an iterative agent decision. The system cannot take actions beyond generating text, which limits the blast radius of any compromise to the quality and trustworthiness of the generated output. This is one of the most common production architectures for enterprise AI applications.
 
 ## Interaction effects
 

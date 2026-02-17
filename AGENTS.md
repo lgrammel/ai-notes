@@ -88,6 +88,8 @@ A note is "complete" when a reader can understand the term without guessing key 
 - Key boundary or distinction (what it's not)
 - If relevant, the most important variants (kept minimal)
 
+When `## Details` has multiple paragraphs, try to structure them so the reader understands why each paragraph follows from what precedes it - either because it builds on the previous paragraph directly, or because an earlier framing paragraph has set up the topics that follow.
+
 ## Concept notes
 
 Concept notes live in `concepts/` and define core terms. Keep them **concise**, **complete**, **definition-first**, and **linked** to related concepts. All concept notes start with an executive summary paragraph, followed by an optional `## Details` section for additional context.

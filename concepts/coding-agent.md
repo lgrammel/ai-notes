@@ -30,7 +30,7 @@ Code review agents become increasingly important as cloud coding agents generate
 - Claude Code, a CLI-based agent that works directly on the developer's machine.
 - Devin, a cloud-native coding agent by Cognition that provides its own IDE, shell, and browser in a remote environment.
 - Cursor Background Agents, which execute asynchronously in cloud VMs while the developer continues other work.
-- Google Jules, which generates implementation plans and executes them in a cloud sandbox.
+- Google Jules, which generates implementation [plans](./planning.md) and executes them in a cloud sandbox.
 - Devin Review, which performs automated PR analysis and provides codebase-aware feedback (code review agent).
 - AI-powered review bots that comment on pull requests with bug detection, security checks, and style suggestions (code review agent).
 

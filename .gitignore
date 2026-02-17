@@ -5,6 +5,10 @@ node_modules/
 .pnpm-store/
 pnpm-debug.log*
 
+# SvelteKit
+.svelte-kit/
+build/
+
 # Editor
 .DS_Store
 *.swp

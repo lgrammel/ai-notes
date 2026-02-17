@@ -8,7 +8,7 @@ Unlike a generic API gateway, an AI gateway is model-aware: it understands token
 
 A gateway presents a unified API across multiple [inference providers](./inference-provider.md), decoupling application code from any single provider's API shape. This reduces vendor lock-in and simplifies failover, A/B testing across providers, and migration to [open-weight models](./open-weight-model.md) or self-hosted deployments - the application switches models by changing a routing configuration rather than rewriting integration code.
 
-The operational control surface - unified auth and key management, [quota management](./quota-management.md), cost controls, PII redaction, retries/timeouts, and logging/metrics - becomes critical as the number of models and consuming teams grows, centralizing policies that would otherwise be duplicated across every service that calls a model.
+The operational control surface - unified auth and key management, [quota management](./quota-management.md), cost controls, [PII handling](./pii-handling.md), retries/timeouts, and logging/metrics - becomes critical as the number of models and consuming teams grows, centralizing policies that would otherwise be duplicated across every service that calls a model.
 
 ## Examples
 

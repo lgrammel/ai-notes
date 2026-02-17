@@ -13,7 +13,7 @@ Effective safety strategies layer these defenses: alignment can be circumvented 
 ## Examples
 
 - An input classifier that detects and blocks [prompt injection](../threats/prompt-injection.md) attempts before they reach the model
-- An output filter that scans model responses for PII or policy-violating content before returning them to the user
+- An output filter that scans model responses for [PII](./pii-handling.md) or policy-violating content before returning them to the user
 - A [structured output](./structured-output.md) constraint that limits the model to a predefined JSON schema, preventing free-form responses
 - A toxicity classifier that scores model outputs and blocks responses above a threshold
 

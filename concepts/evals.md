@@ -4,9 +4,7 @@ Evals (evaluations) are systematic tests used to measure and monitor [LLM](./llm
 
 ## Details
 
-Standardized [benchmarks](./benchmarks.md) are a subset of evals designed for repeatable comparisons, often with fixed datasets and scoring.
-
-Eval approaches include automated metrics (exact match, similarity scores), [model-as-a-judge](./model-as-a-judge.md) (using an LLM to grade outputs), and human evaluation. Evals can run offline (on curated datasets before deployment) or online (against live traffic in production).
+Eval approaches include automated metrics (exact match, similarity scores), [model-as-a-judge](./model-as-a-judge.md) (using an LLM to grade outputs), and human evaluation. Standardized [benchmarks](./benchmarks.md) are a subset of evals designed for repeatable comparisons, often with fixed datasets and scoring. Evals can run offline (on curated datasets before deployment) or online (against live traffic in production).
 
 Evals are commonly built from real user traffic and failure cases surfaced by [observability](./observability.md) telemetry, and they are often used as release gates when changing [prompts](./prompt.md), tools, [LLMs](./llm.md), or [infrastructure](./ai-infrastructure.md). An [eval runner](./eval-runner.md) is the software component that orchestrates eval execution end-to-end.
 

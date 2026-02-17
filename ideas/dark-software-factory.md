@@ -1,6 +1,6 @@
 # Dark Software Factory
 
-A dark software factory is a non-interactive software development workflow where [coding agents](../concepts/coding-agent.md) write, test, and converge code driven entirely by specifications and scenarios, with no human writing or reviewing the code. The term borrows from manufacturing's "lights-out factory" where production runs without human presence on the floor.
+A dark software factory is a non-interactive software development workflow where [coding agents](../concepts/coding-agent.md) write, test, and converge code driven entirely by specifications and scenarios, with no human writing or reviewing the code.
 
 ## Details
 

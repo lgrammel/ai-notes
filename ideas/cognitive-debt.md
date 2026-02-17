@@ -4,11 +4,11 @@ Cognitive debt is the accumulation of lost or fragmented understanding in develo
 
 ## Details
 
-The concept builds on Peter Naur's insight that a program is a theory held in developers' minds, not just its source code. When coding agents produce implementations at high velocity, developers may accept changes without building or maintaining that theory. The result is a team that can ship features but cannot explain why design decisions were made or predict how changes will interact - a state that becomes paralyzing once accumulated debt exceeds the team's capacity to reconstruct understanding.
+A program is a theory held in developers' minds, not just its source code. When coding agents produce implementations at high velocity, developers may accept changes without building or maintaining that theory. The result is a team that can ship features but cannot explain why design decisions were made or predict how changes will interact - a state that becomes paralyzing once accumulated debt exceeds the team's capacity to reconstruct understanding.
 
-Adding more agents to a project amplifies the risk by increasing coordination overhead, invisible decisions, and cognitive load - echoing Brooks' observation that adding capacity compounds communication costs. Agents can also help manage cognitive load through summaries and explanations, but the fundamental constraint is human working memory and the willingness to slow down enough to maintain understanding.
+Adding more agents to a project amplifies the risk: more concurrent contributors increase coordination overhead, create invisible decisions, and compound cognitive load. Agents can also help manage cognitive load through summaries and explanations, but the fundamental constraint is human working memory and the willingness to slow down enough to maintain understanding.
 
-Warning signs include team members hesitating to make changes for fear of unintended consequences, growing reliance on tribal knowledge held by one or two people, and a sense that the system is becoming a black box. Mitigation strategies center on deliberate slowdowns: requiring at least one human to fully understand each AI-generated change before it ships, documenting intent (why, not just what), and rebuilding shared understanding through code reviews, retrospectives, and practices like pair programming, refactoring, and [TDD](../ideas/tdd-as-agent-constraint.md).
+Warning signs include team members hesitating to make changes for fear of unintended consequences, growing reliance on tribal knowledge held by one or two people, and a sense that the system is becoming a black box. Common mitigations center on deliberate slowdowns: at least one human fully understanding each AI-generated change before it ships, documenting intent (why, not just what), and rebuilding shared understanding through code reviews, retrospectives, and practices like pair programming, refactoring, and [TDD](../ideas/tdd-as-agent-constraint.md).
 
 ## Examples
 
@@ -23,7 +23,7 @@ Warning signs include team members hesitating to make changes for fear of uninte
 
 ## Confidence
 
-**Medium.** The core observation - that velocity without understanding is unsustainable - is well-supported by decades of software engineering experience and resonates with established theory (Naur, Brooks). However, the specific claim that AI agents uniquely amplify this problem remains largely anecdotal. AI tooling could evolve to mitigate cognitive debt as effectively as it creates it, and the concept may not require a distinct term beyond existing ideas about knowledge management and documentation.
+**Medium.** The core observation - that velocity without understanding is unsustainable - is well-supported by decades of software engineering experience and resonates with established theory. However, the specific claim that AI agents uniquely amplify this problem remains largely anecdotal. AI tooling could evolve to mitigate cognitive debt as effectively as it creates it, and the concept may not require a distinct term beyond existing ideas about knowledge management and documentation.
 
 ## External references
 

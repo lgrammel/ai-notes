@@ -6,7 +6,7 @@ A multi-agent system is an architecture in which multiple [agents](./agent.md) c
 
 Agents in a multi-agent system communicate through shared state, message passing, or direct handoffs and may have different roles, [tools](./tools.md), permissions, and [LLM](./llm.md) backends.
 
-Common patterns include orchestrator-worker hierarchies (a parent agent delegates subtasks to [subagents](./subagent.md)), pipelines (agents arranged in a fixed sequence resembling an [AI workflow](./ai-workflow.md), each refining or extending the previous output), and peer-based coordination (agents negotiate or vote on decisions). The [agent runtime](./agent-runtime.md) managing a multi-agent system handles routing, delegation, and coordination alongside the standard single-agent concerns.
+Common patterns include orchestrator-worker hierarchies (a parent agent [plans](./planning.md) a task decomposition and delegates subtasks to [subagents](./subagent.md)), pipelines (agents arranged in a fixed sequence resembling an [AI workflow](./ai-workflow.md), each refining or extending the previous output), and peer-based coordination (agents negotiate or vote on decisions). The [agent runtime](./agent-runtime.md) managing a multi-agent system handles routing, delegation, and coordination alongside the standard single-agent concerns.
 
 [Context isolation](./context-isolation.md) is a common design principle: each agent or subagent operates in its own [context](./context.md) window, receiving only the information explicitly passed to it. This keeps contexts focused and limits how far a compromise can propagate.
 

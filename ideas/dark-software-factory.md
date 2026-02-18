@@ -10,9 +10,9 @@ Because agents write both implementation and tests, conventional test suites alo
 
 The repository is the single source of truth for everything agents need: specifications, architectural decisions, quality principles, and agent instructions all live as markdown files alongside the code. No external wikis, no tribal knowledge, no context that is not checked in - agents operate from a checkout alone. This makes the entire development surface text files manipulated through filesystem operations, which is tractable for current LLMs and compatible with standard version control tooling.
 
-Git provides the coordination layer. Branches isolate concurrent agent work, worktrees enable parallel execution with each agent operating on its own copy of the repository, pull requests define the review and merge boundary, and commit history provides full auditability of every agent decision.
+Git provides the coordination layer. Branches isolate concurrent agent work, each agent operates on a full repository checkout inside its own [sandbox](../concepts/sandbox.md), pull requests define the review and merge boundary, and commit history provides full auditability of every agent decision.
 
-Application [legibility](./agent-legibility.md) enables agents to validate outcomes directly. The application is made bootable per worktree so each agent operates on an isolated instance. Browser automation (Chrome DevTools Protocol) lets agents drive the UI, reproduce bugs, and verify fixes. A local [observability](../concepts/observability.md) stack exposes logs, metrics, and traces to agent queries, making prompts like "ensure no span in these critical user journeys exceeds two seconds" tractable. Each worktree's observability data is ephemeral and torn down after the task completes.
+Application [legibility](./agent-legibility.md) enables agents to validate outcomes directly. The application is made bootable so each agent can run it inside its sandbox. Browser automation (Chrome DevTools Protocol) lets agents drive the UI, reproduce bugs, and verify fixes. A local [observability](../concepts/observability.md) stack exposes logs, metrics, and traces to agent queries, making prompts like "ensure no span in these critical user journeys exceeds two seconds" tractable. Each sandbox's observability data is ephemeral and torn down after the task completes.
 
 Agent-to-agent review replaces human code review. An agent implements a change, reviews its own work locally, requests additional agent reviews, responds to feedback, and iterates until all reviewers are satisfied. Agents can squash and merge their own pull requests. Humans may review but are not required to - escalation to a human occurs only when judgment is needed. This enables single-prompt end-to-end feature development: given a task, the agent can implement, validate, open a PR, handle review feedback, detect and remediate build failures, and merge.
 
@@ -24,7 +24,7 @@ Dark software factories depend on [cloud coding agents](../example-systems/cloud
 
 - A three-engineer team produces roughly one million lines of code in five months with zero manually-written lines, averaging 3.5 PRs per engineer per day, with throughput increasing as the team grows to seven engineers.
 - A short `AGENTS.md` serves as the repository's table of contents, pointing to deeper specification sources - design documents, execution plans, architecture maps, and quality scores - enabling [progressive context disclosure](./progressive-context-disclosure.md).
-- Agents boot the application per git worktree, drive it via Chrome DevTools Protocol to reproduce bugs and validate fixes, and query a local observability stack (LogQL for logs, PromQL for metrics) to verify performance and reliability requirements.
+- Agents boot the application in their sandbox, drive it via Chrome DevTools Protocol to reproduce bugs and validate fixes, and query a local observability stack (LogQL for logs, PromQL for metrics) to verify performance and reliability requirements.
 
 ## Counterarguments
 

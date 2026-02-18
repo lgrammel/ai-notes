@@ -24,6 +24,7 @@ This has a dual-use relationship with [hallucination exploitation](../threats/ha
 - Making every hallucinated command work reduces the friction that prevents misuse. A tool that accepts every plausible-sounding invocation may also accept adversarial ones, expanding the attack surface for [prompt injection](../threats/prompt-injection.md) payloads that guess at tool interfaces.
 - Optimizing interfaces for agent expectations may degrade the experience for human users who also need to use the tool directly. If hallucination-driven naming diverges from what human users find intuitive, the tool serves agents better at the cost of human usability - a tradeoff that matters as long as humans remain direct users alongside agents.
 - The approach requires tools similar enough to well-known ones that agents produce stable, consistent hallucination patterns to follow. Truly novel tool categories - with no close analogs in training data - lack the repeated hallucination signal that forms desire paths, making the technique inapplicable precisely where interface design guidance would be most valuable.
+- Different models hallucinate differently based on their training data and fine-tuning. A tool designed around one model's desire paths - GPT-4's hallucinated flags, Claude's guessed function names - may not match another model's expectations. If the agent ecosystem is multi-model, desire paths fragment rather than converge, and the tool author must either pick a model to optimize for or maintain multiple interface variants.
 
 ## Confidence
 

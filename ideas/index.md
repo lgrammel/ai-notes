@@ -11,5 +11,6 @@
 - [Continuous Agent-Driven Refactoring](./continuous-agent-driven-refactoring.md)
 - [Dark Software Factory](./dark-software-factory.md)
 - [Open-Source Restructuring](./open-source-restructuring.md)
+- [Progressive Context Disclosure](./progressive-context-disclosure.md)
 - [Reduced Software Persistence](./reduced-software-persistence.md)
 - [TDD as Agent Constraint](./tdd-as-agent-constraint.md)

@@ -15,7 +15,7 @@ Harness engineering constrains the solution space - specific architectural patte
 ## Examples
 
 - Custom linters that enforce dependency directions between architectural layers (Types -> Config -> Repo -> Service -> Runtime -> UI), with error messages written as agent-readable remediation instructions.
-- A structured `docs/` directory treated as the system of record, with a short AGENTS.md serving as a table of contents pointing to deeper sources (see [progressive context disclosure](../ideas/agent-legibility.md)).
+- A structured `docs/` directory treated as the system of record, with a short AGENTS.md serving as a table of contents pointing to deeper sources (see [progressive context disclosure](../ideas/progressive-context-disclosure.md)).
 - Wiring browser automation (Chrome DevTools Protocol) and a local observability stack (logs via LogQL, metrics via PromQL) into the agent runtime so the agent can validate UI behavior and performance directly.
 - Recurring background agent tasks that scan for deviations from "golden principles," update quality grades per domain, and open fix-up pull requests that can be reviewed in under a minute.
 - [Evals](./evals.md) and structural tests that validate the harness itself - checking documentation freshness, cross-link integrity, and coverage of architectural rules.

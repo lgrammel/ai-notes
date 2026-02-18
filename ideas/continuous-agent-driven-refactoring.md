@@ -25,7 +25,7 @@ Continuous agent-driven refactoring differs from [cognitive debt](./cognitive-de
 
 ## Confidence
 
-**Medium.** The pattern is grounded in a concrete case study and the underlying economics are sound: continuous small corrections are cheaper than periodic large cleanups when agent throughput is high. However, the approach is demonstrated in a single team's experience with a single agent platform, and the risks of compounding automated errors through background agents are not yet well-characterized.
+**Low.** The underlying economics are sound - continuous small corrections are cheaper than periodic large cleanups when agent throughput is high. However, the approach is demonstrated in a single team's experience with a single agent platform, and the risks of compounding automated errors through background agents are not yet well-characterized. The net benefit over shifting cleanup effort to rule-authoring and automation maintenance is unproven at scale.
 
 ## External references
 

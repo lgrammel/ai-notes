@@ -1,6 +1,6 @@
 # Cognitive Debt
 
-Cognitive debt is the accumulation of lost or fragmented understanding in developers' minds as [coding agents](../concepts/coding-agent.md) generate code faster than humans can comprehend it. Unlike technical debt, which lives in the code, cognitive debt describes the erosion of the shared mental model - what the program does, how intentions were implemented, and how the system can be changed - that makes continued development possible.
+Cognitive debt is the accumulation of lost or fragmented understanding in developers' minds as [coding agents](../concepts/coding-agent.md) generate code faster than humans can comprehend it. Unlike technical debt, which lives in the code, cognitive debt describes the erosion of the shared mental model that makes continued development possible - what the program does, how intentions were implemented, and how the system can be changed.
 
 ## Details
 
@@ -27,7 +27,7 @@ Warning signs include team members hesitating to make changes for fear of uninte
 
 ## Confidence
 
-**Medium.** The core observation - that velocity without understanding is unsustainable - is well-supported by decades of software engineering experience and resonates with established theory. However, the specific claim that AI agents uniquely amplify this problem remains largely anecdotal. AI tooling could evolve to mitigate cognitive debt as effectively as it creates it, and the concept may not require a distinct term beyond existing ideas about knowledge management and documentation.
+**Low.** The core observation - that velocity without understanding is unsustainable - is well-supported by decades of software engineering experience. However, cognitive debt is difficult to measure until it becomes paralyzing, risking unfalsifiability as a framework. The specific claim that AI agents uniquely amplify this problem remains largely anecdotal, AI tooling could evolve to mitigate it as effectively as it creates it, and the concept may not require a distinct term beyond existing ideas about knowledge management and documentation.
 
 ## External references
 

@@ -14,7 +14,7 @@ Full rewrites also become feasible where humans would have given up. Rewriting a
 
 The same cost collapse applies to library dependencies. When [coding agents](../concepts/coding-agent.md) - both [local](../example-systems/local-coding-agent.md) and [cloud](../example-systems/cloud-coding-agent.md) - can produce working implementations at negligible cost, the economic rationale for importing a library weakens. Generated implementations offer full control (no opaque internals or versioning constraints), tailoring to the exact use case (no unused features or abstraction layers), and elimination of [supply chain](../threats/supply-chain-attack.md) risk. Rather than generating from scratch, agents can also extract the relevant parts from an existing library into standalone code, working from proven implementations rather than reimplementing from first principles.
 
-At scale, collapsing dependency trees points toward more self-contained applications with smaller attack surfaces, smaller package sizes, and faster boot times. If this trend materializes broadly, it compounds the disruption described in [open-source restructuring](./open-source-restructuring.md): weakened dependency economics erode the practical reason to maintain shared libraries, reinforcing the erosion of community incentives around shared code.
+At scale, collapsing dependency trees points toward more self-contained applications with smaller attack surfaces, smaller package sizes, and faster boot times. If this trend materializes broadly, the weakened economic rationale for shared libraries also has implications for the social dynamics of open-source communities (see [open-source restructuring](./open-source-restructuring.md)).
 
 ## Examples
 

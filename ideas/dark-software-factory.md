@@ -1,6 +1,6 @@
 # Dark Software Factory
 
-A dark software factory is a non-interactive software development workflow where [coding agents](../concepts/coding-agent.md) write, test, and maintain both code and specifications with no human writing or reviewing the code. Humans express intent through prompts, feature requests, bug reports, and acceptance criteria, and shape agent behavior through [harness engineering](../concepts/harness-engineering.md) - designing the environments, constraints, and feedback loops that enable agents to work reliably.
+A dark software factory is a non-interactive software development workflow where [coding agents](../concepts/coding-agent.md) write, test, and maintain both code and specifications with no human writing or reviewing the code. Humans express intent through prompts, feature requests, bug reports, and acceptance criteria, and shape agent behavior through [harness engineering](../concepts/harness-engineering.md).
 
 ## Details
 
@@ -33,6 +33,7 @@ Dark software factories depend on [cloud coding agents](../example-systems/cloud
 - Regulated environments (healthcare, finance, aviation) often mandate human sign-off on code changes. When no human has reviewed the code, accountability and legal liability are unresolved - the organization cannot point to a responsible reviewer, and regulatory frameworks that assume human oversight do not have clear analogs for agent-only development.
 - When code no human has read breaks in production, diagnosing and fixing it is difficult. Delegating debugging to agents creates a trust recursion - the same verification gap that required the dark factory model now applies to incident response. Making observability data directly legible to agents partially mitigates this (agents can query logs, metrics, and traces to diagnose issues), but each layer of agent-driven diagnosis still inherits the reliability limits of the layer it is trying to fix.
 - Human intent passes through two agent-mediated translations: from prompts and feature requests into formal specifications, and from specifications into code. Each translation can lose or distort meaning, and agents may resolve ambiguity in ways that diverge from human intent without detection until outcome verification. Harness rules can only enforce what someone anticipated, so bugs may shift from implementation errors to specification misinterpretations or enforcement gaps, trading one class of defect for another.
+- The entire approach depends on frontier model capabilities remaining at or above current levels at sustainable cost. A harness is designed around the strengths and limitations of specific models; if model capabilities regress, pricing changes dramatically, or the vendor relationship changes, the harness investment may not transfer. The organization has no fallback - it has optimized for a workflow that cannot function with weaker models, creating a strategic dependency on a capability level it does not control.
 
 ## Confidence
 

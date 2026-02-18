@@ -1,6 +1,6 @@
 # Progressive Context Disclosure
 
-Progressive context disclosure is the idea that [agent](../concepts/agent.md) instructions in a repository should follow a "map, not a manual" structure - a short, stable entry point that teaches the agent where to look, pointing to deeper structured knowledge elsewhere in the repository. This replaces front-loading all instructions in a single monolithic file.
+Progressive context disclosure is the idea that [agent](../concepts/agent.md) instructions in a repository should follow a "map, not a manual" structure: a short, stable entry point that teaches the agent where to look, pointing to deeper structured knowledge elsewhere in the repository. It replaces front-loading all instructions in a single monolithic file.
 
 ## Details
 
@@ -16,6 +16,7 @@ The pattern relates to [context engineering](../concepts/context-engineering.md)
 - The "right" depth of disclosure varies by task complexity and agent capability. A simple bug fix may not need architectural context, while a cross-cutting refactor may need most of the knowledge base. Designing a hierarchy that serves both cases well is a non-trivial information architecture problem.
 - For small repositories with limited documentation needs, maintaining a structured knowledge base with mechanical validation imposes overhead that exceeds the benefit. The monolithic approach may fail at scale but work fine for projects below a certain complexity threshold.
 - The optimal hierarchy structure will likely change as models improve and context windows grow. Heavy investment in a specific disclosure structure optimized for current agent capabilities may age poorly - a form of premature optimization at the methodology level.
+- Designing the right disclosure hierarchy requires deep system understanding and information architecture skill - deciding what belongs at the top level, how deep to go, and where to draw boundaries between documents. This is a non-trivial design problem, and the people best positioned to solve it are the same senior engineers whose time the pattern is supposed to free up.
 
 ## Confidence
 

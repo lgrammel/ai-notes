@@ -1,32 +1,62 @@
-import type { NoteSummary } from "./content";
+import { tokenize } from "./tokenize";
 
-export interface SearchResult {
-  id: string;
-  label: string;
-  notes: NoteSummary[];
+export interface SearchIndex {
+  avgDocLength: number;
+  docs: Array<{
+    category: string;
+    slug: string;
+    title: string;
+    length: number;
+    tf: Record<string, number>;
+  }>;
+  idf: Record<string, number>;
 }
 
-export interface Search {
-  search(query: string): SearchResult[];
+export interface BM25Result {
+  category: string;
+  slug: string;
+  title: string;
+  score: number;
 }
 
-export class TitleSearch implements Search {
-  private categories: SearchResult[];
+const K1 = 1.2;
+const B = 0.75;
 
-  constructor(categories: SearchResult[]) {
-    this.categories = categories;
+export class BM25Search {
+  private index: SearchIndex;
+
+  constructor(index: SearchIndex) {
+    this.index = index;
   }
 
-  search(query: string): SearchResult[] {
-    const q = query.trim().toLowerCase();
-    if (!q) return [];
-    return this.categories
-      .map((category) => ({
-        ...category,
-        notes: category.notes.filter((note) =>
-          note.title.toLowerCase().includes(q)
-        ),
-      }))
-      .filter((category) => category.notes.length > 0);
+  search(query: string): BM25Result[] {
+    const queryTerms = tokenize(query);
+    if (queryTerms.length === 0) return [];
+
+    const { avgDocLength, docs, idf } = this.index;
+    const results: BM25Result[] = [];
+
+    for (const doc of docs) {
+      let score = 0;
+      for (const term of queryTerms) {
+        const tf = doc.tf[term] ?? 0;
+        if (tf === 0) continue;
+        const termIdf = idf[term] ?? 0;
+        score +=
+          termIdf *
+          ((tf * (K1 + 1)) /
+            (tf + K1 * (1 - B + B * (doc.length / avgDocLength))));
+      }
+      if (score > 0) {
+        results.push({
+          category: doc.category,
+          slug: doc.slug,
+          title: doc.title,
+          score,
+        });
+      }
+    }
+
+    return results.sort((a, b) => b.score - a.score);
   }
 }

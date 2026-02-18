@@ -8,6 +8,7 @@
     "check-links": "tsx apps/lint/scripts/check-links.ts *.md concepts/*.md ideas/*.md threats/*.md example-systems/*.md",
     "check-quotes": "tsx apps/lint/scripts/check-quotes.ts *.md concepts/*.md ideas/*.md threats/*.md example-systems/*.md",
     "check-structure": "tsx apps/lint/scripts/check-structure.ts concepts/*.md ideas/*.md threats/*.md example-systems/*.md",
+    "index-content": "pnpm --filter @ai-notes/explorer index-content",
     "check-types": "pnpm --filter @ai-notes/explorer check && pnpm --filter @ai-notes/lint check",
     "lint:md": "markdownlint-cli2 \"**/*.md\" \"#**/node_modules\"",
     "format": "prettier --write .",

@@ -590,24 +590,45 @@ body {
   margin-bottom: 1.25rem;
 }
 
-.search-results-group {
+.search-results {
+  list-style: none;
+  padding: 0;
   max-width: var(--content-max-width);
-  margin-bottom: 1.5rem;
 }
 
-.search-results-group h2 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--color-heading);
-  margin-bottom: 0.35rem;
+.search-results li {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--color-border);
 }
 
-.search-results-group .count {
-  font-size: 0.75rem;
+.search-results a {
+  display: block;
+  padding: 0.6rem 0.25rem;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.1s;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.search-results a:hover {
+  color: var(--color-link);
+}
+
+.category-badge {
+  font-size: 0.6875rem;
   font-weight: 500;
+  padding: 0.15rem 0.5rem;
+  border-radius: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  background: var(--color-bg-hover);
   color: var(--color-text-muted);
 }
 

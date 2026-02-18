@@ -10,14 +10,14 @@ The focus is AI engineering - the application layer of building with foundation 
 
 This is a pnpm monorepo. Content directories live at the root; tooling lives under `apps/`.
 
-| Directory          | Contains                                                                   | Canonical for                      |
-| ------------------ | -------------------------------------------------------------------------- | ---------------------------------- |
-| `apps/explorer/`   | SvelteKit static site for browsing notes, graph visualization, and search  | Knowledge base browser             |
-| `apps/lint/`       | TypeScript markdown linting and validation scripts                         | Custom lint tooling                |
-| `example-systems/` | Analyses of concrete AI systems as compositions of concepts                | Trust analysis of real systems     |
-| `concepts/`        | Core term definitions (e.g. [LLMs](./concepts/llm.md), evals, fine-tuning) | Terminology and definitions        |
-| `ideas/`           | Speculative/emerging ideas, optionally attributed to external sources      | Opinion-driven or unproven ideas   |
-| `threats/`         | AI agent threat descriptions (e.g. context poisoning, tool misuse)         | Attack vectors and vulnerabilities |
+| Directory          | Contains                                                                                     | Canonical for                      |
+| ------------------ | -------------------------------------------------------------------------------------------- | ---------------------------------- |
+| `apps/explorer/`   | SvelteKit static site for browsing notes, graph visualization, and search                    | Knowledge base browser             |
+| `apps/lint/`       | TypeScript markdown linting and validation scripts (linting only, not general build tooling) | Custom lint tooling                |
+| `example-systems/` | Analyses of concrete AI systems as compositions of concepts                                  | Trust analysis of real systems     |
+| `concepts/`        | Core term definitions (e.g. [LLMs](./concepts/llm.md), evals, fine-tuning)                   | Terminology and definitions        |
+| `ideas/`           | Speculative/emerging ideas, optionally attributed to external sources                        | Opinion-driven or unproven ideas   |
+| `threats/`         | AI agent threat descriptions (e.g. context poisoning, tool misuse)                           | Attack vectors and vulnerabilities |
 
 Don't invent definitions in-line. If one is missing or unclear, **add or update a note** in the appropriate directory, then use it.
 
@@ -173,20 +173,24 @@ SvelteKit v2 with Svelte 5 (runes), Vite, TypeScript, marked (markdown rendering
 - `/[category]` - alphabetical note list for a category
 - `/[category]/[slug]` - rendered markdown note with resolved links
 - `/graph` - interactive D3 force-directed graph of all notes and their cross-references
-- `/search` - client-side title search (`Cmd+K` shortcut)
+- `/search` - client-side BM25 full-text search (`Cmd+K` shortcut)
 
 ### Key modules
 
-| File                  | Purpose                                                         |
-| --------------------- | --------------------------------------------------------------- |
-| `src/lib/content.ts`  | Reads `.md` files from the repo root at build time              |
-| `src/lib/graph.ts`    | Builds node/edge graph from internal cross-references           |
-| `src/lib/markdown.ts` | Renders markdown to HTML, rewrites relative links to app routes |
+| File                       | Purpose                                                         |
+| -------------------------- | --------------------------------------------------------------- |
+| `src/lib/content.ts`       | Reads `.md` files from the repo root at build time              |
+| `src/lib/graph.ts`         | Builds node/edge graph from internal cross-references           |
+| `src/lib/markdown.ts`      | Renders markdown to HTML, rewrites relative links to app routes |
+| `src/lib/search.ts`        | BM25 search over the pre-built index                            |
+| `src/lib/tokenize.ts`      | Shared tokenizer (used by indexer and client-side search)       |
+| `scripts/index-content.ts` | Generates `static/search-index.json` from markdown content      |
 
 ### Running
 
-- **Dev server**: `pnpm dev` (from `apps/explorer/`)
-- **Build**: `pnpm build` (produces static HTML)
+- **Dev server**: `pnpm dev` (from `apps/explorer/`; run `pnpm index-content` first to generate the search index)
+- **Build**: `pnpm build` (generates search index, then produces static HTML)
+- **Index content**: `pnpm index-content` (regenerate `static/search-index.json`)
 - **Preview**: `pnpm preview`
 - **Type check**: `pnpm check`
 

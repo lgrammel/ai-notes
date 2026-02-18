@@ -1,30 +1,41 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
   import { page } from "$app/stores";
-  import { TitleSearch, type SearchResult } from "$lib/search";
-  import type { PageData } from "./$types";
+  import { browser } from "$app/environment";
+  import { onMount } from "svelte";
+  import { BM25Search, type SearchIndex } from "$lib/search";
 
-  let { data }: { data: PageData } = $props();
+  const CATEGORY_LABELS: Record<string, string> = {
+    concepts: "Concepts",
+    ideas: "Ideas",
+    threats: "Threats",
+    "example-systems": "Example Systems",
+  };
 
-  let titleSearch = $derived(new TitleSearch(data.categories));
-
-  let query = $derived($page.url.searchParams.get("q") ?? "");
+  let query = $derived(
+    browser ? ($page.url.searchParams.get("q") ?? "") : "",
+  );
   let inputValue = $state("");
+
+  let searchIndex = $state<SearchIndex | null>(null);
+  let loading = $state(true);
+
+  onMount(async () => {
+    const response = await fetch("/search-index.json");
+    searchIndex = await response.json();
+    loading = false;
+  });
+
+  let bm25 = $derived(searchIndex ? new BM25Search(searchIndex) : null);
 
   $effect(() => {
     inputValue = query;
   });
 
   let results = $derived.by(() => {
-    if (!query.trim()) return null;
-    return titleSearch.search(query);
+    if (!query.trim() || !bm25) return null;
+    return bm25.search(query);
   });
-
-  let totalCount = $derived(
-    results
-      ? results.reduce((sum: number, cat: SearchResult) => sum + cat.notes.length, 0)
-      : 0,
-  );
 
   function handleSubmit(event: SubmitEvent): void {
     event.preventDefault();
@@ -48,32 +59,32 @@
     class="search-input"
     type="text"
     bind:value={inputValue}
-    placeholder="Search notes by title..."
+    placeholder="Search notes..."
     aria-label="Search notes"
   />
 </form>
 
-{#if results}
-  <p class="search-summary">{totalCount} {totalCount === 1 ? "result" : "results"}</p>
+{#if query && loading}
+  <p class="search-empty">Loading search index...</p>
+{:else if results !== null}
+  <p class="search-summary">
+    {results.length}
+    {results.length === 1 ? "result" : "results"}
+  </p>
 
   {#if results.length === 0}
     <p class="search-empty">No matching notes found.</p>
   {:else}
-    {#each results as category}
-      <div class="search-results-group">
-        <h2>
-          {category.label}
-          <span class="count">{category.notes.length}</span>
-        </h2>
-        <ul class="note-list">
-          {#each category.notes as note}
-            <li>
-              <a href="/{category.id}/{note.slug}">{note.title}</a>
-            </li>
-          {/each}
-        </ul>
-      </div>
-    {/each}
+    <ul class="search-results">
+      {#each results as result}
+        <li>
+          <a href="/{result.category}/{result.slug}">{result.title}</a>
+          <span class="category-badge">
+            {CATEGORY_LABELS[result.category] ?? result.category}
+          </span>
+        </li>
+      {/each}
+    </ul>
   {/if}
 {:else if !query}
   <p class="search-empty">Type a query to search across all notes.</p>

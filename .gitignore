@@ -9,6 +9,9 @@ pnpm-debug.log*
 .svelte-kit/
 build/
 
+# Generated
+apps/explorer/static/search-index.json
+
 # Editor
 .DS_Store
 *.swp

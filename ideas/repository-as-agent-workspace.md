@@ -10,6 +10,10 @@ Git's existing primitives map well to multi-agent coordination concerns: branche
 
 The shift from single-agent to multi-agent repository use surfaces new challenges. Ordering and sequencing matter: a security agent scanning a branch before a coding agent has finished its changes produces incomplete results. Conflict resolution becomes more complex when multiple agents push changes to overlapping files. Trust boundaries blur because one agent's committed code, config changes, or dependency updates become part of another agent's context - a vector for cross-agent [context poisoning](../threats/context-poisoning.md) and [persistence attacks](../threats/persistence-attacks.md). [Agent checkpointing](../concepts/agent-checkpointing.md) and branch-based isolation help contain blast radius, but the fundamental challenge is that shared mutable state (the repository) creates implicit coupling between otherwise independent agents.
 
+### Platform implications
+
+As agent-scale operations strain current code hosting platforms - high-volume API calls, parallel branch explosions, automated PR workflows - the repository-as-workspace pattern points toward platform-level redesign. An agent-native platform could offer agent-optimized storage backends for high-throughput access, automatic knowledge graphs mapping code relationships, native agent orchestration with transparent audit trails, and built-in security [guardrails](../concepts/guardrail.md) such as [sandboxed](../concepts/sandbox.md) execution. This would shift code hosting from version control into an agentic software development lifecycle platform. However, this extension is speculative: network effects strongly favor incumbents like GitHub, and the more likely near-term path is incremental addition of agent-friendly features to existing platforms rather than purpose-built replacements.
+
 ## Examples
 
 - A coding agent opens a feature branch, a linting agent auto-fixes style issues on the same branch, and a review agent evaluates the combined diff before a human merges.
@@ -23,6 +27,7 @@ The shift from single-agent to multi-agent repository use surfaces new challenge
 - Git was designed for human collaboration patterns: infrequent commits, meaningful commit messages, linear review workflows. Agent-scale operations (thousands of micro-commits, parallel branch explosions, machine-generated diffs) may strain git's data model, performance characteristics, and tooling in ways that degrade rather than enhance coordination.
 - Implicit coordination through shared mutable state is a known source of complexity in distributed systems. The note frames artifact-based coordination as "lower-friction" than explicit protocols, but decades of distributed systems experience suggest that implicit coupling through shared state produces harder-to-diagnose failures than explicit message passing. The absence of an orchestration layer is a feature only until coordination failures become difficult to trace.
 - The trust model assumes that commit provenance is sufficient for security. In practice, a committed file carries no reliable signal about whether it was produced by a trusted agent, a compromised agent, or a [prompt injection](../threats/prompt-injection.md) payload that propagated through a code review agent. Git's authorship metadata is easily spoofed and does not provide the authentication guarantees that multi-agent trust requires.
+- The assumed volume of agent operations (millions of commits/day) may not materialize for most repositories. The vast majority of codebases are small enough that current platform limits are not a constraint, and specialized agent-native infrastructure may only be justified for a small number of very large, very active projects.
 
 ## Confidence
 

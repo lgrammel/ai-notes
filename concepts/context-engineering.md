@@ -15,7 +15,7 @@ In [multi-agent systems](./multi-agent-system.md), context engineering extends t
 - Putting tool outputs in a strict schema and separating them from instructions.
 - [Skills](./skill.md) that inject task-specific instructions into an agent's context only when relevant, keeping the base prompt lean.
 - Curating the task description and inputs passed across a [context isolation](./context-isolation.md) boundary to a [subagent](./subagent.md), balancing focus against information loss.
-- Structuring repository-level agent instructions as a short entry point pointing to deeper knowledge rather than a monolithic file ([progressive context disclosure](../ideas/progressive-context-disclosure.md)).
+- Structuring repository-level agent instructions as a short entry point pointing to deeper knowledge rather than a monolithic file ([progressive context disclosure](../ideas/agent-legibility.md)).
 
 ## Synonyms
 

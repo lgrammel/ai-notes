@@ -4,11 +4,19 @@ Agent-native applications are the idea that software can be architected with [ag
 
 ## Details
 
-The architecture rests on five principles. Parity requires that the agent can achieve anything the user can do through the UI, through tools or combinations of tools. Granularity means tools are atomic primitives rather than workflow bundles; judgment about what to do belongs in the agent's reasoning, not baked into tool implementations. Composability follows from atomic tools and parity: new features can be created by writing new prompts without code changes. Emergent capability arises when agents compose tools in ways the developer did not anticipate, revealing latent demand (see [latent demand discovery](./latent-demand-discovery.md)). Improvement over time comes from accumulated context (state persists across sessions via context files) and prompt refinement at developer and user levels, without shipping code.
+The architecture rests on five principles. Parity requires that the agent can achieve anything the user can do through the UI, through tools or combinations of tools. Granularity means tools are atomic primitives rather than workflow bundles; judgment about what to do belongs in the agent's reasoning, not baked into tool implementations. Composability follows from atomic tools and parity: new features can be created by writing new prompts without code changes. Emergent capability arises when agents compose tools in ways the developer did not anticipate, revealing latent demand. Improvement over time comes from accumulated context (state persists across sessions via context files) and prompt refinement at developer and user levels, without shipping code.
 
 [Customer support agents](../example-systems/customer-support-agent.md) illustrate a partial version of this pattern: schema-constrained business API tools serve as atomic primitives, and the agent loop handles edge cases and routing decisions rather than hard-coded branching logic. [Skills](../concepts/skill.md) extend this further: each skill is a prompt-based feature the [agent runtime](../concepts/agent-runtime.md) injects when relevant, enabling new capabilities without code changes.
 
 Domain-specific tools emerge from observed usage patterns rather than upfront design: start with pure primitives (bash, file operations, basic storage), observe what the agent actually needs, and add domain tools deliberately for vocabulary anchoring, guardrails, or efficiency. Domain tools represent one conceptual action from the user's perspective, but the underlying primitives remain available for edge cases. Operations can graduate from agent-orchestrated loops to optimized code when performance demands it, while preserving the agent's ability to trigger the optimized path and fall back to primitives.
+
+### Latent demand discovery
+
+Agent-native applications can discover what features to build by observing what users ask the agent to do, inverting traditional product development from imagine-build-validate into build a capable foundation, observe, and formalize. When the agent has atomic tools and UI parity, users inevitably ask for things the developer did not anticipate. The agent either composes tools to accomplish the request or fails, revealing a gap. Both outcomes are signal: successful unanticipated requests indicate patterns worth optimizing with domain-specific tools or dedicated [prompts](../concepts/prompt.md), and failed requests expose missing tools or parity gaps.
+
+Over time, the developer adds domain tools for common patterns (making them faster and more reliable), creates dedicated prompts for frequent requests (making them more discoverable), and removes tools that are not being used. The agent becomes a research instrument for understanding what users actually need, grounded in observed behavior rather than upfront feature speculation. [Customer support agents](../example-systems/customer-support-agent.md) are a concrete instance: observing what customers ask the agent to do (and where it fails or escalates) reveals unmet support needs and missing knowledge base content.
+
+### Common anti-patterns
 
 Common approaches that fall short of agent-native:
 
@@ -23,6 +31,9 @@ Common approaches that fall short of agent-native:
 - Delegating judgment to the agent on every request trades predictability for flexibility. For production systems where consistent, auditable behavior matters (finance, healthcare, compliance), non-deterministic agent judgment is a liability rather than a feature. Many domains require that the same input always produces the same output, which agent loops cannot guarantee.
 - The framing of coded edge-case handling as an anti-pattern ignores that deterministic branches are often a regulatory or business requirement, not a limitation of imagination. "Let the agent handle it" is not an acceptable answer when the handling must be documented, repeatable, and legally defensible.
 - Atomic tools with full parity create a large, unsecured action space. The more capable the agent becomes (approaching full UI parity), the larger the [tool misuse](../threats/tool-misuse.md) and [prompt injection](../threats/prompt-injection.md) attack surface. The "defensive tool design" that the note dismisses as an anti-pattern is often a deliberate security constraint.
+- Observing what users ask an agent to do conflates demand with curiosity. Users experiment with novel interfaces, and early-adoption requests may not reflect sustained needs. Formalizing features based on exploratory usage risks building for novelty rather than durable demand.
+- The latent demand signal depends on the agent being capable enough to attempt (or clearly fail at) the requested task. If the agent silently produces poor results rather than clearly failing, the developer gets a false positive - apparent success that masks an unmet need rather than revealing one.
+- Demand discovery favors incremental feature additions within the existing tool space. It is less effective at surfacing needs that require fundamentally new capabilities the agent cannot approximate by composing existing primitives.
 
 ## Confidence
 

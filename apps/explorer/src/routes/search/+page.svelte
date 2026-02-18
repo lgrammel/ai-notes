@@ -1,11 +1,12 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
   import { page } from "$app/stores";
+  import { TitleSearch, type SearchResult } from "$lib/search";
   import type { PageData } from "./$types";
 
   let { data }: { data: PageData } = $props();
-  type SearchCategory = PageData["categories"][number];
-  type SearchNote = SearchCategory["notes"][number];
+
+  let titleSearch = $derived(new TitleSearch(data.categories));
 
   let query = $derived($page.url.searchParams.get("q") ?? "");
   let inputValue = $state("");
@@ -15,21 +16,13 @@
   });
 
   let results = $derived.by(() => {
-    const q = query.trim().toLowerCase();
-    if (!q) return null;
-    return data.categories
-      .map((category: SearchCategory) => ({
-        ...category,
-        notes: category.notes.filter((note: SearchNote) =>
-          note.title.toLowerCase().includes(q),
-        ),
-      }))
-      .filter((category: SearchCategory) => category.notes.length > 0);
+    if (!query.trim()) return null;
+    return titleSearch.search(query);
   });
 
   let totalCount = $derived(
     results
-      ? results.reduce((sum: number, cat: SearchCategory) => sum + cat.notes.length, 0)
+      ? results.reduce((sum: number, cat: SearchResult) => sum + cat.notes.length, 0)
       : 0,
   );
 

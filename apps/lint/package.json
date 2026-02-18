@@ -3,11 +3,16 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "check-indexes": "node scripts/check-indexes.js",
-    "check-links": "node scripts/check-links.js",
-    "check-quotes": "node scripts/check-quotes.js"
+    "check": "tsc --noEmit",
+    "check-indexes": "tsx scripts/check-indexes.ts",
+    "check-links": "tsx scripts/check-links.ts",
+    "check-quotes": "tsx scripts/check-quotes.ts",
+    "check-structure": "tsx scripts/check-structure.ts"
   },
   "devDependencies": {
-    "markdown-link-check": "^3.13.6"
+    "@types/node": "^24.3.1",
+    "markdown-link-check": "^3.13.6",
+    "tsx": "^4.19.2",
+    "typescript": "^5.9.2"
   }
 }

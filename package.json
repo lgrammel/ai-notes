@@ -4,11 +4,11 @@
   "type": "module",
   "scripts": {
     "prepare": "husky",
-    "check-indexes": "node apps/lint/scripts/check-indexes.js",
-    "check-links": "node apps/lint/scripts/check-links.js *.md concepts/*.md ideas/*.md threats/*.md example-systems/*.md",
-    "check-quotes": "node apps/lint/scripts/check-quotes.js *.md concepts/*.md ideas/*.md threats/*.md example-systems/*.md",
-    "check-structure": "node apps/lint/scripts/check-structure.js concepts/*.md ideas/*.md threats/*.md example-systems/*.md",
-    "check-types": "pnpm --filter @ai-notes/explorer check",
+    "check-indexes": "tsx apps/lint/scripts/check-indexes.ts",
+    "check-links": "tsx apps/lint/scripts/check-links.ts *.md concepts/*.md ideas/*.md threats/*.md example-systems/*.md",
+    "check-quotes": "tsx apps/lint/scripts/check-quotes.ts *.md concepts/*.md ideas/*.md threats/*.md example-systems/*.md",
+    "check-structure": "tsx apps/lint/scripts/check-structure.ts concepts/*.md ideas/*.md threats/*.md example-systems/*.md",
+    "check-types": "pnpm --filter @ai-notes/explorer check && pnpm --filter @ai-notes/lint check",
     "lint:md": "markdownlint-cli2 \"**/*.md\" \"#**/node_modules\"",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
@@ -18,16 +18,17 @@
     "lint-staged": "^15.4.3",
     "markdownlint-cli2": "^0.17.2",
     "prettier": "^3.5.1",
+    "tsx": "^4.19.2",
     "typescript": "^5.9.2"
   },
   "lint-staged": {
     "*.md": [
       "prettier --write",
       "markdownlint-cli2",
-      "node apps/lint/scripts/check-indexes.js",
-      "node apps/lint/scripts/check-links.js",
-      "node apps/lint/scripts/check-quotes.js",
-      "node apps/lint/scripts/check-structure.js"
+      "tsx apps/lint/scripts/check-indexes.ts",
+      "tsx apps/lint/scripts/check-links.ts",
+      "tsx apps/lint/scripts/check-quotes.ts",
+      "tsx apps/lint/scripts/check-structure.ts"
     ],
     "*.{js,ts,json,jsonc}": [
       "prettier --write"

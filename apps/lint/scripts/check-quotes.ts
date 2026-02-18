@@ -1,17 +1,14 @@
 #!/usr/bin/env node
 
-/**
- * Check markdown files for typography issues:
- * - Curly/smart quotes should be straight quotes (" ')
- * - Curly apostrophes should be straight apostrophes (')
- * - Em dashes and en dashes flagged (use - instead)
- * - Ellipsis character flagged (use ... instead)
- */
-
 import { readFileSync } from "fs";
 
-// Using Unicode escapes to ensure correct patterns regardless of file encoding
-const CHECKS = [
+interface TypographyCheck {
+  pattern: RegExp;
+  name: string;
+  replacement: string;
+}
+
+const CHECKS: TypographyCheck[] = [
   { pattern: /\u201C/g, name: "curly double quote (open)", replacement: '"' },
   { pattern: /\u201D/g, name: "curly double quote (close)", replacement: '"' },
   { pattern: /\u2018/g, name: "curly single quote (open)", replacement: "'" },
@@ -28,7 +25,7 @@ const CHECKS = [
 const files = process.argv.slice(2);
 
 if (files.length === 0) {
-  console.error("Usage: check-quotes.js <file1.md> [file2.md] ...");
+  console.error("Usage: check-quotes.ts <file1.md> [file2.md] ...");
   process.exit(1);
 }
 
@@ -42,7 +39,7 @@ for (const file of files) {
     const line = lines[lineNum];
 
     for (const check of CHECKS) {
-      let match;
+      let match: RegExpExecArray | null;
       while ((match = check.pattern.exec(line)) !== null) {
         hasErrors = true;
         console.error(

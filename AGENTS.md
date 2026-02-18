@@ -13,7 +13,7 @@ This is a pnpm monorepo. Content directories live at the root; tooling lives und
 | Directory          | Contains                                                                   | Canonical for                      |
 | ------------------ | -------------------------------------------------------------------------- | ---------------------------------- |
 | `apps/explorer/`   | SvelteKit static site for browsing notes, graph visualization, and search  | Knowledge base browser             |
-| `apps/lint/`       | Markdown linting and validation scripts                                    | Custom lint tooling                |
+| `apps/lint/`       | TypeScript markdown linting and validation scripts                         | Custom lint tooling                |
 | `example-systems/` | Analyses of concrete AI systems as compositions of concepts                | Trust analysis of real systems     |
 | `concepts/`        | Core term definitions (e.g. [LLMs](./concepts/llm.md), evals, fine-tuning) | Terminology and definitions        |
 | `ideas/`           | Speculative/emerging ideas, optionally attributed to external sources      | Opinion-driven or unproven ideas   |
@@ -226,7 +226,7 @@ Enforces plain ASCII characters for consistency and tooling compatibility.
 | Ellipsis character              | `...`                     |
 
 - **Manual check**: `pnpm check-quotes <file.md>`
-- **Script**: `apps/lint/scripts/check-quotes.js`
+- **Script**: `apps/lint/scripts/check-quotes.ts`
 
 ### Structure checking (check-structure)
 
@@ -234,7 +234,7 @@ Validates note structure against type-specific rules: kebab-case filenames, H1 t
 
 - **Check all files**: `pnpm check-structure`
 - **Manual check**: `pnpm check-structure <file.md>`
-- **Script**: `apps/lint/scripts/check-structure.js`
+- **Script**: `apps/lint/scripts/check-structure.ts`
 
 ### Link checking (check-links)
 
@@ -242,12 +242,12 @@ Validates markdown links (both relative and external). Only dead links are repor
 
 - **Check all files**: `pnpm check-links`
 - **Manual check**: `pnpm check-links <file.md>`
-- **Script**: `apps/lint/scripts/check-links.js`
+- **Script**: `apps/lint/scripts/check-links.ts`
 - **Config**: `.markdown-link-check.json` (timeouts, retries, ignored patterns)
 
 ### TypeScript checking (check-types)
 
-Runs `svelte-kit sync` and `svelte-check` on the explorer app to catch type errors.
+Runs type checks on both the explorer app (`svelte-kit sync` + `svelte-check`) and the lint app (`tsc --noEmit`).
 
 - **Check types**: `pnpm check-types`
 
@@ -256,4 +256,4 @@ Runs `svelte-kit sync` and `svelte-check` on the explorer app to catch type erro
 Validates that each directory index (`example-systems/index.md`, `concepts/index.md`, `ideas/index.md`, `threats/index.md`) lists all `.md` files in that directory (excluding `index.md`) and that entries are sorted alphabetically by visible name.
 
 - **Check all indexes**: `pnpm check-indexes`
-- **Script**: `apps/lint/scripts/check-indexes.js`
+- **Script**: `apps/lint/scripts/check-indexes.ts`

@@ -1,19 +1,12 @@
 #!/usr/bin/env node
 
-/**
- * Check markdown files for dead links.
- * Wraps markdown-link-check to produce concise, agent-friendly output:
- * - Only dead links are printed (one per line with file, URL, and status)
- * - Exits with code 1 when any dead link is found
- */
-
 import { readFileSync } from "fs";
 import { resolve, dirname } from "path";
 import { pathToFileURL } from "url";
 import markdownLinkCheck from "markdown-link-check";
 
 const configPath = resolve(process.cwd(), ".markdown-link-check.json");
-let config = {};
+let config: Record<string, unknown> = {};
 try {
   config = JSON.parse(readFileSync(configPath, "utf-8"));
 } catch {
@@ -23,7 +16,7 @@ try {
 const files = process.argv.slice(2);
 
 if (files.length === 0) {
-  console.error("Usage: check-links.js <file1.md> [file2.md] ...");
+  console.error("Usage: check-links.ts <file1.md> [file2.md] ...");
   process.exit(1);
 }
 
@@ -31,42 +24,56 @@ let deadCount = 0;
 let checkedCount = 0;
 let fileCount = 0;
 
-function checkFile(file) {
+interface LinkResult {
+  status: string;
+  statusCode?: number;
+  link: string;
+}
+
+function checkFile(file: string): Promise<void> {
   return new Promise((resolvePromise, reject) => {
-    let markdown;
+    let markdown: string;
     try {
       markdown = readFileSync(file, "utf-8");
     } catch (err) {
-      reject(new Error(`Cannot read ${file}: ${err.message}`));
+      reject(
+        new Error(
+          `Cannot read ${file}: ${err instanceof Error ? err.message : err}`
+        )
+      );
       return;
     }
 
     const baseUrl = pathToFileURL(resolve(dirname(file))) + "/";
     const opts = { ...config, baseUrl };
 
-    markdownLinkCheck(markdown, opts, (err, results) => {
-      if (err) {
-        reject(err);
-        return;
+    markdownLinkCheck(
+      markdown,
+      opts,
+      (err: Error | null, results: LinkResult[]) => {
+        if (err) {
+          reject(err);
+          return;
+        }
+
+        fileCount++;
+        const dead = results.filter((r) => r.status === "dead");
+        checkedCount += results.length;
+        deadCount += dead.length;
+
+        for (const r of dead) {
+          const status =
+            r.statusCode != null ? ` (status: ${r.statusCode})` : "";
+          console.error(`${file}: ${r.link}${status}`);
+        }
+
+        resolvePromise();
       }
-
-      fileCount++;
-      const dead = results.filter((r) => r.status === "dead");
-      checkedCount += results.length;
-      deadCount += dead.length;
-
-      for (const r of dead) {
-        const status = r.statusCode != null ? ` (status: ${r.statusCode})` : "";
-        console.error(`${file}: ${r.link}${status}`);
-      }
-
-      resolvePromise();
-    });
+    );
   });
 }
 
-// Process files sequentially to keep output grouped
-async function run() {
+async function run(): Promise<void> {
   for (const file of files) {
     await checkFile(file);
   }
@@ -83,7 +90,7 @@ async function run() {
   );
 }
 
-run().catch((err) => {
-  console.error(err.message);
+run().catch((err: unknown) => {
+  console.error(err instanceof Error ? err.message : err);
   process.exit(1);
 });

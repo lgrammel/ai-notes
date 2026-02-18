@@ -1,18 +1,5 @@
 #!/usr/bin/env node
 
-/**
- * Check markdown note structure against AGENTS.md rules:
- * - Kebab-case filenames
- * - H1 title on line 1
- * - Executive summary present (non-empty paragraph after H1, before first ##)
- * - Section ordering per note type
- * - No unexpected ## sections
- * - ### subsections only under ## Details
- * - No links in ## Synonyms
- * - Only external URLs in ## External references
- * - Type-specific required sections
- */
-
 import { readFileSync } from "fs";
 import path from "node:path";
 
@@ -25,7 +12,9 @@ const CONTENT_DIRS = new Set([
   "example-systems",
 ]);
 
-const SECTION_ORDER = {
+type NoteType = "concepts" | "ideas" | "threats" | "example-systems";
+
+const SECTION_ORDER: Record<NoteType, string[]> = {
   concepts: ["Details", "Examples", "Synonyms", "External references"],
   ideas: [
     "Details",
@@ -54,7 +43,7 @@ const SECTION_ORDER = {
   ],
 };
 
-const REQUIRED_SECTIONS = {
+const REQUIRED_SECTIONS: Record<NoteType, string[]> = {
   concepts: [],
   ideas: ["Confidence"],
   threats: [],
@@ -69,27 +58,32 @@ const REQUIRED_SECTIONS = {
 const files = process.argv.slice(2);
 
 if (files.length === 0) {
-  console.error("Usage: check-structure.js <file1.md> [file2.md] ...");
+  console.error("Usage: check-structure.ts <file1.md> [file2.md] ...");
   process.exit(1);
 }
 
 let errorCount = 0;
 let checkedCount = 0;
 
-function error(file, line, message) {
+function error(file: string, line: number | null, message: string): void {
   const loc = line != null ? `:${line}` : "";
   console.error(`${file}${loc}: ${message}`);
   errorCount++;
 }
 
-function getNoteType(file) {
+function getNoteType(file: string): NoteType | null {
   const parts = path.dirname(file).split(path.sep);
   const dirName = parts[parts.length - 1];
-  if (CONTENT_DIRS.has(dirName)) return dirName;
+  if (CONTENT_DIRS.has(dirName)) return dirName as NoteType;
   return null;
 }
 
-function checkFile(file) {
+interface Heading {
+  name: string;
+  line: number;
+}
+
+function checkFile(file: string): void {
   const fileName = path.basename(file);
 
   if (fileName === "index.md") return;
@@ -102,17 +96,14 @@ function checkFile(file) {
   const content = readFileSync(file, "utf-8");
   const lines = content.split("\n");
 
-  // Rule: Kebab-case filename
   if (!KEBAB_CASE.test(fileName)) {
     error(file, null, `Filename "${fileName}" is not kebab-case`);
   }
 
-  // Rule: H1 title on line 1
   if (lines.length === 0 || !lines[0].startsWith("# ")) {
     error(file, 1, "First line must be an H1 title (# Title)");
   }
 
-  // Rule: Executive summary present
   let firstH2Idx = lines.length;
   for (let i = 1; i < lines.length; i++) {
     if (lines[i].startsWith("## ")) {
@@ -132,9 +123,8 @@ function checkFile(file) {
     );
   }
 
-  // Parse all ## and ### headings with line numbers (1-based)
-  const h2Headings = [];
-  const h3Headings = [];
+  const h2Headings: Heading[] = [];
+  const h3Headings: Heading[] = [];
   for (let i = 0; i < lines.length; i++) {
     if (lines[i].startsWith("## ")) {
       h2Headings.push({ name: lines[i].slice(3).trim(), line: i + 1 });
@@ -147,7 +137,6 @@ function checkFile(file) {
   const allowedSet = new Set(allowedOrder);
   const h2Names = h2Headings.map((h) => h.name);
 
-  // Rule: No unexpected ## sections
   for (const h of h2Headings) {
     if (!allowedSet.has(h.name)) {
       error(
@@ -158,7 +147,6 @@ function checkFile(file) {
     }
   }
 
-  // Rule: Section ordering (recognized sections must appear in allowed order)
   const recognizedH2 = h2Headings.filter((h) => allowedSet.has(h.name));
   for (let i = 1; i < recognizedH2.length; i++) {
     const prevIdx = allowedOrder.indexOf(recognizedH2[i - 1].name);
@@ -172,7 +160,6 @@ function checkFile(file) {
     }
   }
 
-  // Rule: Type-specific required sections
   const required = REQUIRED_SECTIONS[noteType];
   for (const section of required) {
     if (!h2Names.includes(section)) {
@@ -184,7 +171,6 @@ function checkFile(file) {
     }
   }
 
-  // Rule: H3 subsections only under ## Details
   const detailsH2 = h2Headings.find((h) => h.name === "Details");
   let detailsStartLine = -1;
   let detailsEndLine = -1;
@@ -211,10 +197,9 @@ function checkFile(file) {
     }
   }
 
-  // Rule: Synonyms has no links
   const synonymsH2 = h2Headings.find((h) => h.name === "Synonyms");
   if (synonymsH2) {
-    const synContentStart = synonymsH2.line; // 0-based index of first content line
+    const synContentStart = synonymsH2.line;
     const synIdx = h2Headings.indexOf(synonymsH2);
     const synContentEnd =
       synIdx + 1 < h2Headings.length
@@ -232,10 +217,9 @@ function checkFile(file) {
     }
   }
 
-  // Rule: External references are URLs only
   const extRefH2 = h2Headings.find((h) => h.name === "External references");
   if (extRefH2) {
-    const extContentStart = extRefH2.line; // 0-based index of first content line
+    const extContentStart = extRefH2.line;
     const extIdx = h2Headings.indexOf(extRefH2);
     const extContentEnd =
       extIdx + 1 < h2Headings.length

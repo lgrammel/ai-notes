@@ -10,6 +10,9 @@ Four forces drive this shift:
 - **Full control.** Self-contained code is fully visible, debuggable, and modifiable without working around library abstractions, versioning constraints, or opaque internals.
 - **Tailored to the exact use case.** A generated implementation covers only the specific behavior needed, with no unused features, unnecessary abstraction layers, or configuration surface. This can result in simpler, smaller, and sometimes faster code than the general-purpose library equivalent.
 - **No [supply chain](../threats/supply-chain-attack.md) risk.** Eliminating external dependencies removes exposure to malicious packages, transitive vulnerabilities, and breaking upstream changes.
+- **Extraction as a middle path.** Rather than generating code from scratch, [coding agents](../concepts/coding-agent.md) can extract the relevant parts from an existing library into standalone code. This lowers the barrier further since the agent works from proven implementations rather than reimplementing from first principles.
+
+At scale, collapsing dependency trees points toward monolithic, self-contained applications. Fewer external dependencies mean a smaller attack surface, smaller package sizes, and faster boot times. By leveraging agents' capacity to work through large codebases without fatigue, building an entire application from bare-metal considerations upward becomes realistic where it was previously impractical.
 
 ## Examples
 
@@ -30,3 +33,4 @@ Four forces drive this shift:
 ## External references
 
 - https://x.com/karpathy/status/2021633574089416993
+- https://x.com/Thom_Wolf/status/2023387043967959138

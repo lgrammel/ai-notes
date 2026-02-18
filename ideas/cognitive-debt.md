@@ -21,6 +21,7 @@ Warning signs include team members hesitating to make changes for fear of uninte
 - Teams have accumulated cognitive debt long before AI agents existed - through rapid hiring, deadline pressure, or poor documentation practices. Cognitive debt may be a speed problem rather than an AI problem, and existing practices (code review, onboarding, documentation) may be sufficient without a new framework.
 - In a [dark software factory](../ideas/dark-software-factory.md) model where humans never touch the code and quality is measured through behavioral specification testing, cognitive debt as traditionally defined becomes irrelevant - the shared theory shifts from understanding code to understanding specifications and scenarios.
 - Modular architectures with well-defined interfaces structurally bound how much theory any one developer needs to hold. Good decomposition limits cognitive debt independently of process interventions like code review or documentation, and agents that produce well-isolated modules may reduce rather than increase the required mental model.
+- Cognitive debt is difficult to measure until it becomes paralyzing, which risks making the concept unfalsifiable - any team slowdown can be attributed to cognitive debt retroactively, and any productive team can be assumed to have managed it. Without a leading indicator, the concept may function more as a post-hoc narrative than a predictive or actionable framework.
 
 ## Confidence
 

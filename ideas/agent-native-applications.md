@@ -10,6 +10,8 @@ The architecture rests on five principles. Parity requires that the agent can ac
 
 Domain-specific tools emerge from observed usage patterns rather than upfront design: start with pure primitives (bash, file operations, basic storage), observe what the agent actually needs, and add domain tools deliberately for vocabulary anchoring, guardrails, or efficiency. Domain tools represent one conceptual action from the user's perspective, but the underlying primitives remain available for edge cases. Operations can graduate from agent-orchestrated loops to optimized code when performance demands it, while preserving the agent's ability to trigger the optimized path and fall back to primitives.
 
+The architecture suits domains where flexibility, edge-case variety, and emergent capability matter more than auditability and determinism - customer support, internal tooling, creative workflows, and exploratory interfaces where the space of valid actions is large and evolving. Regulated or compliance-critical domains (finance, healthcare, aviation) require the deterministic branching and defensive constraints that agent-native framing treats as anti-patterns, because those constraints exist to satisfy accountability, repeatability, and legal defensibility requirements rather than to limit agent capability.
+
 ### Latent demand discovery
 
 Agent-native applications can discover what features to build by observing what users ask the agent to do, inverting traditional product development from imagine-build-validate into build a capable foundation, observe, and formalize. When the agent has atomic tools and UI parity, users inevitably ask for things the developer did not anticipate. The agent either composes tools to accomplish the request or fails, revealing a gap. Both outcomes are signal: successful unanticipated requests indicate patterns worth optimizing with domain-specific tools or dedicated [prompts](../concepts/prompt.md), and failed requests expose missing tools or parity gaps.
@@ -18,7 +20,7 @@ Over time, the developer adds domain tools for common patterns (making them fast
 
 ### Patterns the idea distinguishes from agent-native
 
-The idea identifies several approaches that fall short of agent-native architecture:
+In domains where agent judgment is appropriate, the idea identifies several approaches that limit agent-native benefits:
 
 - Agent-as-router - using the agent only to dispatch to pre-built functions
 - Request/response thinking - single-turn execution without a loop
@@ -37,7 +39,7 @@ The idea identifies several approaches that fall short of agent-native architect
 
 ## Confidence
 
-**Low.** The five principles are well-articulated as a design philosophy, but the counterarguments around predictability requirements, regulatory compliance, and the security implications of full tool parity substantially limit applicability. The note does not clearly delineate which use cases benefit from agent-native architecture versus which require deterministic, auditable behavior, making the idea overbroad as stated.
+**Low.** The five principles are well-articulated as a design philosophy, but the counterarguments around predictability requirements, regulatory compliance, and the security implications of full tool parity substantially limit applicability to domains where flexibility and emergent capability outweigh auditability and determinism.
 
 ## External references
 

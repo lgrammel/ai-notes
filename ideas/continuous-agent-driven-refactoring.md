@@ -20,6 +20,7 @@ Continuous agent-driven refactoring differs from [cognitive debt](./cognitive-de
 - Refactoring agents modifying code that other agents are actively working on creates merge conflicts and can invalidate in-progress work, requiring coordination mechanisms that add complexity to the background automation.
 - Golden principles may be premature for fast-evolving codebases where the "right" pattern has not yet stabilized. Encoding opinionated rules too early locks in conventions that the team may need to revise, turning the refactoring agent into an obstacle rather than an aid.
 - Even well-established golden principles require ongoing human maintenance as the codebase evolves. If principles are not updated to reflect architectural changes, new dependencies, or shifted conventions, the refactoring agent enforces stale rules - systematically reverting intentional evolution back to outdated patterns.
+- Encoding golden principles and maintaining the refactoring automation requires ongoing engineering investment. The 20% cleanup time cited as motivation may shift to a different activity - writing and maintaining rules, reviewing refactoring PRs, debugging the automation - rather than being eliminated. The net time savings depend on the ratio of rule-authoring cost to repeated manual cleanup cost, which varies by codebase and team.
 
 ## Confidence
 

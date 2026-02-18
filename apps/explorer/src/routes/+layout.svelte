@@ -1,26 +1,11 @@
 <script>
   import "../app.css";
   import { page } from "$app/stores";
+  import { goto } from "$app/navigation";
 
   let { data, children } = $props();
   let sidebarOpen = $state(false);
-  let searchQuery = $state("");
   let searchInput = $state(null);
-
-  let searchResults = $derived.by(() => {
-    const q = searchQuery.trim().toLowerCase();
-    if (!q) return null;
-    return data.categories
-      .map((category) => ({
-        ...category,
-        notes: category.notes.filter((note) =>
-          note.title.toLowerCase().includes(q),
-        ),
-      }))
-      .filter((category) => category.notes.length > 0);
-  });
-
-  let isSearching = $derived(searchResults !== null);
 
   function isActive(path) {
     return $page.url.pathname === path;
@@ -30,14 +15,20 @@
     return $page.url.pathname.startsWith(`/${categoryId}`);
   }
 
-  function clearSearch() {
-    searchQuery = "";
-    searchInput?.blur();
+  function handleSearchSubmit(event) {
+    event.preventDefault();
+    const q = searchInput?.value?.trim();
+    if (q) {
+      goto(`/search?q=${encodeURIComponent(q)}`);
+      searchInput.value = "";
+      sidebarOpen = false;
+    }
   }
 
   function handleSearchKeydown(event) {
     if (event.key === "Escape") {
-      clearSearch();
+      searchInput.value = "";
+      searchInput?.blur();
     }
   }
 
@@ -65,32 +56,21 @@
       <a href="/" onclick={() => (sidebarOpen = false)}>AI Notes</a>
     </div>
 
-    <div class="sidebar-search">
+    <form class="sidebar-search" onsubmit={handleSearchSubmit}>
       <div class="sidebar-search-wrapper">
         <input
           bind:this={searchInput}
-          bind:value={searchQuery}
           onkeydown={handleSearchKeydown}
           type="text"
+          name="q"
           placeholder="Search notes..."
           aria-label="Search notes"
         />
-        {#if searchQuery}
-          <button
-            class="sidebar-search-clear"
-            onclick={clearSearch}
-            aria-label="Clear search"
-          >
-            &#x2715;
-          </button>
-        {/if}
       </div>
-      {#if !searchQuery}
-        <div class="sidebar-search-hint">
-          <kbd>&#8984;K</kbd>
-        </div>
-      {/if}
-    </div>
+      <div class="sidebar-search-hint">
+        <kbd>&#8984;K</kbd>
+      </div>
+    </form>
 
     <a
       href="/graph"
@@ -101,59 +81,33 @@
       Knowledge Graph
     </a>
 
-    {#if isSearching}
-      {#if searchResults.length === 0}
-        <div class="search-no-results">No matching notes</div>
-      {:else}
-        {#each searchResults as category}
-          <span class="search-category-label">
+    {#each data.categories as category}
+      <details open={isCategoryActive(category.id)}>
+        <summary>
+          <a
+            href="/{category.id}"
+            class:active={isActive(`/${category.id}`)}
+            onclick={() => (sidebarOpen = false)}
+          >
             {category.label}
             <span class="count">{category.notes.length}</span>
-          </span>
-          <ul>
-            {#each category.notes as note}
-              <li>
-                <a
-                  href="/{category.id}/{note.slug}"
-                  class:active={isActive(`/${category.id}/${note.slug}`)}
-                  onclick={() => { clearSearch(); sidebarOpen = false; }}
-                >
-                  {note.title}
-                </a>
-              </li>
-            {/each}
-          </ul>
-        {/each}
-      {/if}
-    {:else}
-      {#each data.categories as category}
-        <details open={isCategoryActive(category.id)}>
-          <summary>
-            <a
-              href="/{category.id}"
-              class:active={isActive(`/${category.id}`)}
-              onclick={() => (sidebarOpen = false)}
-            >
-              {category.label}
-              <span class="count">{category.notes.length}</span>
-            </a>
-          </summary>
-          <ul>
-            {#each category.notes as note}
-              <li>
-                <a
-                  href="/{category.id}/{note.slug}"
-                  class:active={isActive(`/${category.id}/${note.slug}`)}
-                  onclick={() => (sidebarOpen = false)}
-                >
-                  {note.title}
-                </a>
-              </li>
-            {/each}
-          </ul>
-        </details>
-      {/each}
-    {/if}
+          </a>
+        </summary>
+        <ul>
+          {#each category.notes as note}
+            <li>
+              <a
+                href="/{category.id}/{note.slug}"
+                class:active={isActive(`/${category.id}/${note.slug}`)}
+                onclick={() => (sidebarOpen = false)}
+              >
+                {note.title}
+              </a>
+            </li>
+          {/each}
+        </ul>
+      </details>
+    {/each}
   </nav>
 
   <main class="content">

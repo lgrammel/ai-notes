@@ -519,7 +519,7 @@ body {
 
 .sidebar-search input {
   width: 100%;
-  padding: 0.35rem 1.75rem 0.35rem 0.6rem;
+  padding: 0.35rem 0.6rem;
   font-size: 0.8125rem;
   font-family: inherit;
   color: var(--color-text);
@@ -538,29 +538,6 @@ body {
   border-color: var(--color-link);
 }
 
-.sidebar-search-clear {
-  position: absolute;
-  right: 0.35rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.1rem;
-  height: 1.1rem;
-  padding: 0;
-  border: none;
-  border-radius: 3px;
-  background: none;
-  color: var(--color-text-muted);
-  font-size: 0.75rem;
-  cursor: pointer;
-  line-height: 1;
-}
-
-.sidebar-search-clear:hover {
-  color: var(--color-text);
-  background: var(--color-bg-hover);
-}
-
 .sidebar-search-hint {
   font-size: 0.6875rem;
   color: var(--color-text-muted);
@@ -577,21 +554,65 @@ body {
   padding: 0.05rem 0.3rem;
 }
 
-.search-category-label {
-  display: block;
-  padding: 0.4rem 1rem;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+/* Search page */
+
+.search-form {
+  margin-bottom: 1.25rem;
+  max-width: var(--content-max-width);
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.55rem 0.85rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.search-input::placeholder {
   color: var(--color-text-muted);
 }
 
-.search-no-results {
-  padding: 1rem;
-  font-size: 0.8125rem;
+.search-input:focus {
+  border-color: var(--color-link);
+}
+
+.search-summary {
+  font-size: 0.875rem;
   color: var(--color-text-muted);
-  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.search-results-group {
+  max-width: var(--content-max-width);
+  margin-bottom: 1.5rem;
+}
+
+.search-results-group h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search-results-group .count {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.search-empty {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  margin-top: 2rem;
 }
 
 /* Mobile responsive */

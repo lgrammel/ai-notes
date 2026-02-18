@@ -1,6 +1,7 @@
 # Ideas
 
 - [Agent Demonstration Artifacts](./agent-demonstration-artifacts.md)
+- [Agent Legibility](./agent-legibility.md)
 - [Agent SEO](./agent-seo.md)
 - [Agent UX](./agent-ux.md)
 - [Agent-Native Applications](./agent-native-applications.md)
@@ -8,10 +9,12 @@
 - [AI-Favored Programming Languages](./ai-favored-programming-languages.md)
 - [Cloud Agents as Org Capacity](./cloud-agents-as-org-capacity.md)
 - [Cognitive Debt](./cognitive-debt.md)
+- [Continuous Agent-Driven Refactoring](./continuous-agent-driven-refactoring.md)
 - [Dark Software Factory](./dark-software-factory.md)
 - [Dependency-Free Software](./dependency-free-software.md)
 - [Latent Demand Discovery](./latent-demand-discovery.md)
 - [Open-Source Restructuring](./open-source-restructuring.md)
+- [Progressive Context Disclosure](./progressive-context-disclosure.md)
 - [Repository as Agent Workspace](./repository-as-agent-workspace.md)
 - [TDD as Agent Constraint](./tdd-as-agent-constraint.md)
 - [Weakened Lindy Effect](./weakened-lindy-effect.md)

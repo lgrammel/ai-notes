@@ -5,6 +5,9 @@
     },
     {
       "pattern": "^https?://.*\\.medium\\.com"
+    },
+    {
+      "pattern": "^https?://openai\\.com/index/"
     }
   ],
   "timeout": "20s",

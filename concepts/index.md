@@ -35,6 +35,7 @@
 - [Grounding](./grounding.md)
 - [Guardrail](./guardrail.md)
 - [Hallucination](./hallucination.md)
+- [Harness Engineering](./harness-engineering.md)
 - [Human-in-the-Loop](./human-in-the-loop.md)
 - [Hybrid Search](./hybrid-search.md)
 - [In-Context Learning](./in-context-learning.md)

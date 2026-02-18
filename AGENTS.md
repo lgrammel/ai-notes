@@ -12,6 +12,7 @@ This is a pnpm monorepo. Content directories live at the root; tooling lives und
 
 | Directory          | Contains                                                                   | Canonical for                      |
 | ------------------ | -------------------------------------------------------------------------- | ---------------------------------- |
+| `apps/explorer/`   | SvelteKit static site for browsing notes, graph visualization, and search  | Knowledge base browser             |
 | `apps/lint/`       | Markdown linting and validation scripts                                    | Custom lint tooling                |
 | `example-systems/` | Analyses of concrete AI systems as compositions of concepts                | Trust analysis of real systems     |
 | `concepts/`        | Core term definitions (e.g. [LLMs](./concepts/llm.md), evals, fine-tuning) | Terminology and definitions        |
@@ -157,6 +158,39 @@ Example system notes follow concept note conventions (including the executive su
 - `## Interaction effects` is a required section describing emergent risks from the specific combination of capabilities that are not captured by any single capability in isolation. Place it after `## Trust analysis`.
 - `## Threats` is a required section listing all applicable threats as a table with three columns: Threat (linked name), Relevance (`Primary` / `Elevated` / `Standard`), and Note (brief architecture-specific phrase). **Primary**: defining threat for this architecture, uniquely amplified by or central to this specific composition of capabilities. **Elevated**: meaningfully present due to the system's capabilities, beyond baseline foundation model risk. **Standard**: baseline risk present in any LLM system, no architecture-specific amplifier. Notes are short phrases, not full sentences. Threats already discussed in `## Trust analysis` or `## Interaction effects` need only a brief pointer, not a full re-explanation. Place it after `## Interaction effects`.
 - `## Examples` is an optional section for generic category notes (e.g., "Enterprise RAG Chatbot") to list concrete product instances. Named product notes (e.g., "Cursor") typically do not need this section. Place it after `## Threats`.
+
+## Explorer app
+
+`apps/explorer/` is a SvelteKit static site that renders the repository's notes as a browsable web app. It reads markdown files from `concepts/`, `ideas/`, `threats/`, and `example-systems/` at build time and pre-renders all pages using `@sveltejs/adapter-static`.
+
+### Tech stack
+
+SvelteKit v2 with Svelte 5 (runes), Vite, TypeScript, marked (markdown rendering), and D3.js (graph visualization). Hand-written CSS with `prefers-color-scheme` dark mode support.
+
+### Pages
+
+- `/` - dashboard with category cards and note counts
+- `/[category]` - alphabetical note list for a category
+- `/[category]/[slug]` - rendered markdown note with resolved links
+- `/graph` - interactive D3 force-directed graph of all notes and their cross-references
+- `/search` - client-side title search (`Cmd+K` shortcut)
+
+### Key modules
+
+| File                  | Purpose                                                         |
+| --------------------- | --------------------------------------------------------------- |
+| `src/lib/content.ts`  | Reads `.md` files from the repo root at build time              |
+| `src/lib/graph.ts`    | Builds node/edge graph from internal cross-references           |
+| `src/lib/markdown.ts` | Renders markdown to HTML, rewrites relative links to app routes |
+
+### Running
+
+- **Dev server**: `pnpm dev` (from `apps/explorer/`)
+- **Build**: `pnpm build` (produces static HTML)
+- **Preview**: `pnpm preview`
+- **Type check**: `pnpm check`
+
+Content resolution depends on the repo root being two levels up from `apps/explorer/`.
 
 ## Tools
 

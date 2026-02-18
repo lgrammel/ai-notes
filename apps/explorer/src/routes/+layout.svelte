@@ -53,7 +53,7 @@
 
   <nav class="sidebar" class:open={sidebarOpen}>
     <div class="sidebar-header">
-      <a href="/" onclick={() => (sidebarOpen = false)}>AI Notes</a>
+      <a href="/" onclick={() => (sidebarOpen = false)}>AI Engineering</a>
     </div>
 
     <form class="sidebar-search" onsubmit={handleSearchSubmit}>

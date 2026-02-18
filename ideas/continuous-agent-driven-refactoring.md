@@ -19,6 +19,7 @@ Continuous agent-driven refactoring differs from [cognitive debt](./cognitive-de
 - The approach assumes high agent reliability for maintenance tasks. If the refactoring agents themselves produce flawed changes at a meaningful rate, the volume of low-quality PRs could overwhelm reviewers rather than relieving them - shifting the entropy problem from the codebase to the review queue.
 - Refactoring agents modifying code that other agents are actively working on creates merge conflicts and can invalidate in-progress work, requiring coordination mechanisms that add complexity to the background automation.
 - Golden principles may be premature for fast-evolving codebases where the "right" pattern has not yet stabilized. Encoding opinionated rules too early locks in conventions that the team may need to revise, turning the refactoring agent into an obstacle rather than an aid.
+- Even well-established golden principles require ongoing human maintenance as the codebase evolves. If principles are not updated to reflect architectural changes, new dependencies, or shifted conventions, the refactoring agent enforces stale rules - systematically reverting intentional evolution back to outdated patterns.
 
 ## Confidence
 

@@ -16,9 +16,9 @@ Agent-native applications can discover what features to build by observing what 
 
 Over time, the developer adds domain tools for common patterns (making them faster and more reliable), creates dedicated prompts for frequent requests (making them more discoverable), and removes tools that are not being used. The agent becomes a research instrument for understanding what users actually need, grounded in observed behavior rather than upfront feature speculation. [Customer support agents](../example-systems/customer-support-agent.md) are a concrete instance: observing what customers ask the agent to do (and where it fails or escalates) reveals unmet support needs and missing knowledge base content.
 
-### Common anti-patterns
+### Patterns the idea distinguishes from agent-native
 
-Common approaches that fall short of agent-native:
+The idea identifies several approaches that fall short of agent-native architecture:
 
 - Agent-as-router - using the agent only to dispatch to pre-built functions
 - Request/response thinking - single-turn execution without a loop

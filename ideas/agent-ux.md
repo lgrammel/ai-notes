@@ -6,7 +6,7 @@ Agent UX is the idea that software libraries and [tools](../concepts/tools.md) d
 
 In practice, this means watching how agents attempt to use an API, CLI, or library (including [hallucinated](../concepts/hallucination.md) commands, flags, and function names), then implementing whatever they repeatedly try. [Local coding agents](../example-systems/local-coding-agent.md) are the primary consumers of these "desire path" interfaces, since they continuously interact with CLIs, libraries, and APIs during development sessions. An interface that matches agent expectations needs less documentation loaded into [context](../concepts/context.md), saving [tokens](../concepts/token.md) at [inference](../concepts/inference.md) time.
 
-This has a dual-use relationship with [hallucination exploitation](../threats/hallucination-exploitation.md): the same predictability that lets a tool author make hallucinated interfaces real also lets an attacker register hallucinated package names and serve compromised artifacts. The underlying phenomenon - that model outputs are consistent enough to anticipate - is neutral; the intent determines whether it is a design technique or an attack vector.
+This has a dual-use relationship with [hallucination exploitation](../threats/hallucination-exploitation.md): the same predictability that lets a tool author make hallucinated interfaces real also lets an attacker register hallucinated package names and serve compromised artifacts. The underlying phenomenon - [model familiarity bias](../concepts/model-familiarity-bias.md), where model outputs are consistent enough to anticipate because they reflect training data distributions - is neutral; the intent determines whether it is a design technique or an attack vector.
 
 ## Examples
 
@@ -20,6 +20,7 @@ This has a dual-use relationship with [hallucination exploitation](../threats/ha
 - The approach may entrench the conventions of dominant models. If most agents hallucinate git-like commands because of training data distribution, tools that adopt those conventions lock in an ecosystem shaped by the training data of a few frontier models rather than by interface quality.
 - Hallucination-driven design is only feasible when model outputs are consistent enough to form stable desire paths. For less common tools or domains where model behavior is unpredictable, the signal-to-noise ratio of hallucinated patterns may be too low to guide useful design decisions.
 - Making every hallucinated command work reduces the friction that prevents misuse. A tool that accepts every plausible-sounding invocation may also accept adversarial ones, expanding the attack surface for [prompt injection](../threats/prompt-injection.md) payloads that guess at tool interfaces.
+- Optimizing interfaces for agent expectations may degrade the experience for human users who also need to use the tool directly. If hallucination-driven naming diverges from what human users find intuitive, the tool serves agents better at the cost of human usability - a tradeoff that matters as long as humans remain direct users alongside agents.
 
 ## Confidence
 

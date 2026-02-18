@@ -50,6 +50,7 @@
 - [MCP](./mcp.md)
 - [ML Engineering](./ml-engineering.md)
 - [Model Developer (Model Creator)](./model-developer.md)
+- [Model Familiarity Bias](./model-familiarity-bias.md)
 - [Model Quantization](./model-quantization.md)
 - [Model Routing](./model-routing.md)
 - [Model-as-a-Judge](./model-as-a-judge.md)

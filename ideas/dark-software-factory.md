@@ -27,6 +27,7 @@ The central open question is trust: how do you prove that software works when no
 - The economic case depends on current [inference cost](../concepts/inference-cost.md) trajectories and the assumption that token costs will remain the dominant constraint. If agent reliability plateaus before specifications can be made precise enough, the cost of iterating to convergence may exceed traditional development for complex systems.
 - Regulated environments (healthcare, finance, aviation) often mandate human sign-off on code changes. When no human has reviewed the code, accountability and legal liability are unresolved - the organization cannot point to a responsible reviewer, and regulatory frameworks that assume human oversight do not have clear analogs for agent-only development.
 - Digital twin fidelity is inherently limited. If the behavioral clone does not perfectly replicate the real service's edge cases, eventual consistency behavior, or failure modes, tests pass against the twin but fail in production - and the divergence may not surface until the software handles real traffic.
+- Building a faithful digital twin of a complex service is itself a specification task - the same problem the approach claims to solve. The twin must correctly capture the real service's behavior, edge cases, and failure modes, which requires precisely the kind of complete behavioral specification that the first counterargument identifies as the fundamental difficulty.
 
 ## Confidence
 

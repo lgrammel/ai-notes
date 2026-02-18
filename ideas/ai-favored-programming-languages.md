@@ -18,6 +18,7 @@ In the longer term, AI may not share the tradeoffs that shaped human language de
 - AI-generated code still needs human review, debugging, and maintenance in most workflows. Human readability remains a hard constraint as long as humans are in the loop, limiting how far language design can diverge from human ergonomics.
 - New languages face a bootstrapping problem: LLMs need training data in the language to generate it well, but training data requires an existing ecosystem of code written in that language. A language designed purely for LLMs would lack this ecosystem initially.
 - Ecosystem network effects - tooling, libraries, CI/CD integrations, and hiring pipelines - create switching costs that dominate language choice even when the primary author is a machine. An agent writing Rust still needs the Rust ecosystem (crates, build tooling, deployment infrastructure) to be healthy.
+- Most codebases are polyglot, and language choice is dictated by existing systems, platform constraints, and team expertise rather than greenfield decisions. Even if agents favor Rust, a team maintaining a Python monolith faces migration costs that dwarf any language-level advantage - the Lindy effect of existing codebases limits how quickly language preferences can shift in practice.
 
 ## Confidence
 

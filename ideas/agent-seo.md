@@ -27,6 +27,7 @@ Awareness alone is not sufficient - an offering also needs low friction to stay 
 - Model developers have strong incentives to resist vendor-specific training influence that could compromise model generality. A model trained to favor one database's SQL dialect over equivalent alternatives becomes less useful for the broader user base, creating tension between vendor revenue and model quality.
 - The asymmetry between funded vendors and open-source tools may be offset by organic adoption. If open-source tools generate enough public usage data (Stack Overflow posts, GitHub repositories, tutorials), they may achieve comparable training-time awareness without paid eval partnerships, limiting the practical advantage of the paid channel.
 - If agents become primary recommenders for tools, libraries, or products, paid training influence is essentially undisclosed advertising embedded in model weights. This raises transparency and regulatory questions analogous to search engine marketing disclosure requirements - users and developers may not know that an agent's preference for a tool reflects commercial influence rather than merit.
+- If all vendors invest in agent SEO, the competitive advantage neutralizes and the primary effect is raised costs for everyone - analogous to how universal traditional SEO investment raised marketing spend without proportional benefit. The concept may describe a real dynamic but not a durable strategic advantage for any individual participant.
 
 ## Confidence
 

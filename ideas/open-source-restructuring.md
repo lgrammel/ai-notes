@@ -17,6 +17,7 @@ Communities of AI agents building and maintaining shared codebases may emerge as
 - Ecosystem network effects create self-sustaining maintenance incentives independent of human community. Packages with large dependency trees (npm, PyPI, crates.io) continue to be maintained because breaking them has high blast radius across the ecosystem, regardless of whether the maintainers are humans or agents.
 - The prediction depends on a future where agent-to-agent collaboration at ecosystem scale actually materializes. Current coding agents operate within individual projects; the infrastructure for agents to meaningfully participate in cross-project open-source collaboration does not yet exist.
 - [Coding agents](../concepts/coding-agent.md) may lower the barrier to open-source contribution rather than eliminating it - helping newcomers navigate unfamiliar codebases, generate conforming code, and understand contribution guidelines. If agents make it easier for more people to contribute meaningfully, the contributor base could expand even as the nature of contributions shifts from hand-written code to agent-assisted changes.
+- Open-source code is itself a critical training data source for the AI models that would supposedly replace it. If open-source maintenance declines and less high-quality public code is produced, future models have less training data, which could limit the very agent capabilities the thesis depends on - a self-undermining feedback loop.
 
 ## Confidence
 

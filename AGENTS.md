@@ -245,6 +245,12 @@ Validates markdown links (both relative and external). Only dead links are repor
 - **Script**: `apps/lint/scripts/check-links.js`
 - **Config**: `.markdown-link-check.json` (timeouts, retries, ignored patterns)
 
+### TypeScript checking (check-types)
+
+Runs `svelte-kit sync` and `svelte-check` on the explorer app to catch type errors.
+
+- **Check types**: `pnpm check-types`
+
 ### Index checking (check-indexes)
 
 Validates that each directory index (`example-systems/index.md`, `concepts/index.md`, `ideas/index.md`, `threats/index.md`) lists all `.md` files in that directory (excluding `index.md`) and that entries are sorted alphabetically by visible name.

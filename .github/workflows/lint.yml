@@ -41,5 +41,8 @@ jobs:
       - name: Check structure
         run: pnpm check-structure
 
+      - name: Check types
+        run: pnpm check-types
+
       - name: Check links
         run: pnpm check-links

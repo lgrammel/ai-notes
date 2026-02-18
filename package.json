@@ -8,6 +8,7 @@
     "check-links": "node apps/lint/scripts/check-links.js *.md concepts/*.md ideas/*.md threats/*.md example-systems/*.md",
     "check-quotes": "node apps/lint/scripts/check-quotes.js *.md concepts/*.md ideas/*.md threats/*.md example-systems/*.md",
     "check-structure": "node apps/lint/scripts/check-structure.js concepts/*.md ideas/*.md threats/*.md example-systems/*.md",
+    "check-types": "pnpm --filter @ai-notes/explorer check",
     "lint:md": "markdownlint-cli2 \"**/*.md\" \"#**/node_modules\"",
     "format": "prettier --write .",
     "format:check": "prettier --check ."

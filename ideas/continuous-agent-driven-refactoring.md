@@ -17,6 +17,8 @@ Continuous agent-driven refactoring differs from [cognitive debt](./cognitive-de
 - Background refactoring agents may introduce their own drift if their understanding of "golden principles" is imprecise or if the principles themselves are poorly specified. An agent enforcing a subtly wrong interpretation of a rule could systematically degrade the codebase while appearing to improve it.
 - Quality grading is inherently subjective. Automated scores risk creating a false sense of health - a codebase can score well on measurable dimensions while harboring deeper structural problems that no lint rule captures. Teams may over-index on metric improvement at the expense of harder-to-measure qualities.
 - The approach assumes high agent reliability for maintenance tasks. If the refactoring agents themselves produce flawed changes at a meaningful rate, the volume of low-quality PRs could overwhelm reviewers rather than relieving them - shifting the entropy problem from the codebase to the review queue.
+- Refactoring agents modifying code that other agents are actively working on creates merge conflicts and can invalidate in-progress work, requiring coordination mechanisms that add complexity to the background automation.
+- Golden principles may be premature for fast-evolving codebases where the "right" pattern has not yet stabilized. Encoding opinionated rules too early locks in conventions that the team may need to revise, turning the refactoring agent into an obstacle rather than an aid.
 
 ## Confidence
 

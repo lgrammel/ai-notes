@@ -17,6 +17,7 @@ In the longer term, AI may not share the tradeoffs that shaped human language de
 - Current evidence (2026) shows LLMs performing best on languages with the most training data (Python, TypeScript) rather than the most formally verifiable (Rust, Haskell, Idris). Training data volume may matter more than formal properties for LLM code generation quality, and this advantage compounds: more usage generates more training data.
 - AI-generated code still needs human review, debugging, and maintenance in most workflows. Human readability remains a hard constraint as long as humans are in the loop, limiting how far language design can diverge from human ergonomics.
 - New languages face a bootstrapping problem: LLMs need training data in the language to generate it well, but training data requires an existing ecosystem of code written in that language. A language designed purely for LLMs would lack this ecosystem initially.
+- Ecosystem network effects - tooling, libraries, CI/CD integrations, and hiring pipelines - create switching costs that dominate language choice even when the primary author is a machine. An agent writing Rust still needs the Rust ecosystem (crates, build tooling, deployment infrastructure) to be healthy.
 
 ## Confidence
 

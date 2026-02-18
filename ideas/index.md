@@ -12,5 +12,4 @@
 - [Dark Software Factory](./dark-software-factory.md)
 - [Open-Source Restructuring](./open-source-restructuring.md)
 - [Reduced Software Persistence](./reduced-software-persistence.md)
-- [Repository as Agent Workspace](./repository-as-agent-workspace.md)
 - [TDD as Agent Constraint](./tdd-as-agent-constraint.md)

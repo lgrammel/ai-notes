@@ -21,6 +21,8 @@ Demonstration artifacts sit between two extremes of agent supervision: full [hum
 - Demonstration artifacts verify that the software works for the specific scenarios the agent chose to demonstrate, but the agent selects which scenarios to show. An agent can construct a convincing demo that exercises only the happy path while leaving edge cases, error handling, and performance characteristics unexamined. The artifact creates an illusion of completeness that may reduce scrutiny rather than increase it.
 - The approach adds overhead to every agent session: producing the demo takes time and tokens. For tasks where automated tests already provide high confidence (pure logic, well-specified transformations), the demonstration artifact may be redundant verification that slows the feedback loop without adding trust.
 - Constraining agents to append-only, execution-backed document construction is difficult to enforce reliably. Agents with filesystem access can always edit files directly, and detecting whether a document was constructed through the sanctioned tool or modified by hand requires its own verification layer - turtles all the way down.
+- If every agent session produces a demonstration artifact, reviewers may stop watching them carefully - the same [approval fatigue](../threats/approval-fatigue-exploitation.md) dynamic that affects code review, shifted to a different medium.
+- A convincing demo can look correct to a reviewer without sufficient domain expertise. The artifact compresses information but does not eliminate the need for the supervisor to understand what correct behavior looks like in the first place.
 
 ## Confidence
 

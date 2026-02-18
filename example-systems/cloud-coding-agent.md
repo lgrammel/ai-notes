@@ -10,7 +10,7 @@ This delegation model enables parallelism - multiple agent sessions can run conc
 
 Cloud coding agents typically connect to org-level infrastructure: repository hosting, CI/CD pipelines, issue trackers, secret stores, and [MCP](../concepts/mcp.md) servers for error tracking, monitoring, and databases. These integrations make cloud agents accessible to non-developers (PMs, designers, support staff) who can trigger tasks without local tooling or Git knowledge. Teams often encode recurring workflows into [skills](../concepts/skill.md) (sometimes called playbooks) so anyone in the organization can trigger a standardized process - framing the cloud agent as [organizational capacity](../ideas/cloud-agents-as-org-capacity.md) rather than individual developer tooling.
 
-Multiple cloud agents operating on the same codebase turn the [repository into a shared agent workspace](../ideas/repository-as-agent-workspace.md), with git branches and pull requests serving as coordination primitives. Taken to its extreme, this architecture enables [dark software factories](../ideas/dark-software-factory.md) where agents handle the entire development lifecycle without human code review.
+Multiple cloud agents operating on the same codebase coordinate as [filesystem agents](../concepts/filesystem-agent.md) sharing a repository, with git branches and pull requests serving as coordination primitives. Taken to its extreme, this architecture enables [dark software factories](../ideas/dark-software-factory.md) where agents handle the entire development lifecycle without human code review.
 
 ## Capabilities
 

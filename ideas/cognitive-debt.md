@@ -20,6 +20,7 @@ Warning signs include team members hesitating to make changes for fear of uninte
 - AI tools can also reduce cognitive debt by generating documentation, summarizing changes, and explaining code on demand. If agents reliably produce self-documenting code with clear architectural summaries, cognitive debt may decrease rather than increase - the problem may be transitional rather than fundamental.
 - Teams have accumulated cognitive debt long before AI agents existed - through rapid hiring, deadline pressure, or poor documentation practices. Cognitive debt may be a speed problem rather than an AI problem, and existing practices (code review, onboarding, documentation) may be sufficient without a new framework.
 - In a [dark software factory](../ideas/dark-software-factory.md) model where humans never touch the code and quality is measured through behavioral specification testing, cognitive debt as traditionally defined becomes irrelevant - the shared theory shifts from understanding code to understanding specifications and scenarios.
+- Modular architectures with well-defined interfaces structurally bound how much theory any one developer needs to hold. Good decomposition limits cognitive debt independently of process interventions like code review or documentation, and agents that produce well-isolated modules may reduce rather than increase the required mental model.
 
 ## Confidence
 

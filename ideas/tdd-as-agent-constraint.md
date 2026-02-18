@@ -23,6 +23,7 @@ The constraint is complementary to [agent demonstration artifacts](./agent-demon
 - TDD constrains the agent to testable behaviors, but many valuable software qualities - usability, performance under load, visual correctness, integration behavior - are not easily captured in unit-level red/green cycles. Over-reliance on TDD as the supervision mechanism may create false confidence in aspects of the system that the tests do not cover.
 - The red/green cycle assumes the agent writes meaningful tests. An agent optimizing for the appearance of TDD can write trivially passing tests (`assert result is not None`) that satisfy the red/green pattern without actually constraining the implementation. The supervision value depends on test quality, which itself requires review.
 - Forcing test-first development on every task adds overhead to exploratory or prototyping work where the requirements are not yet clear enough to specify as tests. For discovery-phase tasks, TDD as a constraint may slow the agent without adding proportional trust, since the tests themselves will need to be rewritten once the design stabilizes.
+- The technique assumes the person specifying the test (or the agent writing it) knows the correct behavior to assert. For complex or novel features where the right behavior is itself unclear, writing a failing test first may anchor the implementation to a premature specification.
 
 ## Confidence
 

@@ -1,38 +1,44 @@
-<script>
+<script lang="ts">
   import "../app.css";
-  import { page } from "$app/stores";
   import { goto } from "$app/navigation";
+  import { page } from "$app/stores";
+  import type { Snippet } from "svelte";
+  import type { LayoutData } from "./$types";
 
-  let { data, children } = $props();
+  let { data, children }: { data: LayoutData; children: Snippet } = $props();
   let sidebarOpen = $state(false);
-  let searchInput = $state(null);
+  let searchInput = $state<HTMLInputElement | null>(null);
 
-  function isActive(path) {
+  function isActive(path: string): boolean {
     return $page.url.pathname === path;
   }
 
-  function isCategoryActive(categoryId) {
+  function isCategoryActive(categoryId: string): boolean {
     return $page.url.pathname.startsWith(`/${categoryId}`);
   }
 
-  function handleSearchSubmit(event) {
+  function handleSearchSubmit(event: SubmitEvent): void {
     event.preventDefault();
     const q = searchInput?.value?.trim();
     if (q) {
       goto(`/search?q=${encodeURIComponent(q)}`);
-      searchInput.value = "";
+      if (searchInput) {
+        searchInput.value = "";
+      }
       sidebarOpen = false;
     }
   }
 
-  function handleSearchKeydown(event) {
+  function handleSearchKeydown(event: KeyboardEvent): void {
     if (event.key === "Escape") {
-      searchInput.value = "";
+      if (searchInput) {
+        searchInput.value = "";
+      }
       searchInput?.blur();
     }
   }
 
-  function handleGlobalKeydown(event) {
+  function handleGlobalKeydown(event: KeyboardEvent): void {
     if ((event.metaKey || event.ctrlKey) && event.key === "k") {
       event.preventDefault();
       searchInput?.focus();

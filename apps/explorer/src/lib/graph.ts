@@ -1,11 +1,22 @@
 import path from "node:path";
-import { getCategories, listNotes, getNote } from "./content.js";
+import { getCategories, getNote, listNotes } from "./content";
+
+export interface GraphNode {
+  id: string;
+  title: string;
+  category: string;
+}
+
+export interface GraphEdge {
+  source: string;
+  target: string;
+}
 
 /**
  * Resolve a relative markdown link to a node ID (category/slug).
  * Reuses the same resolution logic as markdown.js.
  */
-function resolveLink(href, sourceCategory) {
+function resolveLink(href: string, sourceCategory: string): string | null {
   if (
     !href ||
     href.startsWith("http://") ||
@@ -32,7 +43,7 @@ function resolveLink(href, sourceCategory) {
  * Extract all relative markdown links from content.
  * Returns an array of raw href strings.
  */
-function extractLinks(content) {
+function extractLinks(content: string): string[] {
   const linkRegex = /\[([^\]]*)\]\(([^)]+)\)/g;
   const hrefs = [];
   let match;
@@ -45,10 +56,10 @@ function extractLinks(content) {
 /**
  * Build the full graph of nodes and edges from all markdown notes.
  */
-export function buildGraph() {
+export function buildGraph(): { nodes: GraphNode[]; edges: GraphEdge[] } {
   const categories = getCategories();
-  const nodes = [];
-  const nodeIds = new Set();
+  const nodes: GraphNode[] = [];
+  const nodeIds = new Set<string>();
 
   // Collect all nodes
   for (const category of categories) {
@@ -61,8 +72,8 @@ export function buildGraph() {
   }
 
   // Collect edges by reading note content and extracting links
-  const edgeSet = new Set();
-  const edges = [];
+  const edgeSet = new Set<string>();
+  const edges: GraphEdge[] = [];
 
   for (const category of categories) {
     const notes = listNotes(category.id);

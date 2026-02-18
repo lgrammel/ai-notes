@@ -8,7 +8,10 @@ import path from "node:path";
  *      "../threats/index.md" from "concepts" -> "/threats"
  *      "https://example.com" -> "https://example.com" (unchanged)
  */
-function resolveLink(href, sourceCategory) {
+function resolveLink(
+  href: string | null | undefined,
+  sourceCategory: string
+): string | null | undefined {
   if (
     !href ||
     href.startsWith("http://") ||
@@ -30,11 +33,27 @@ function resolveLink(href, sourceCategory) {
   return cleaned;
 }
 
-export function renderMarkdown(content, sourceCategory) {
+export function renderMarkdown(
+  content: string,
+  sourceCategory: string
+): string {
   const marked = new Marked();
 
   const renderer = {
-    link({ href, title, tokens }) {
+    // Marked binds `this` to the renderer context at runtime.
+    // Typing it loosely keeps this helper simple without pulling in deep Marked internals.
+    link(
+      this: { parser: { parseInline: (t: unknown[]) => string } },
+      {
+        href,
+        title,
+        tokens,
+      }: {
+        href?: string | null;
+        title?: string | null;
+        tokens: unknown[];
+      }
+    ): string {
       const resolvedHref = resolveLink(href, sourceCategory);
       const text = this.parser.parseInline(tokens);
       const titleAttr = title ? ` title="${title}"` : "";
@@ -51,6 +70,6 @@ export function renderMarkdown(content, sourceCategory) {
     },
   };
 
-  marked.use({ renderer });
-  return marked.parse(content);
+  marked.use({ renderer: renderer as never });
+  return marked.parse(content) as string;
 }

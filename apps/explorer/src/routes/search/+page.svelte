@@ -1,8 +1,11 @@
-<script>
-  import { page } from "$app/stores";
+<script lang="ts">
   import { goto } from "$app/navigation";
+  import { page } from "$app/stores";
+  import type { PageData } from "./$types";
 
-  let { data } = $props();
+  let { data }: { data: PageData } = $props();
+  type SearchCategory = PageData["categories"][number];
+  type SearchNote = SearchCategory["notes"][number];
 
   let query = $derived($page.url.searchParams.get("q") ?? "");
   let inputValue = $state("");
@@ -15,20 +18,22 @@
     const q = query.trim().toLowerCase();
     if (!q) return null;
     return data.categories
-      .map((category) => ({
+      .map((category: SearchCategory) => ({
         ...category,
-        notes: category.notes.filter((note) =>
+        notes: category.notes.filter((note: SearchNote) =>
           note.title.toLowerCase().includes(q),
         ),
       }))
-      .filter((category) => category.notes.length > 0);
+      .filter((category: SearchCategory) => category.notes.length > 0);
   });
 
   let totalCount = $derived(
-    results ? results.reduce((sum, cat) => sum + cat.notes.length, 0) : 0,
+    results
+      ? results.reduce((sum: number, cat: SearchCategory) => sum + cat.notes.length, 0)
+      : 0,
   );
 
-  function handleSubmit(event) {
+  function handleSubmit(event: SubmitEvent): void {
     event.preventDefault();
     const q = inputValue.trim();
     if (q) {

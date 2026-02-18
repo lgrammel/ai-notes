@@ -1,23 +1,24 @@
 import { error } from "@sveltejs/kit";
 import {
+  getCategories,
   isValidCategory,
   getCategory,
   getNote,
   listNotes,
-  getCategories,
-} from "$lib/content.js";
-import { renderMarkdown } from "$lib/markdown.js";
+} from "$lib/content";
+import { renderMarkdown } from "$lib/markdown";
+import type { EntryGenerator, PageServerLoad } from "./$types";
 
-export function load({ params }) {
+export const load: PageServerLoad = ({ params }) => {
   const { category, slug } = params;
 
   if (!isValidCategory(category)) {
-    error(404, "Category not found");
+    throw error(404, "Category not found");
   }
 
   const note = getNote(category, slug);
   if (!note) {
-    error(404, "Note not found");
+    throw error(404, "Note not found");
   }
 
   const categoryInfo = getCategory(category);
@@ -29,9 +30,9 @@ export function load({ params }) {
     slug: note.slug,
     html,
   };
-}
+};
 
-export function entries() {
+export const entries: EntryGenerator = () => {
   const entries = [];
   for (const cat of getCategories()) {
     for (const note of listNotes(cat.id)) {
@@ -39,4 +40,4 @@ export function entries() {
     }
   }
   return entries;
-}
+};

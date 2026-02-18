@@ -6,6 +6,8 @@ Agentic workloads are [agent](./agent.md)-driven traffic patterns that differ fr
 
 Compared to human-driven traffic, agentic workloads favor structured machine-readable responses over rendered pages. At the more experimental end, agents generate declarative code (SQL, GraphQL, infrastructure-as-code) for execution, making the request space effectively unbounded.
 
+Agentic workloads also shift connection duration. A single agent interaction holds a connection open across multiple [LLM](./llm.md) round-trips, [tool](./tools.md) invocations, and [streaming](./streaming.md) responses - orders of magnitude longer than conventional request-response cycles. At scale, thousands of concurrent long-lived stateful sessions create pressure on connection management, memory per session, and garbage collection that is distinct from the burstiness and parameter-diversity challenges.
+
 These patterns affect multiple infrastructure layers. Caching and database indexes tuned for common query shapes degrade against the long tail of agent-generated requests. [Rate limiting](./rate-limiting.md) and abuse detection built around human signals (session cookies, CAPTCHAs) or fixed integration patterns become ineffective; [AI gateways](./ai-gateway.md) and agent-aware rate policies are common adaptations. Autoscaling also shifts: agent-driven traffic can spike abruptly as automated workflows trigger in parallel, compounding [inference](./inference.md) costs with tool execution costs, unlike the predictable curves of human or traditional integration traffic.
 
 ## Examples

@@ -36,6 +36,7 @@ In domains where agent judgment is appropriate, the idea identifies several appr
 - Observing what users ask an agent to do conflates demand with curiosity. Users experiment with novel interfaces, and early-adoption requests may not reflect sustained needs. Formalizing features based on exploratory usage risks building for novelty rather than durable demand.
 - The latent demand signal depends on the agent being capable enough to attempt (or clearly fail at) the requested task. If the agent silently produces poor results rather than clearly failing, the developer gets a false positive - apparent success that masks an unmet need rather than revealing one.
 - Demand discovery favors incremental feature additions within the existing tool space. It is less effective at surfacing needs that require fundamentally new capabilities the agent cannot approximate by composing existing primitives.
+- The granularity and emergent capability principles may be internally inconsistent. Emergent capability - agents composing tools in unanticipated ways - is framed as a benefit, but unanticipated compositions are difficult to distinguish from uncontrolled behavior in practice. Without a mechanism for telling the difference between a valuable emergent pattern and an unsafe one, the architecture lacks a principled way to encourage the former while preventing the latter.
 
 ## Confidence
 

@@ -26,6 +26,7 @@ The constraint is complementary to [agent demonstration artifacts](./agent-demon
 - The technique assumes the person specifying the test (or the agent writing it) knows the correct behavior to assert. For complex or novel features where the right behavior is itself unclear, writing a failing test first may anchor the implementation to a premature specification.
 - TDD is poorly suited for code where behavioral assertions are hard to express as unit-level tests - UI rendering, data pipeline transformations, ML model behavior, and performance characteristics resist the red/green pattern. Applying TDD as a universal agent constraint risks either excluding these domains or producing superficial tests that satisfy the form without providing supervision value.
 - The sequential red/green cycle forces one-test-at-a-time progression that may substantially slow agents on well-understood tasks where batch implementation would be more efficient. For simple, well-specified features, the overhead of writing a failing test before each incremental change adds latency without proportional trust.
+- The technique assumes testing infrastructure already exists and is well-configured. For projects without a test framework, test runner, or CI integration, the overhead of establishing that infrastructure is a meaningful barrier that the note does not address - the agent must first build the harness before the red/green constraint can function as supervision.
 
 ## Confidence
 

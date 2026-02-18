@@ -23,6 +23,7 @@ This has a dual-use relationship with [hallucination exploitation](../threats/ha
 - Hallucination-driven design is only feasible when model outputs are consistent enough to form stable desire paths. For less common tools or domains where model behavior is unpredictable, the signal-to-noise ratio of hallucinated patterns may be too low to guide useful design decisions.
 - Making every hallucinated command work reduces the friction that prevents misuse. A tool that accepts every plausible-sounding invocation may also accept adversarial ones, expanding the attack surface for [prompt injection](../threats/prompt-injection.md) payloads that guess at tool interfaces.
 - Optimizing interfaces for agent expectations may degrade the experience for human users who also need to use the tool directly. If hallucination-driven naming diverges from what human users find intuitive, the tool serves agents better at the cost of human usability - a tradeoff that matters as long as humans remain direct users alongside agents.
+- The approach requires tools similar enough to well-known ones that agents produce stable, consistent hallucination patterns to follow. Truly novel tool categories - with no close analogs in training data - lack the repeated hallucination signal that forms desire paths, making the technique inapplicable precisely where interface design guidance would be most valuable.
 
 ## Confidence
 

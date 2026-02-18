@@ -29,6 +29,7 @@ At scale, collapsing dependency trees points toward more self-contained applicat
 - Widespread adoption of dependency-free software fragments the ecosystem: instead of one well-tested library with thousands of users finding bugs, there are thousands of bespoke implementations each tested only against their own narrow use case.
 - Generated code that reimplements library functionality may inadvertently reproduce copyrighted patterns from training data, creating legal exposure that importing a properly licensed library avoids. The licensing clarity of open-source dependencies is a practical advantage that bespoke generated code does not yet have.
 - Productized services - the same kind of software built repeatedly for many customers around shared domain concepts - invert the economics. A shared library encapsulates domain logic once and propagates fixes across every customer project, while bespoke generated code must be patched, audited, and evolved independently in each instance.
+- Code generation quality varies enormously by domain. Utility functions and straightforward data transformations are reliably generated, but complex algorithms, protocol implementations, concurrent data structures, and cryptographic primitives may be consistently wrong in subtle ways when generated. Replacing a well-tested library with generated code in these domains introduces correctness risks that the dependency's existing test coverage and user base would have caught.
 
 ## Confidence
 

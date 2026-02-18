@@ -1,6 +1,6 @@
 # Continuous Agent-Driven Refactoring
 
-Continuous agent-driven refactoring is the idea that background [coding agents](../concepts/coding-agent.md) running on a recurring cadence can manage codebase entropy - detecting architectural drift, enforcing "golden principles," updating quality grades, and opening targeted refactoring pull requests - functioning as garbage collection for agent-generated code.
+Continuous agent-driven refactoring is the idea that background [coding agents](../concepts/coding-agent.md) running on a recurring cadence can manage codebase entropy, functioning as garbage collection for agent-generated code. These agents detect architectural drift, enforce "golden principles," update quality grades, and open targeted refactoring pull requests.
 
 ## Details
 

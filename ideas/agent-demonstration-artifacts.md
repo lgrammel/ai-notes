@@ -1,6 +1,6 @@
 # Agent Demonstration Artifacts
 
-Agent demonstration artifacts are structured, executable documents that a [coding agent](../concepts/coding-agent.md) produces to prove its work to a human supervisor - interleaving commands, their actual outputs, and screenshots into a reviewable record of what the agent built and whether it works.
+Agent demonstration artifacts are structured, executable documents that a [coding agent](../concepts/coding-agent.md) produces to prove its work to a human supervisor. They interleave commands, their actual outputs, and screenshots into a reviewable record of what the agent built and whether it works.
 
 ## Details
 

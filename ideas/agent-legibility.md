@@ -1,6 +1,6 @@
 # Agent Legibility
 
-Agent legibility is the idea that codebases, tools, and development environments should be optimized for [agent](../concepts/agent.md) comprehension first, treating machine readability as a primary design constraint rather than a secondary benefit.
+Agent legibility is the idea that codebases and development environments should be optimized for [agent](../concepts/agent.md) comprehension first, treating machine readability as a primary design constraint rather than a secondary benefit.
 
 ## Details
 

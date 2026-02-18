@@ -31,10 +31,6 @@ Awareness alone is not sufficient - an offering also needs low friction to stay 
 
 **Medium.** The dynamic is real - agent awareness is scarce and paid training influence exists - but the counterarguments about model retraining cycles and context-time dominance leave the durability of training-time SEO uncertain. The broader concept of optimizing for agent discovery is likely to persist even if the specific mechanisms shift.
 
-## Synonyms
-
-library evals for model training.
-
 ## External references
 
 - https://steve-yegge.medium.com/software-survival-3-0-97a2a6255f7b

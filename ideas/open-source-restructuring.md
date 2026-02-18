@@ -12,7 +12,7 @@ Communities of AI agents building and maintaining shared codebases may emerge as
 
 ## Counterarguments
 
-- Open source is also sustained by corporate incentives - shared infrastructure reduces duplication, hiring pipelines value open-source contributors, and strategic commoditization of competitors' products drives corporate sponsorship. These motivations are independent of individual human connection and would persist even if agents write most code.
+- Open source is also sustained by corporate incentives - shared infrastructure reduces duplication, hiring pipelines value open-source contributors, and strategic commoditization of competitors' products drives corporate sponsorship. Major projects like React, Kubernetes, and Android are maintained primarily for competitive positioning and ecosystem control, not community connection. These corporate motivations are independent of individual human connection and would persist even if agents write most code.
 - Humans will likely remain the specifiers and consumers of open-source software even if agents write it, preserving community around usage decisions, API design, and project governance. The transition may restructure contributor dynamics without eliminating human involvement.
 - The prediction depends on a future where agent-to-agent collaboration at ecosystem scale actually materializes. Current coding agents operate within individual projects; the infrastructure for agents to meaningfully participate in cross-project open-source collaboration does not yet exist.
 

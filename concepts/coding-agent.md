@@ -24,6 +24,8 @@ Code review agents are coding agents specialized for automated review of code ch
 
 Code review agents become increasingly important as cloud coding agents generate more pull requests in parallel - the bottleneck shifts from writing code to reviewing it. Automated review helps prevent rubber-stamping or accumulating review debt by catching common issues before a human reviewer sees the change, serving as a mitigation against [approval fatigue exploitation](../threats/approval-fatigue-exploitation.md). A code review agent can run on the same cloud infrastructure as the coding agent that produced the change, creating a feedback loop where generated code is automatically screened before human review.
 
+Human code review has historically served four distinct functions beyond catching bugs: mentorship (learning the codebase and its conventions), consistency (maintaining shared style and patterns), correctness (verifying logic and behavior), and trust (building confidence that changes are safe to deploy). When agents handle code production, each function needs a new home. Code review agents absorb correctness and consistency checking. Mentorship - the learning that happened through reading and discussing code - migrates to pair programming, ensemble development, and architecture retrospectives. Trust shifts toward [risk-tiered verification](../ideas/risk-tiered-verification.md) (calibrating review depth to blast radius) and [harness engineering](./harness-engineering.md) (mechanical enforcement that provides trust without requiring human inspection).
+
 ## Examples
 
 - Cursor agents (background and inline) operating on a local project inside the IDE.

@@ -10,6 +10,8 @@ AI observability extends general software observability with concerns specific t
 
 In [agent](./agent.md) systems, observability is also essential for security: structured traces that link reasoning steps to tool invocations help detect threats like [tool misuse](../threats/tool-misuse.md), [denial of service](../threats/denial-of-service.md), [misaligned model behaviors](../threats/misaligned-model-behaviors.md), and [persistence attacks](../threats/persistence-attacks.md) in production, and audit trails can support reliable attribution and reconstruction of agent actions, particularly when backed by append-only storage and access controls.
 
+When [coding agents](./coding-agent.md) change code faster than humans can review it line-by-line, observability tools extend beyond production monitoring into continuous comprehension - maintaining developer understanding of an evolving system. AI-assisted code comprehension tools that generate system overviews on demand, architecture retrospectives informed by trace and dependency data, and automated change summaries help teams sustain the shared mental model that traditional code review once provided. This application of observability is a mitigation for [cognitive debt](../ideas/cognitive-debt.md) and supports [supervisory engineering](../ideas/supervisory-engineering.md) by giving engineers the system-level visibility needed to assess agent output without reading every line.
+
 ## Examples
 
 - A trace viewer that links each [agent](./agent.md) reasoning step to its tool invocations, showing [latency](./latency.md) and token cost at each node.

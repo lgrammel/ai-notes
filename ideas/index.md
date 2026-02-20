@@ -1,6 +1,7 @@
 # Ideas
 
 - [Agent Demonstration Artifacts](./agent-demonstration-artifacts.md)
+- [Agent Experience](./agent-experience.md)
 - [Agent Legibility](./agent-legibility.md)
 - [Agent SEO](./agent-seo.md)
 - [Agent UX](./agent-ux.md)
@@ -13,4 +14,7 @@
 - [Open-Source Restructuring](./open-source-restructuring.md)
 - [Progressive Context Disclosure](./progressive-context-disclosure.md)
 - [Reduced Software Persistence](./reduced-software-persistence.md)
+- [Risk-Tiered Verification](./risk-tiered-verification.md)
+- [Spec-Driven Development](./spec-driven-development.md)
+- [Supervisory Engineering](./supervisory-engineering.md)
 - [TDD as Agent Constraint](./tdd-as-agent-constraint.md)

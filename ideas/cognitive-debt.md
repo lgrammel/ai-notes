@@ -27,7 +27,7 @@ Warning signs include team members hesitating to make changes for fear of uninte
 
 ## Confidence
 
-**Medium.** The core observation - that velocity without understanding is unsustainable - is well-supported by decades of software engineering experience, and AI agents visibly amplify the dynamic through higher code throughput, approval fatigue, and ambiguous authorship. However, cognitive debt is difficult to measure until it becomes paralyzing, risking unfalsifiability as a framework, and the concept may not require a distinct term beyond existing ideas about knowledge management and documentation.
+**High.** The core observation - that velocity without understanding is unsustainable - is well-supported by decades of software engineering experience, and AI agents visibly amplify the dynamic through higher code throughput, approval fatigue, and ambiguous authorship. The counterarguments identify measurement difficulty (cognitive debt is hard to quantify until it becomes paralyzing), but this is a limitation of the metric, not of the concept's validity - the same is true of technical debt, which remains a useful and widely applied framework despite similar measurement challenges.
 
 ## External references
 

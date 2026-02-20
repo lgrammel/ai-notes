@@ -10,7 +10,6 @@
 - [AI-Favored Programming Languages](./ai-favored-programming-languages.md)
 - [Cloud Agents as Org Capacity](./cloud-agents-as-org-capacity.md)
 - [Cognitive Debt](./cognitive-debt.md)
-- [Continuous Agent-Driven Refactoring](./continuous-agent-driven-refactoring.md)
 - [Dark Software Factory](./dark-software-factory.md)
 - [Open-Source Restructuring](./open-source-restructuring.md)
 - [Progressive Context Disclosure](./progressive-context-disclosure.md)

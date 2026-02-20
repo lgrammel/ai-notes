@@ -17,6 +17,7 @@ The pattern relates to [context engineering](../concepts/context-engineering.md)
 - For small repositories with limited documentation needs, maintaining a structured knowledge base with mechanical validation imposes overhead that exceeds the benefit. The monolithic approach may fail at scale but work fine for projects below a certain complexity threshold.
 - The optimal hierarchy structure will likely change as models improve and context windows grow. Heavy investment in a specific disclosure structure optimized for current agent capabilities may age poorly - a form of premature optimization at the methodology level.
 - Designing the right disclosure hierarchy requires deep system understanding and information architecture skill - deciding what belongs at the top level, how deep to go, and where to draw boundaries between documents. This is a non-trivial design problem, and the people best positioned to solve it are the same senior engineers whose time the pattern is supposed to free up.
+- Current models frequently fail to follow pointer chains reliably - reading a top-level file but not navigating to referenced deeper documents, or extracting incomplete information across hops. Multi-hop pointer-following is a known weakness of current LLMs, making the pattern's effectiveness dependent on a capability that is improving but not yet reliable at scale.
 
 ## Confidence
 

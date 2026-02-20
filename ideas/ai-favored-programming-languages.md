@@ -10,6 +10,8 @@ As [coding agents](../concepts/coding-agent.md) write an increasing share of pro
 
 A separate axis favors languages based on runtime concurrency properties rather than type system strength. When the primary challenge is running thousands of concurrent, long-lived, failure-prone [agent](../concepts/agent.md) sessions, process isolation, supervision trees, preemptive scheduling, and fault tolerance become the dominant selection criteria. Erlang/Elixir (BEAM VM) is the canonical example - designed for telecom workloads with requirements nearly identical to [multi-agent systems](../concepts/multi-agent-system.md).
 
+### Novel AI-optimized languages
+
 In the longer term, AI may not share the tradeoffs that shaped human language design: expressiveness vs. simplicity, safety vs. control, performance vs. abstraction, compile time vs. runtime, explicitness vs. conciseness. An optimal LLM programming language could diverge significantly from human-designed languages, potentially optimizing for machine verifiability, token efficiency, or properties humans never prioritized. The reasons to create new programming languages would shift from human productivity to machine productivity.
 
 ## Counterarguments

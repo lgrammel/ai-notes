@@ -5,6 +5,7 @@
 - [Agent SEO](./agent-seo.md)
 - [Agent UX](./agent-ux.md)
 - [Agent-Native Applications](./agent-native-applications.md)
+- [AI-Centric Software Ecosystem](./ai-centric-software-ecosystem.md)
 - [AI-Favored Programming Languages](./ai-favored-programming-languages.md)
 - [Cloud Agents as Org Capacity](./cloud-agents-as-org-capacity.md)
 - [Cognitive Debt](./cognitive-debt.md)

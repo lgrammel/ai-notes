@@ -10,6 +10,8 @@ This is a form of systemic [reward hacking](./reward-hacking.md): not the model 
 
 Whether the gap is structural or transient remains an open question. Previous generation gaps (e.g., early ImageNet overfitting) closed over time as benchmarks became more diverse and training pipelines matured. Poor real-world performance may also reflect insufficient [context engineering](./context-engineering.md) or deployment-side gaps rather than a fundamental generalization failure.
 
+The eval-reality gap is the inverse of [product overhang](./product-overhang.md): the eval-reality gap describes models that appear capable but fail in practice, while product overhang describes models with genuine capabilities that no product has yet surfaced.
+
 ## Examples
 
 - A model that scores in the top percentile on coding benchmarks but alternates between introducing and reintroducing bugs when fixing real code

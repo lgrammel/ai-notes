@@ -18,15 +18,17 @@ Agent-native applications can discover what features to build by observing what 
 
 Over time, the developer adds domain tools for common patterns (making them faster and more reliable), creates dedicated prompts for frequent requests (making them more discoverable), and removes tools that are not being used. The agent becomes a research instrument for understanding what users actually need, grounded in observed behavior rather than upfront feature speculation. [Customer support agents](../example-systems/customer-support-agent.md) are a concrete instance: observing what customers ask the agent to do (and where it fails or escalates) reveals unmet support needs and missing knowledge base content.
 
-### Patterns the idea distinguishes from agent-native
+### Patterns the source material distinguishes from agent-native
 
-In domains where agent judgment is appropriate, the idea identifies several approaches that limit agent-native benefits:
+The source material identifies several approaches as distinct from the agent-native model:
 
 - Agent-as-router - using the agent only to dispatch to pre-built functions
 - Request/response thinking - single-turn execution without a loop
 - Workflow-shaped tools - bundling judgment into tool implementations
-- Defensive tool design - over-constraining inputs in ways that prevent unanticipated compositions
-- Coded edge-case handling - encoding all branching logic into application code rather than letting the agent handle it with judgment
+- Defensive tool design - constraining inputs to prevent unanticipated compositions
+- Coded edge-case handling - encoding branching logic into application code rather than delegating to the agent
+
+Several of these - particularly defensive tool design and coded edge-case handling - are deliberate design choices in contexts where auditability, security, or compliance take priority over flexibility. The distinction is between domains where agent judgment adds value and domains where deterministic behavior is a requirement.
 
 ## Counterarguments
 

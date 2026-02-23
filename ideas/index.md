@@ -1,7 +1,6 @@
 # Ideas
 
 - [Agent Demonstration Artifacts](./agent-demonstration-artifacts.md)
-- [Agent Experience](./agent-experience.md)
 - [Agent Legibility](./agent-legibility.md)
 - [Agent SEO](./agent-seo.md)
 - [Agent UX](./agent-ux.md)
